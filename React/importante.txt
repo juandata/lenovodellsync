@@ -1,0 +1,4 @@
+1. npx create-react-app myapp
+2.cd my app
+3.npm start
+*cambiar puerto por defecto de la aplicación en scripts de json en windows:   "start": "set PORT=XXXX && react-scripts start",

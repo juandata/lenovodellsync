@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://expressjs.com/es/guide/routing.html -->
+<html lang="es" class="gr__expressjs_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Direccionamiento de Express</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async="" data-rocketsrc="//www.googletagmanager.com/gtm.js?id=GTM-5XL76H" data-rocketoptimized="true"></script><script type="text/javascript" src="./Direccionamiento de Express_files/gtm.js.download"></script><script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"7bcf0eebd30a48c81f815366c319e391616fba04-1517979867-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="./Direccionamiento de Express_files/rocket.min.js.download"></script>
+<link rel="icon" type="image/png" href="http://expressjs.com/images/favicon.png">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/style.css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/dropit.css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/prism.css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/font-awesome.min.css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/es.css">
+<link rel="stylesheet" href="./Direccionamiento de Express_files/nodeinteractive.css">
+
+<script data-cfasync="false" src="./Direccionamiento de Express_files/jquery.min.js.download"></script>
+<script data-cfasync="false" src="./Direccionamiento de Express_files/ismobile.js.download"></script>
+<script data-cfasync="false" src="./Direccionamiento de Express_files/app.js.download"></script>
+<script data-cfasync="false" src="./Direccionamiento de Express_files/retina.js.download"></script>
+<script data-cfasync="false" src="./Direccionamiento de Express_files/dropit.js.download"></script>
+<script data-cfasync="false" src="./Direccionamiento de Express_files/prism.js.download"></script>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body class="non-en-doc" data-gr-c-s-loaded="true">
+<section class="page content">
+<header>
+<div id="mobile-menu">
+<div id="nav-button" class="fa fa-bars fa-2x button"></div>
+</div>
+<section id="logo"><a href="http://expressjs.com/" class="express">Express</a>
+</section>
+<div id="navbar">
+<ul id="navmenu">
+<li><a href="http://expressjs.com/es/" id="home-menu">Inicio</a></li>
+<li>
+<ul id="getting-started-menu" class="menu dropit">
+<li class="dropit-trigger"><a href="http://expressjs.com/es/starter/installing.html">Cómo empezar</a>
+<ul class="dropit-submenu" style="display: none;">
+<li>
+<a href="http://expressjs.com/es/starter/installing.html">
+Instalación
+</a>
+</li>
+<li>
+<a href="http://expressjs.com/es/starter/hello-world.html">
+Hello world
+</a>
+</li>
+<li>
+<a href="http://expressjs.com/es/starter/generator.html">
+Generador de Express
+</a>
+</li>
+<li>
+<a href="http://expressjs.com/es/starter/basic-routing.html">
+Direccionamiento básico
+</a>
+</li>
+<li>
+<a href="http://expressjs.com/es/starter/static-files.html">
+Archivos estáticos
+</a>
+</li>
+<li>
+<a href="http://expressjs.com/es/starter/faq.html">
+Preguntas más frecuentes
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<ul id="guide-menu" class="menu dropit">
+<li class="dropit-trigger"><a href="http://expressjs.com/es/guide/routing.html" class="active">Guía</a>
+<ul class="dropit-submenu" style="display: none;">
+<li><a href="http://expressjs.com/es/guide/routing.html" class="current">Direccionamiento</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/writing-middleware.html">Escritura de middleware</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/using-middleware.html">Utilización del middleware</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/using-template-engines.html">Utilización de motores de plantilla</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/error-handling.html">Manejo de errores</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/debugging.html">Depuración</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/behind-proxies.html">Express detrás de proxies</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/migrating-4.html">Migración a Express 4</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/migrating-5.html">Migración a Express 5</a>
+</li>
+<li><a href="http://expressjs.com/es/guide/database-integration.html">Integración de la base de datos</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<ul id="application-menu" class="menu dropit">
+<li class="dropit-trigger"><a href="http://expressjs.com/es/4x/api.html">Referencia de API</a>
+<ul class="dropit-submenu" style="display: none;">
+<li><a href="http://expressjs.com/es/4x/api.html">4.x</a>
+</li>
+<li><a href="http://expressjs.com/es/3x/api.html">3.x (en desuso)</a>
+</li>
+<li><a href="http://expressjs.com/2x/">2.x (en desuso)</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">
+<ul id="advanced-topics-menu" class="menu dropit">
+<li class="dropit-trigger"><a href="http://expressjs.com/es/advanced/developing-template-engines.html">Temas avanzados</a>
+<ul class="dropit-submenu" style="display: none;">
+<li><a href="http://expressjs.com/es/advanced/developing-template-engines.html">Motores de plantilla</a>
+</li>
+<li><a href="http://expressjs.com/es/advanced/pm.html">Utilización de gestores de procesos</a>
+</li>
+<li><a href="http://expressjs.com/es/advanced/security-updates.html">Actualizaciones de seguridad</a>
+</li>
+<li><a href="http://expressjs.com/es/advanced/best-practice-security.html">Mejores prácticas de seguridad</a>
+</li>
+<li><a href="http://expressjs.com/es/advanced/best-practice-performance.html">Mejores prácticas de rendimiento</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul id="resources-menu" class="menu dropit">
+<li class="dropit-trigger"><a href="http://expressjs.com/es/resources/glossary.html">Recursos</a>
+<ul class="dropit-submenu" style="display: none;">
+<li><a href="http://expressjs.com/es/resources/glossary.html">Glosario</a>
+</li>
+<li><a href="http://expressjs.com/es/resources/middleware.html">Middleware</a>
+</li>
+<li><a href="http://expressjs.com/es/resources/community.html">Comunidad</a>
+</li>
+<li><a href="http://expressjs.com/es/resources/books-blogs.html">Manuales y blogs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</header>
+<div id="overlay"></div>
+<div id="i18n-notice-box" class="doc-box doc-warn">
+<p></p><p>Esta traducción proporcionada por <a href="http://strongloop.com/">StrongLoop / IBM</a>.</p>
+Este documento puede estar desfasado respecto a la documentación en inglés. Para ver las últimas actualizaciones, consulte la <a href="http://expressjs.com/">documentación en inglés</a>.
+<p></p>
+<div id="close-i18n-notice-box" title="Close">✖</div>
+</div>
+<div id="page-doc" markdown="1">
+<h1 id="direccionamiento">Direccionamiento</h1>
+<p><em>Direccionamiento</em> hace referencia a la definición de puntos finales de aplicación (URI) y cómo responden a las solicitudes de cliente.
+Para ver una introducción al direccionamiento, consulte <a href="http://expressjs.com/es/starter/basic-routing.html">Direccionamiento básico</a>.</p>
+<p>El siguiente código es un ejemplo de una ruta muy básica.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token function">express<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// respond with "hello world" when a GET request is made to the homepage
+</span>app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<h2 id="route-methods">Métodos de ruta</h2>
+<p>Un método de ruta se deriva de uno de los métodos HTTP y se adjunta a una instancia de la clase <code>express</code>.</p>
+<p>El siguiente código es un ejemplo de las rutas que se definen para los métodos GET y POST a la raíz de la aplicación.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token comment" spellcheck="true">// GET method route
+</span>app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'GET request to the homepage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// POST method route
+</span>app<span class="token punctuation">.</span><span class="token function">post<span class="token punctuation">(</span></span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'POST request to the homepage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Express da soporte a los siguientes métodos de direccionamiento que se corresponden con los métodos HTTP: <code>get</code>, <code>post</code>, <code>put</code>, <code>head</code>, <code>delete</code>, <code>options</code>, <code>trace</code>, <code>copy</code>, <code>lock</code>, <code>mkcol</code>, <code>move</code>, <code>purge</code>, <code>propfind</code>, <code>proppatch</code>, <code>unlock</code>, <code>report</code>, <code>mkactivity</code>, <code>checkout</code>, <code>merge</code>, <code>m-search</code>, <code>notify</code>, <code>subscribe</code>, <code>unsubscribe</code>, <code>patch</code>, <code>search</code> y <code>connect</code>.</p>
+<div class="doc-box doc-info">
+<p>Para direccionar los métodos que se convierten en nombres de variable JavaScript no válidos, utilice la notación entre corchetes. Por ejemplo, <code>app['m-search']('/', function ...</code></p>
+</div>
+<p>Hay un método de direccionamiento especial, <code>app.all()</code>, que no se deriva de ningún método HTTP. Este método se utiliza para cargar funciones de middleware en una vía de acceso para todos los métodos de solicitud.</p>
+<p>En el siguiente ejemplo, el manejador se ejecutará para las solicitudes a “/secret”, tanto si utiliza GET, POST, PUT, DELETE, como cualquier otro método de solicitud HTTP soportado en el <a href="https://nodejs.org/api/http.html#http_http_methods">módulo http</a>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token function">all<span class="token punctuation">(</span></span><span class="token string">'/secret'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Accessing the secret section ...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// pass control to the next handler
+</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<h2 id="route-paths">Vías de acceso de ruta</h2>
+<p>Las vías de acceso de ruta, en combinación con un método de solicitud, definen los puntos finales en los que pueden realizarse las solicitudes. Las vías de acceso de ruta pueden ser series, patrones de serie o expresiones regulares.</p>
+<div class="doc-box doc-info">
+<p>Express utiliza <a href="https://www.npmjs.com/package/path-to-regexp">path-to-regexp</a> para correlacionar las vías de acceso de ruta; consulte la documentación de path-to-regexp para ver todas las posibilidades para definir vías de acceso de ruta. <a href="http://forbeslindesay.github.io/express-route-tester/">Express Route Tester</a> es una herramienta muy útil para probar rutas básicas de Express, aunque no da soporte a la coincidencia de patrones.</p>
+</div>
+<div class="doc-box doc-warn">
+<p>Las series de consulta no forman parte de la vía de acceso de ruta.</p>
+</div>
+<p>Estos son algunos ejemplos de vías de acceso de ruta basadas en series.</p>
+<p>Esta vía de acceso de ruta coincidirá con las solicitudes a la ruta raíz, <code>/</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con las solicitudes a <code>/about</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/about'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'about'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con las solicitudes a <code>/random.text</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/random.text'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'random.text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Estos son algunos ejemplos de vías de acceso de ruta basadas en patrones de serie.</p>
+<p>Esta vía de acceso de ruta coincidirá con <code>acd</code> y <code>abcd</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/ab?cd'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'ab?cd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con <code>abcd</code>, <code>abbcd</code>, <code>abbbcd</code>, etc.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/ab+cd'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'ab+cd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con <code>abcd</code>, <code>abxcd</code>, <code>abRABDOMcd</code>, <code>ab123cd</code>, etc.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/ab*cd'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'ab*cd'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con <code>/abe</code> y <code>/abcde</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/ab(cd)?e'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'ab(cd)?e'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<div class="doc-box doc-info">
+<p>Los caracteres ?, +, * y () son subconjuntos de sus contrapartidas de expresiones regulares. El guión (-) y el punto (.) se interpretan literalmente en las vías de acceso basadas en series.</p>
+</div>
+<p>Ejemplos de vías de acceso de ruta basadas en expresiones regulares:</p>
+<p>Esta vía de acceso de ruta coincidirá con cualquier valor con una “a” en el nombre de la ruta.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token regex">/a/</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'/a/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Esta vía de acceso de ruta coincidirá con <code>butterfly</code> y <code>dragonfly</code>, pero no con <code>butterflyman</code>, <code>dragonfly man</code>, etc.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token regex">/.*fly$/</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'/.*fly$/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<h2 id="route-handlers">Manejadores de rutas</h2>
+<p>Puede proporcionar varias funciones de devolución de llamada que se comportan como <a href="http://expressjs.com/es/guide/using-middleware.html">middleware</a> para manejar una solicitud. La única excepción es que estas devoluciones de llamada pueden invocar <code>next('route')</code> para omitir el resto de las devoluciones de llamada de ruta. Puede utilizar este mecanismo para imponer condiciones previas en una ruta y, a continuación, pasar el control a las rutas posteriores si no hay motivo para continuar con la ruta actual.</p>
+<p>Los manejadores de rutas pueden tener la forma de una función, una matriz de funciones o combinaciones de ambas, como se muestra en los siguientes ejemplos.</p>
+<p>Una función de devolución de llamada individual puede manejar una ruta. Por ejemplo:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/example/a'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Hello from A!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Más de una función de devolución de llamada puede manejar una ruta (asegúrese de especificar el objeto <code>next</code>). Por ejemplo:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/example/b'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'the response will be sent by the next function ...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Hello from B!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Una matriz de funciones de devolución de llamada puede manejar una ruta. Por ejemplo:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token keyword">var</span> cb0 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'CB0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> cb1 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'CB1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> cb2 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Hello from C!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/example/c'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>cb0<span class="token punctuation">,</span> cb1<span class="token punctuation">,</span> cb2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>Una combinación de funciones independientes y matrices de funciones puede manejar una ruta. Por ejemplo:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token keyword">var</span> cb0 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'CB0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> cb1 <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'CB1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/example/d'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>cb0<span class="token punctuation">,</span> cb1<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'the response will be sent by the next function ...'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Hello from D!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<h2 id="response-methods">Métodos de respuesta</h2>
+<p>Los métodos en el objeto de respuesta (<code>res</code>) de la tabla siguiente pueden enviar una respuesta al cliente y terminar el ciclo de solicitud/respuestas. Si ninguno de estos métodos se invoca desde un manejador de rutas, la solicitud de cliente se dejará colgada.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.download">res.download()</a></td>
+<td>Solicita un archivo para descargarlo.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.end">res.end()</a></td>
+<td>Finaliza el proceso de respuesta.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.json">res.json()</a></td>
+<td>Envía una respuesta JSON.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.jsonp">res.jsonp()</a></td>
+<td>Envía una respuesta JSON con soporte JSONP.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.redirect">res.redirect()</a></td>
+<td>Redirecciona una solicitud.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.render">res.render()</a></td>
+<td>Representa una plantilla de vista.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.send">res.send()</a></td>
+<td>Envía una respuesta de varios tipos.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.sendFile">res.sendFile</a></td>
+<td>Envía un archivo como una secuencia de octetos.</td>
+</tr>
+<tr>
+<td><a href="http://expressjs.com/es/4x/api.html#res.sendStatus">res.sendStatus()</a></td>
+<td>Establece el código de estado de la respuesta y envía su representación de serie como el cuerpo de respuesta.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="app-route">app.route()</h2>
+<p>Puede crear manejadores de rutas encadenables para una vía de acceso de ruta utilizando <code>app.route()</code>.
+Como la vía de acceso se especifica en una única ubicación, la creación de rutas modulares es muy útil, al igual que la reducción de redundancia y errores tipográficos. Para obtener más información sobre las rutas, consulte: <a href="http://expressjs.com/es/4x/api.html#router">Documentación de Router()</a>.</p>
+<p>A continuación, se muestra un ejemplo de manejadores de rutas encadenados que se definen utilizando <code>app.route()</code>.</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+app<span class="token punctuation">.</span><span class="token function">route<span class="token punctuation">(</span></span><span class="token string">'/book'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Get a random book'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">post<span class="token punctuation">(</span></span><span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Add a book'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">put<span class="token punctuation">(</span></span><span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Update the book'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<h2 id="express-router">express.Router</h2>
+<p>Utilice la clase <code>express.Router</code> para crear manejadores de rutas montables y modulares. Una instancia <code>Router</code> es un sistema de middleware y direccionamiento completo; por este motivo, a menudo se conoce como una “miniaplicación”.</p>
+<p>El siguiente ejemplo crea un direccionador como un módulo, carga una función de middleware en él, define algunas rutas y monta el módulo de direccionador en una vía de acceso en la aplicación principal.</p>
+<p>Cree un archivo de direccionador denominado <code>birds.js</code> en el directorio de la aplicación, con el siguiente contenido:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token keyword">var</span> express <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// middleware that is specific to this router
+</span>router<span class="token punctuation">.</span><span class="token function">use<span class="token punctuation">(</span></span><span class="token keyword">function</span> <span class="token function">timeLog<span class="token punctuation">(</span></span>req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span><span class="token string">'Time: '</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">next<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// define the home page route
+</span>router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'Birds home page'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// define the about route
+</span>router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/about'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send<span class="token punctuation">(</span></span><span class="token string">'About birds'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router<span class="token punctuation">;</span>
+</code>
+</pre>
+<p>A continuación, cargue el módulo de direccionador en la aplicación:</p>
+<pre class="  language-javascript"><code class="  language-javascript" translate="no">
+<span class="token keyword">var</span> birds <span class="token operator">=</span> <span class="token function">require<span class="token punctuation">(</span></span><span class="token string">'./birds'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+app<span class="token punctuation">.</span><span class="token function">use<span class="token punctuation">(</span></span><span class="token string">'/birds'</span><span class="token punctuation">,</span> birds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code>
+</pre>
+<p>La aplicación ahora podrá manejar solicitudes a <code>/birds</code> y <code>/birds/about</code>, así como invocar la función de middleware <code>timeLog</code> que es específica de la ruta.</p>
+</div>
+</section>
+
+<noscript>
+    &lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-5XL76H" height="0" width="0" style="display: none; visibility: hidden;"&gt;&lt;/iframe&gt;
+</noscript>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-5XL76H');
+</script>
+<a id="top" href="http://expressjs.com/es/guide/routing.html#"><img src="./Direccionamiento de Express_files/arrow.png"></a>
+<footer>
+<div id="footer-content">
+<div id="github">
+<iframe src="./Direccionamiento de Express_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+</div>
+<div id="sponsor"><a href="https://github.com/expressjs/express">Express</a> es un proyecto de la Fundación Node.js.</div>
+<div id="fork"><a href="https://github.com/expressjs/expressjs.com">Bifurque el sitio web en GitHub</a>.
+</div>
+<div>Copyright © StrongLoop, Inc. y otros colaboradores de expressjs.com.</div>
+</div>
+<div id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/"><img alt="Licencia Creative Commons" style="border-width:0" src="./Direccionamiento de Express_files/80x15.png"></a> Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Licencia Creative Commons Atribución-CompartirIgual 3.0 Estados Unidos de América</a>.
+</div>
+</footer>
+
+
+</body></html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://blog.risingstack.com/using-react-with-webpack-tutorial/ -->
+<html class="gr__blog_risingstack_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/track"></script><script async="" src="./Using React with Webpack Tutorial _ RisingStack_files/fbds.js.download"></script><script type="text/javascript" async="" src="./Using React with Webpack Tutorial _ RisingStack_files/analytics.js.download"></script><script type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/visit"></script>
+  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Using React with Webpack Tutorial | RisingStack</title>
+
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="1VZwYFsfiVb7eRGn7Hx4CQN2PHLUmbYZnlJOXrBaCPA">
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://blog.risingstack.com/assets/favicons/apple-touch-icon.png?v=8dbcecdb4b">
+<link rel="icon" type="image/png" href="https://blog.risingstack.com/assets/favicons/favicon-32x32.png?v=8dbcecdb4b" sizes="32x32">
+<link rel="icon" type="image/png" href="https://blog.risingstack.com/assets/favicons/favicon-16x16.png?v=8dbcecdb4b" sizes="16x16">
+<link rel="manifest" href="https://blog.risingstack.com/assets/favicons/manifest.json?v=8dbcecdb4b">
+<link rel="mask-icon" href="https://blog.risingstack.com/assets/favicons/safari-pinned-tab.svg?v=8dbcecdb4b" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+
+<link href="./Using React with Webpack Tutorial _ RisingStack_files/css" rel="stylesheet">
+<link rel="stylesheet" href="./Using React with Webpack Tutorial _ RisingStack_files/default.min.css">
+<link href="./Using React with Webpack Tutorial _ RisingStack_files/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./Using React with Webpack Tutorial _ RisingStack_files/main.css">
+
+<meta name="description" content="What makes Webpack great and a look at the very latest contributions to the Webpack/React ecosystem.">
+    <link rel="shortcut icon" href="https://blog.risingstack.com/favicon.png" type="image/png">
+    <link rel="canonical" href="https://blog.risingstack.com/using-react-with-webpack-tutorial/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="RisingStack Engineering - Node.js Tutorials &amp; Resources">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using React with Webpack Tutorial | RisingStack">
+    <meta property="og:description" content="What makes Webpack great and a look at the very latest contributions to the Webpack/React ecosystem.">
+    <meta property="og:url" content="https://blog.risingstack.com/using-react-with-webpack-tutorial/">
+    <meta property="og:image" content="https://risingstack-blog.s3.amazonaws.com/2016/Jun/react_webpack_babel_1-1466684773214.jpg">
+    <meta property="article:published_time" content="2015-10-27T12:33:15.000Z">
+    <meta property="article:modified_time" content="2017-09-05T15:37:48.000Z">
+    <meta property="article:tag" content="Advanced Node.js Tutorials">
+    <meta property="article:tag" content="React.js Tutorials">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Using React with Webpack Tutorial | RisingStack">
+    <meta name="twitter:description" content="What makes Webpack great and a look at the very latest contributions to the Webpack/React ecosystem.">
+    <meta name="twitter:url" content="https://blog.risingstack.com/using-react-with-webpack-tutorial/">
+    <meta name="twitter:image" content="https://risingstack-blog.s3.amazonaws.com/2016/Jun/react_webpack_babel_1-1466684773214.jpg">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Gabor Nagy">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Advanced Node.js Tutorials, React.js Tutorials">
+    <meta name="twitter:site" content="@risingstack">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="582">
+    
+    <script async="" src="./Using React with Webpack Tutorial _ RisingStack_files/gtm.js.download"></script><script id="twitter-wjs" src="./Using React with Webpack Tutorial _ RisingStack_files/widgets.js.download"></script><script type="text/javascript" async="" src="./Using React with Webpack Tutorial _ RisingStack_files/drip.js.download"></script><script type="text/javascript" async="" defer="" src="./Using React with Webpack Tutorial _ RisingStack_files/mailchimp-v1.js.download"></script><script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "RisingStack Engineering - Node.js Tutorials &amp; Resources",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://risingstack-blog.s3.amazonaws.com/2016/Mar/risingstack_logo-1457001742686.png",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Gabor Nagy",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://risingstack-blog.s3-eu-west-1.amazonaws.com/2015/03/bFlJb7gv.jpeg",
+            "width": 400,
+            "height": 400
+        },
+        "url": "https://blog.risingstack.com/author/gabor-nagy/",
+        "sameAs": [
+            "https://twitter.com/hellogabor"
+        ]
+    },
+    "headline": "Using React with Webpack Tutorial | RisingStack",
+    "url": "https://blog.risingstack.com/using-react-with-webpack-tutorial/",
+    "datePublished": "2015-10-27T12:33:15.000Z",
+    "dateModified": "2017-09-05T15:37:48.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://risingstack-blog.s3.amazonaws.com/2016/Jun/react_webpack_babel_1-1466684773214.jpg",
+        "width": 1600,
+        "height": 582
+    },
+    "keywords": "Advanced Node.js Tutorials, React.js Tutorials",
+    "description": "What makes Webpack great and a look at the very latest contributions to the Webpack/React ecosystem.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.risingstack.com/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/ghost-sdk.min.js.download"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "3fe3251906b2"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="RisingStack Engineering - Node.js Tutorials &amp; Resources" href="https://blog.risingstack.com/rss/">
+    <!-- Mailchimp -->
+<script type="text/javascript">
+	var $mcGoal = {'settings':{'uuid':'510d6f81b948a39e0d9c32ec3','dc':'us9'}};
+	(function() {
+		 var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
+		sp.src = 'https://resources.risingstack.com/mailchimp-v1.js'
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
+	})(); 
+</script>
+
+<script>
+(function (){
+    var tests = [
+    ]
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var $topCta = $('#top-cta')
+        $topCta.html(tests[Math.floor(Math.random() * tests.length)])
+    });
+}())
+</script>
+<script type="text/javascript" async="" src="./Using React with Webpack Tutorial _ RisingStack_files/embed.js.download"></script><script type="text/javascript" charset="utf-8" async="" src="./Using React with Webpack Tutorial _ RisingStack_files/button.5f64a1a5864e1229f84c8defd65341b4.js.download"></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.2d848eddee1b8c12749b72a04b2b33dc.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.845ead53749f15d0bd8a5ee344c8f06e.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.7b984c87b2825d6651408c24c7a8a583.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/services" src="./Using React with Webpack Tutorial _ RisingStack_files/services.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="156085c5-0017-4150-b225-a731ad248f38/service" src="./Using React with Webpack Tutorial _ RisingStack_files/service.js.download"></script><style></style><style>@-webkit-keyframes insQ_100 {  from {  outline: 1px solid transparent  } to {  outline: 0px solid transparent }  }
+#menufication-top { animation-duration: 0.001s; animation-name: insQ_100; -webkit-animation-duration: 0.001s; -webkit-animation-name: insQ_100;  } </style><link type="text/css" rel="stylesheet" href="./Using React with Webpack Tutorial _ RisingStack_files/listbuilder-popup.css"><link type="text/css" rel="stylesheet" href="./Using React with Webpack Tutorial _ RisingStack_files/sumome-share-client.css"></head>
+
+<body class="post-template tag-advanced-node-js-tutorials tag-react-js-tutorials" data-gr-c-s-loaded="true" style="margin-bottom: 50px;" data-sumo-smart-bar-data="{&quot;originalInlineStyles&quot;:{&quot;top&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;marginTop&quot;:&quot;&quot;,&quot;marginBottom&quot;:&quot;&quot;},&quot;originalOffset&quot;:{&quot;top&quot;:&quot;auto&quot;,&quot;bottom&quot;:&quot;auto&quot;},&quot;originalOffsetTop&quot;:0,&quot;originalTransition&quot;:&quot;all 0s ease 0s&quot;,&quot;originalInlineTransition&quot;:&quot;&quot;,&quot;originalMarginTop&quot;:&quot;0px&quot;,&quot;originalMarginBottom&quot;:&quot;0px&quot;}"><div class="s u m o me smartbar-popup"><div class="smartbar-popup-content"><div class="sumome-react-wysiwyg-popup-container sumome-smartbar-popup sumome-react-smartbar-bottom sumome-react-smartbar-fixed" style="min-height: 50px; line-height: 50px;"><link href="./Using React with Webpack Tutorial _ RisingStack_files/css(1)" rel="stylesheet" type="text/css"><span><div class="sumome-react-wysiwyg-component sumome-react-wysiwyg-smart-bar-background sumome-react-wysiwyg-background" style="left: 0px; top: 30px; width: 550px; height: 270px; position: absolute;"><div class="sumome-react-wysiwyg-move-handle" style="size: 22px; height: 100%;"><div style="position: relative; width: 100%; height: 100%; overflow: hidden; z-index: 0; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 0px; border-width: 0px;"><div style="background-color: rgb(239, 239, 239); fill: rgb(0, 0, 0); padding: 0px; margin: 0px; display: block; width: 100%; height: 100%;"></div><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"></div></div></div></div></span><span><div class="sumome-react-wysiwyg-component sumome-react-wysiwyg-smart-bar-text sumome-react-wysiwyg-text" style="left: 77px; top: 0px; width: 513px; position: absolute;"><div class="sumome-react-wysiwyg-move-handle" style="size: 25px; height: 100%;"><div><p style="color: rgb(73, 82, 89); background-color: rgba(0, 0, 0, 0); font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 400; font-style: normal; font-size: 16px; text-align: center; border-width: 0px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 0px; line-height: 1.5; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px inset; text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; padding: 0px; margin: 0px; letter-spacing: normal;">Become confident with Node.js:</p></div></div></div></span><span><div class="sumome-react-wysiwyg-component sumome-react-wysiwyg-smart-bar-textField sumome-react-wysiwyg-textField" style="left: 324px; top: 10px; width: 220px; height: auto; position: absolute;"><div class="sumome-react-wysiwyg-move-handle" style="size: 31px; height: 100%;"><div><input type="text" value="" name="email" spellcheck="false" placeholder="Enter your Email" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 400; font-style: normal; font-size: 14px; text-align: left; border-width: 1px; border-color: rgb(204, 204, 204); border-style: solid; border-radius: 4px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px inset; text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; padding: 0px 14px; margin: 0px; display: block; width: 100%; height: 32px; transition: none;"><div></div></div></div></div></span><span><div class="sumome-react-wysiwyg-component sumome-react-wysiwyg-smart-bar-button sumome-react-wysiwyg-button" style="left: 236px; top: 62px; width: 150px; height: 32px; position: absolute;"><div class="sumome-react-wysiwyg-move-handle" style="size: 26px; height: 100%;"><div style="padding: 0px; margin: 0px; display: block; width: 100%; height: 100%; position: relative; overflow: hidden; z-index: 0; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 4px; border-width: 0px;"><button style="color: rgb(255, 255, 255); background-color: rgb(69, 169, 148); font-family: &quot;Open Sans&quot;, sans-serif; font-weight: 700; font-style: normal; font-size: 14px; line-height: 1.5; text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; padding: 0px; margin: 0px; display: block; width: 100%; height: 100%; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px inset; cursor: pointer;">Subscribe Now</button></div></div></div></span><span><div class="sumome-react-wysiwyg-component sumome-react-wysiwyg-outside-horizontal-resize-handles sumome-react-wysiwyg-outside-vertical-resize-handles sumome-react-wysiwyg-close-button sumome-react-wysiwyg-smart-bar-image sumome-react-wysiwyg-image" style="top: 17px; width: 16px; height: 16px; position: absolute;"><div class="sumome-react-wysiwyg-move-handle" style="size: 20px; height: 100%;"><div style="position: relative; width: 100%; height: 100%; overflow: hidden; z-index: 0; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px; border-color: rgb(0, 0, 0); border-style: solid; border-radius: 0px; border-width: 0px; cursor: pointer;"><div class="sumome-react-svg-image-container" style="background-color: rgba(0, 0, 0, 0); fill: rgb(164, 169, 172); padding: 0px; margin: 0px; display: block; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-size: 100% 100%;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="4f8ed63b-7ccd-42ac-b57e-2d25323d54a5" data-name="Layer 1" viewBox="0 0 20 20" preserveAspectRatio="none" style="height: 100%; width: 100%; position: absolute; top: 0; left: 0;"><defs><style>.ce6357df-3c80-4519-935a-7fdea9b9de07{clip-path:url(#464a6701-eb06-43cb-8f85-6a825f427d30);}.\34 e594ea1-a930-4654-9fe2-fd997e75edff{clip-path:url(#e1eed25e-fb9f-4288-919f-efc8910e7c24);}</style><clippath id="464a6701-eb06-43cb-8f85-6a825f427d30"><path d="M10,8,2.44.42a1.43,1.43,0,0,0-2,2L8,10,.42,17.56a1.43,1.43,0,1,0,2,2L10,12l7.56,7.56a1.43,1.43,0,0,0,2-2L12,10l7.56-7.56a1.43,1.43,0,0,0-2-2Z"></path></clippath><clippath id="e1eed25e-fb9f-4288-919f-efc8910e7c24"><rect x="-790" y="-2755" width="2350" height="3951"></rect></clippath></defs><title>Artboard 6</title><path d="M10,8,2.44.42a1.43,1.43,0,0,0-2,2L8,10,.42,17.56a1.43,1.43,0,1,0,2,2L10,12l7.56,7.56a1.43,1.43,0,0,0,2-2L12,10l7.56-7.56a1.43,1.43,0,0,0-2-2Z"></path><g class="ce6357df-3c80-4519-935a-7fdea9b9de07"><rect x="-790" y="-2755" width="2350" height="3951"></rect><g class="4e594ea1-a930-4654-9fe2-fd997e75edff"><rect x="-5" y="-5" width="30" height="30"></rect></g></g></svg></div><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px inset;"></div></div></div></div></span></div></div></div><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-edgeless cc-bottom cc-color-override--1836051700 cc-invisible" style="display: none;"><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience on our website. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://blog.risingstack.com/privacy-policy/" target="_blank">Learn more</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Got it!</a></div><!--googleon: all--></div>
+    <div class="progress-container">
+      <span class="progress-bar" style="width: 2.8847%;"></span>
+    </div>
+
+    <header class="site-header text-center">
+  <div class="inline-block valign-middle">
+    <a class="inline-block margin-left-2 margin-top-1" href="https://blog.risingstack.com/">
+      <img class="margin-1" src="./Using React with Webpack Tutorial _ RisingStack_files/risingstack-logo-2017.svg" alt="RisingStack" height="45" width="150">
+    </a>
+  </div>
+  <button class="inline-block valign-middle" id="btn-nav"></button>
+  <nav class="inline-block valign-middle" id="main-nav">
+    <hr>
+    <ul class="nav-items">
+      <li><a href="https://blog.risingstack.com/">Home</a></li>
+      <li><a target="_blank" href="https://risingstack.com/">About Us</a></li>
+      <li class="dropdown-toggle">
+        <a href="https://blog.risingstack.com/using-react-with-webpack-tutorial/#">Trainings<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a target="_blank" href="https://risingstack.com/trainings#designingmicroservicesarchitectures">Designing Microservices Architectures</a></li>
+          <li><a target="_blank" href="https://risingstack.com/trainings#handlingmicroserviceswithkubernetes">Handling Microservices with Kubernetes</a></li>
+          <li><a target="_blank" href="https://risingstack.com/trainings#modernfrontendwithreact">Modern Front-End with React</a></li>
+          <li><a target="_blank" href="https://risingstack.com/trainings#buildingcomplexappswithangular">Building Complex Apps with Angular</a></li>
+          <li><a target="_blank" href="https://risingstack.com/trainings#nodejsfundamentals">Node.js Fundamentals</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-toggle">
+        <a href="https://blog.risingstack.com/using-react-with-webpack-tutorial/#">Services<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a target="_blank" href="https://risingstack.com/nodejs-development-consulting-services?utm_source=rsblog&amp;utm_medium=header">Node.js Consulting &amp; Development</a></li>
+          <li><a target="_blank" href="https://risingstack.com/nodejs-support?utm_source=rsblog&amp;utm_medium=header">24 / 7 Node.js Support</a></li>
+          <li><a target="_blank" href="https://risingstack.com/kubernetes-consulting-training?utm_source=rsblog&amp;utm_medium=header">Kubernetes Consulting</a></li>
+        </ul>
+      </li>
+      <li><a target="_blank" href="https://risingstack.com/resources?utm_source=rsblog&amp;utm_medium=header">Resources</a></li>
+    </ul>
+    <div style="clear:both"></div>
+  </nav>
+</header>
+
+      <div style="height: 50px;"></div>
+
+
+    <aside class="sidebar-column position-fixed " data-sumo-smart-bar-data="{&quot;originalInlineStyles&quot;:{&quot;top&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;marginTop&quot;:&quot;&quot;,&quot;marginBottom&quot;:&quot;&quot;},&quot;originalOffset&quot;:{&quot;top&quot;:&quot;100px&quot;,&quot;bottom&quot;:&quot;-57px&quot;},&quot;originalOffsetTop&quot;:126,&quot;originalTransition&quot;:&quot;all 0s ease 0s&quot;,&quot;originalInlineTransition&quot;:&quot;&quot;,&quot;originalMarginTop&quot;:&quot;26px&quot;,&quot;originalMarginBottom&quot;:&quot;0px&quot;}" style="top: auto; bottom: -56px;">
+
+
+        <div class="sidebar-box">
+  <h4 class="margin-0" style="background-color: #2c3e50; color: white; margin-bottom: 5px"><a target="_blank" style="color: white" href="https://risingstack.com/?utm_source=rsblog&amp;utm_medium=sidebar">Hire RisingStack</a></h4>
+
+  <a target="_blank" class="list-item font-small margin-left-2 margin-bottom-2" href="https://risingstack.com/nodejs-development-consulting-services?utm_source=rsblog&amp;utm_medium=sidebar">
+    <span class="square grey margin-right-1"></span>Outsourced Development
+  </a>
+
+  <a target="_blank" class="list-item font-small margin-left-2 margin-bottom-2" href="https://risingstack.com/nodejs-support?utm_source=rsblog&amp;utm_medium=sidebar">
+    <span class="square grey margin-right-1"></span>24/7 Node.js Support
+  </a>
+
+  <a target="_blank" class="list-item font-small margin-left-2 margin-bottom-2" href="https://risingstack.com/trainings?utm_source=rsblog&amp;utm_medium=sidebar">
+    <span class="square grey margin-right-1"></span>Training (fullstack &amp; devops)
+  </a>
+
+</div>
+        <!-- Training sidebar, add back if needed-->
+        <!-- <div class="sidebar-box bg-transparent" style="margin-bottom: 0">
+          <iframe width="230px" height="230px" frameBorder="0" src="https://blog-sidebar.risingstack.com/"></iframe>
+        </div> --> 
+
+          <div class="sidebar-box bg-transparent" style="margin-bottom: 0">
+  <iframe width="230px" height="400px" frameborder="0" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource.html"></iframe>
+</div>
+
+    </aside>
+
+        <main>
+        <div class="main-inner main-inner-post">
+
+          <section class="padding-top-3" style="padding-top: 0px;" id="results"></section>
+
+          
+<article class="post-page post tag-advanced-node-js-tutorials tag-react-js-tutorials">
+  <div class="hide-tablet-and-smaller">
+    <p class="post-route font-smaller"><a href="https://blog.risingstack.com/">Blog</a> &gt; <b><a href="https://blog.risingstack.com/tag/advanced-node-js-tutorials/">Advanced Node.js Tutorials</a></b></p>
+    <section class="post-meta-post-page">
+      <span class="post-time">
+      <i class="fa fa-calendar"></i>
+      <time datetime="2015-10-27" class="timeago">2 years ago</time>
+      <time datetime="2015-10-27" class="fulldate">October 27th, 2015</time>
+      </span>
+    </section>
+    <div style="clear:both"></div>
+  </div>
+  <header class="post-header">
+    <h1 class="post-title">Using React with Webpack Tutorial</h1>
+    <section>
+      <img class="author inline-block valign-middle" alt="Gabor Nagy&#39;s Picture" src="./Using React with Webpack Tutorial _ RisingStack_files/bFlJb7gv.jpeg">
+      <span class="inline-block valign-middle font-smaller">by <a class="author-url" href="https://blog.risingstack.com/author/gabor-nagy"><b>Gabor Nagy</b></a>(), Full stack in marketing, on track from zero to hero in web development.</span>
+    </section>
+  </header>
+  <section class="post-content">
+    <div class="kg-card-markdown"><blockquote>
+<p>This article is a guest post from <a href="https://twitter.com/christianalfoni">Christian Alfoni</a>, who is a speaker among other world-class React hackers at <a href="https://reactive2015.com/">Reactive2015</a> in Bratislava, November 2-4 2015.</p>
+</blockquote>
+<p>It has been a year since I first got into React and Webpack. I have many times expressed that Webpack is amazing, but hard to configure. That being truthy I think there is a different reason why developers do not adopt it. So I want to go head first and say; "Webpack is amazing, but it is hard to understand why." In this article, I will try to convey the core of what makes Webpack great. Then we are going to look at the very latest contributions to the Webpack/React ecosystem.</p>
+<h2 id="thecoreideaofwebpack">The core idea of Webpack</h2>
+<p>To understand Webpack, it can often be a good idea to talk about Grunt and Gulp first. The input to a Grunt task or a Gulp pipeline is filepaths (globs). The matching files can be run through different processes. Typically transpile, concat, minify, etc. This is a really great concept, but neither Grunt or Gulp understands the structure of your project. If we compare this to Webpack, you could say that Gulp and Grunt handle files, while Webpack handles projects.</p>
+<p>With Webpack, you give a single path. The path to your entry point. This is typically <em>index.js</em> or <em>main.js</em>. Webpack will now investigate your application. It will figure out how everything is connected through <em>require</em>, <em>import</em>, etc. statements, <em>url</em> values in your CSS,  <em>href</em> values in image tags, etc. It creates a complete dependency graph of all the assets your application needs to run. All of this just pointing to one single file.</p>
+<p>An asset is a file. It being an image, css, less, json, js, jsx etc. And this file is a node in the dependency graph created by Webpack.</p>
+<pre><code class="language-javascript hljs">
+|---------|         |------------|       |--------|
+| main.js | ------- | styles.css | ----- | bg.png |
+|---------|    |    |------------|       |--------|
+               |
+               |    |--------|       |-------------|
+               |--- | app.js | ----- | config.json |
+                    |--------|       |-------------|
+
+</code></pre>
+<p>When Webpack investigates your app, it will hook on new nodes to the dependency graph. When a new node is found, it will check the file extension. If the extension matches your configuration, it will run a process on it. This process is called a <strong>loader</strong>. An example of this would be to transform the content of a <em>.js</em> file from ES6 to ES5. Babel is a project that does this and it has a Webpack loader. Install it with <code>npm install babel-loader</code>.</p>
+<pre><code class="language-js hljs javascript">
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+
+<span class="hljs-keyword">const</span> config = {
+
+  <span class="hljs-comment">// Gives you sourcemaps without slowing down rebundling</span>
+  devtool: <span class="hljs-string">'eval-source-map'</span>,
+  <span class="hljs-attr">entry</span>: path.join(__dirname, <span class="hljs-string">'app/main.js'</span>),
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'/dist/'</span>),
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,
+    <span class="hljs-attr">publicPath</span>: <span class="hljs-string">'/'</span>
+  },
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">loaders</span>: [{
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js?$/</span>,
+      <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel'</span>
+    }]
+  }
+};
+</code></pre>
+<p>We basically tell Webpack that whenever it finds a <em>.js</em> file it should be passed to the Babel loader.</p>
+<p>This is really great, but it is just the beginning. With Webpack, a loader is not just an input/output. You can do some pretty amazing stuff that we are going to look at now. The funny thing about Webpack is that it has been out for quite some time and also the additions I am going to talk about here. For some reason, it just does not reach out... anyways, hopefully this will at least reach you now :-)</p>
+<h2 id="expressmiddleware">Express middleware</h2>
+<p>Using Node as a development server is really great. Maybe you run Node in production, but even if you do not you should have a Node development server. Why, you ask? Well, what web application does not talk to the server? Instead of faking requests and responses in your client application, why not do that with a Node development server? Now you can implement your application with as if you had a fully working backend. This makes the transition to production easier.</p>
+<p>To make Webpack work with a Node backend you just have to <code>npm install webpack-dev-middleware</code> and bippeti-bappeti....</p>
+<pre><code class="language-javascript hljs">
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
+<span class="hljs-keyword">import</span> webpack <span class="hljs-keyword">from</span> <span class="hljs-string">'webpack'</span>;
+<span class="hljs-keyword">import</span> webpackMiddleware <span class="hljs-keyword">from</span> <span class="hljs-string">'webpack-dev-middleware'</span>;
+<span class="hljs-keyword">import</span> config <span class="hljs-keyword">from</span> <span class="hljs-string">'./webpack.config.js'</span>;
+
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> compiler = webpack(config);
+
+app.use(express.static(__dirname + <span class="hljs-string">'/dist'</span>));
+app.use(webpackMiddleware(compiler);
+app.get(<span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">response</span>(<span class="hljs-params">req, res</span>) </span>{
+  res.sendFile(path.join(__dirname, <span class="hljs-string">'dist/index.html'</span>));
+});
+
+app.listen(<span class="hljs-number">3000</span>);
+</code></pre>
+<p>...bo! A Node development server with Webpack bundling capabilities.</p>
+<h2 id="es6onnode">ES6 on Node</h2>
+<p>As you can see, I am using ES6 code on Node. There is really no reason why the JavaScript on the client should look different than the JavaScript on the server. Since you have already installed <code>babel-loader</code>, which includes <code>babel-core</code>, you have what you need. In your <em>package.json</em> change the following line:</p>
+<pre><code class="language-javascript hljs">
+{
+  <span class="hljs-string">"scripts"</span>: {
+    <span class="hljs-string">"start"</span>: <span class="hljs-string">"node server.js"</span>
+  }
+}
+</code></pre>
+<p>to:</p>
+<pre><code class="language-javascript hljs">
+{
+  <span class="hljs-string">"scripts"</span>: {
+    <span class="hljs-string">"start"</span>: <span class="hljs-string">"babel-node server.js"</span>
+  }
+}
+</code></pre>
+<p>Easy peasy. You can now even use JSX on the server. <strong>Note</strong> that <em>babel-node</em> is not recommended for production. You have to pre-transpile the server code and you can use Webpack for that.</p>
+<h2 id="hotloadingcode">Hot loading code</h2>
+<p>Hot loading code is a great concept. It makes your workflow a lot smoother. Normally you have to refresh the application and sometimes click your way back to the same state. We spend a lot of time on this, and we should not do that. As I mentioned, Webpack can do some pretty amazing things with its loaders. Hot loading styles is the first we will look at, but before that we have to make our Webpack workflow allow hot loading:</p>
+<p><code>npm install webpack-hot-middleware</code></p>
+<pre><code class="language-javascript hljs">
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+<span class="hljs-keyword">import</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>;
+<span class="hljs-keyword">import</span> webpack <span class="hljs-keyword">from</span> <span class="hljs-string">'webpack'</span>;
+<span class="hljs-keyword">import</span> webpackMiddleware <span class="hljs-keyword">from</span> <span class="hljs-string">'webpack-dev-middleware'</span>;
+<span class="hljs-keyword">import</span> webpackHotMiddleware <span class="hljs-keyword">from</span> <span class="hljs-string">'webpack-hot-middleware'</span>; <span class="hljs-comment">// This line</span>
+<span class="hljs-keyword">import</span> config <span class="hljs-keyword">from</span> <span class="hljs-string">'./webpack.config.js'</span>;
+
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">const</span> compiler = webpack(config);
+
+app.use(express.static(__dirname + <span class="hljs-string">'/dist'</span>));
+app.use(webpackMiddleware(compiler);
+app.use(webpackHotMiddleware(compiler)); <span class="hljs-comment">// And this line</span>
+app.get(<span class="hljs-string">'*'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">response</span>(<span class="hljs-params">req, res</span>) </span>{
+  res.sendFile(path.join(__dirname, <span class="hljs-string">'dist/index.html'</span>));
+});
+
+app.listen(<span class="hljs-number">3000</span>);
+</code></pre>
+<h3 id="hotloadingstyles">Hot loading styles</h3>
+<p>First we add a new loader to our project. This makes Webpack understand what CSS is. Specifically it will understand what a <em>url</em> means. It will treat this as any other <em>require</em>, <em>import</em>, etc. statement. But we do not just want to understand CSS, we also want to add it to our page. With <code>npm install style-loader</code> we can add behavior to our CSS loading.</p>
+<pre><code class="language-js hljs javascript">
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+
+<span class="hljs-keyword">const</span> config = {
+
+  <span class="hljs-attr">devtool</span>: <span class="hljs-string">'eval-source-map'</span>,
+
+  <span class="hljs-comment">// We add an entry to connect to the hot loading middleware from</span>
+  <span class="hljs-comment">// the page</span>
+  entry: [
+    <span class="hljs-string">'webpack-hot-middleware/client'</span>,
+    path.join(__dirname, <span class="hljs-string">'app/main.js'</span>)
+  ],
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'/dist/'</span>),
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,
+    <span class="hljs-attr">publicPath</span>: <span class="hljs-string">'/'</span>
+  },
+
+  <span class="hljs-comment">// This plugin activates hot loading</span>
+  plugins: [
+    <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin(),
+  ],
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">loaders</span>: [{
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js?$/</span>,
+      <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel'</span>
+    }, {
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css?$/</span>,
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">'style!css'</span> <span class="hljs-comment">// This are the loaders</span>
+    }]
+  }
+};
+</code></pre>
+<p>In our config we tell Webpack to first run the <em>css-loader</em> and then the <em>style-loader</em>, it reads right to left. The css-loader makes any urls within it part of our dependency graph and the style-loader puts a style tag for the CSS in our HTML.</p>
+<p>So now you see that we do not only process files with Webpack, we can create side effects like creating style tags. With the HOT middleware, we can even run these side effects as we change the code of the app. That means every time you change some CSS Webpack will just update the existing style tag on the page, without a refresh.</p>
+<h3 id="hotloadingcomponents">Hot loading components</h3>
+<p>I got a developer crush on Dan Abramov after he released <em>react-hot-loader</em>, now called <em>react-transform</em>. Hot loading CSS is pretty neat, but you can do the same with React components. The react-transform project is not a Webpack loader, which actually react-hot-loader was. React-transform is a Babel transform. To configure a Babel transform you first need to <code>npm install react-transform</code>. Then you add a file to your project called <em>.babelrc</em>.</p>
+<pre><code class="language-js hljs javascript">
+{
+  <span class="hljs-string">"stage"</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-string">"env"</span>: {
+    <span class="hljs-string">"development"</span>: {
+      <span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"react-transform"</span>],
+      <span class="hljs-string">"extra"</span>: {
+        <span class="hljs-string">"react-transform"</span>: {
+          <span class="hljs-string">"transforms"</span>: [{
+            <span class="hljs-string">"transform"</span>: <span class="hljs-string">"react-transform-hmr"</span>,
+            <span class="hljs-string">"imports"</span>: [<span class="hljs-string">"react"</span>],
+            <span class="hljs-string">"locals"</span>: [<span class="hljs-string">"module"</span>]
+          }]
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>I have not asked Dan why he decided to make it a Babel transform instead of a Webpack loader, but probably it allows other projects than Webpack to use it. Anyways, there you have it. Now you can actually make changes to the code of your components and without any refresh they will just change in the browser and keep their current state, right in front of your eyes. Combining this with CSS hot loading and you will be a very happy developer.</p>
+<h2 id="cssmodules">CSS Modules</h2>
+<p>When I think about Tobias Koppler (Creator of Webpack) I imagine him sitting at his desk like Hugh Jackman in the movie Swordfish, though without the extra monitors for effect... and Tobias actually knows what he is doing. I do not think he has a mouse though, but a titanium alloyed keyboard to keep up with the stress of his fingers pounding on it 24/7. Webpack has an incredible codebase and Tobias manages to keep up with all advancements that fit in with it. One of these advancements is CSS Modules and of course Webpack supports it.</p>
+<p>A short description of CSS Modules is that each CSS file you create has a local scope. Just like a JavaScript module has its local scope. The way it works is:</p>
+<p><em>App.css</em></p>
+<pre><code class="language-css hljs">
+<span class="hljs-selector-class">.header</span> {
+  <span class="hljs-attribute">color</span>: red;
+}
+</code></pre>
+<p><em>App.js</em></p>
+<pre><code class="language-javascript hljs">
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./App.css'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">props</span>) </span>{
+
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.header}</span>&gt;</span>Hello world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+
+};
+</code></pre>
+<p>You also have to update the config:</p>
+<pre><code class="language-js hljs javascript">
+<span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">'path'</span>;
+
+<span class="hljs-keyword">const</span> config = {
+  ...
+  module: {
+    <span class="hljs-attr">loaders</span>: [{
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js?$/</span>,
+      <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel'</span>
+    }, {
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css?$/</span>,
+      <span class="hljs-attr">loader</span>: <span class="hljs-string">'style!css?modules&amp;localIdentName=[name]---[local]---[hash:base64:5]'</span>
+    }]
+  }
+};
+</code></pre>
+<p>So you only use classes and those classes can be referenced by name when you import the css file. The thing here now is that this <em>.header</em> class is not global. It will only work on JavaScript modules importing the file. This is fantastic news because now you get the power of CSS. <em>:hover</em>, <em>[disabled]</em>, <em>media queries</em>, etc. but you reference the rules with JavaScript.</p>
+<p>There are more to these CSS Modules which you can look at <a href="http://glenmaddern.com/articles/css-modules">here</a>. Composition being one of the most important parts. But the core concept here is that you get the power of CSS with the scoping of JavaScript modules. Fantastic!</p>
+<h2 id="aboilerplateforthisreactwebpacktutorial">A boilerplate for this React &amp; Webpack tutorial</h2>
+<p>To play around with this setup, you can use <a href="https://github.com/christianalfoni/webpack-express-boilerplate">this boilerplate</a>. It is basically works like the examples shown here. Expressing project structure is difficult. Yes, we have our files and folders, but how those files are part of your application is often not obvious. With Webpack, you can stop thinking files and start thinking modules. A module is a folder with the React component, images, fonts, css and any child components. The files and folders now reflects how they are used inside your application, and that is a powerful concept.</p>
+<blockquote>
+<p>This article is a guest post from <a href="https://twitter.com/christianalfoni">Christian Alfoni</a>, who is a speaker among other world-class React hackers at <a href="https://reactive2015.com/">Reactive2015</a> in Bratislava, November 2-4 2015.</p>
+</blockquote>
+</div>
+    <center>
+      <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Using React with Webpack Tutorial _ RisingStack_files/follow_button.02a1dca8703a0f5962a962619634825b.en.html" style="position: static; visibility: visible; width: 261px; height: 28px;" data-screen-name="RisingStack"></iframe>
+    </center>
+  </section>
+  <footer class="post-footer-post-page">
+    <div class="tags">
+      <p><strong>TAGS:</strong></p>
+      <a href="https://blog.risingstack.com/tag/advanced-node-js-tutorials/">Advanced Node.js Tutorials</a> <a href="https://blog.risingstack.com/tag/react-js-tutorials/">React.js Tutorials</a>
+    </div>
+  </footer>
+  <div class="bottom-navigation">
+    <span class="font-weight-bold">Read more from us:</span>
+    <ul style="margin: 0px;">
+      <li>
+        <a class="post-nav-item post-nav-prev" href="https://blog.risingstack.com/node-js-security-checklist/">Node.js Security Checklist</a>
+      </li>
+      <li>
+        <a class="post-nav-item post-nav-next" href="https://blog.risingstack.com/state-of-nodejs-october-2015/">State of Node.js - October 2015</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="text-center">
+    <a data-sumome-listbuilder-id="b4000942-80ee-40b2-955b-7e4bdda02b9a" style="padding: 6px 13px;" class="button hide-desktop" href="http://risingstack.us9.list-manage.com/subscribe/post?u=510d6f81b948a39e0d9c32ec3&amp;id=02a6a69990" target="_blank" data-sumome-trigger="true">
+      Get early access to our posts
+    </a>
+  </div>
+
+  <section class="post-comments">
+    <div id="disqus_thread"><iframe id="dsq-app1644" name="dsq-app1644" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(8).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1762px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'risingstackblog';      
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+    
+  </section>
+</article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="row group">
+    <div class="col">
+      <h4>Blog</h4>
+      <a href="https://blog.risingstack.com/articles" target="_blank">Best articles</a>
+      <a href="https://blog.risingstack.com/node-hero-tutorial-getting-started-with-node-js/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Node Hero Tutorials</a>
+      <a href="https://blog.risingstack.com/nodejs-at-scale-npm-best-practices/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Node.js at Scale Tutorials</a>
+    </div>
+
+
+    <div class="col">
+      <h4>Resources</h4>
+      <a href="https://node-checklist.risingstack.com/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Node.js Maturity Checklist</a>
+      <a href="https://trace.risingstack.com/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Trace by RisingStack - Node.js Monitoring</a>
+      <a href="https://risingstack.com/resources/nodejs-is-enterprise-ready?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Node.js is Enterprise Ready</a>
+      <a href="https://community.risingstack.com/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">RisingStack Community</a>
+      <a href="https://news.risingstack.com/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">Node.js Daily</a>
+    </div>
+
+    <div class="col">
+      <h4>Connect</h4>
+      <a href="https://risingstack.com/?utm_source=rsblog&amp;utm_medium=footer" target="_blank">RisingStack.com</a>
+      <a href="https://twitter.com/risingstack" target="_blank">Twitter</a>
+      <a href="https://github.com/risingstack" target="_blank">Github</a>
+      <a href="https://facebook.com/risingstack" target="_blank">Facebook</a>
+    </div>
+
+  </div>
+
+  <div class="text-center opacity-half">
+    We ♥ Node.js © RisingStack, Inc. 2017 | RisingStack® and Trace by RisingStack® are registered trademarks of RisingStack, Inc.
+  </div>
+
+</footer>
+
+<script>
+    console.log("______  _       _                _____  _                 _    \n| ___ \\(_)     (_)              /  ___|| |               | |   \n| |_/ / _  ___  _  _ __    __ _ \\ `--. | |_   __ _   ___ | | __\n|    / | |/ __|| || '_ \\  / _` | `--. \\| __| / _` | / __|| |/ /\n| |\\ \\ | |\\__ \\| || | | || (_| |/\\__/ /| |_ | (_| || (__ |   < \n\\_| \\_||_||___/|_||_| |_| \\__, |\\____/  \\__| \\__,_| \\___||_|\\_\\\n                           __/ |                               \n                          |___/                                \n");
+    console.log("You like to look under the hood? Why not join us? https://risingstack.workable.com")
+</script>
+
+<script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {}; 
+  _dcs.account = '3044742';
+  
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true; 
+    dc.src = '//resources.risingstack.com/js/drip.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+</script>
+<script data-cfasync="true" type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/jquery-3.1.1.min.js.download"></script>
+<script src="./Using React with Webpack Tutorial _ RisingStack_files/jquery.ghostHunter.min.js.download"></script>
+<script src="./Using React with Webpack Tutorial _ RisingStack_files/jquery.autocomplete.min.js.download"></script>
+<script data-cfasync="true" type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/highlight-9.9.0.min.js.download"></script>
+<script data-cfasync="true" type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/fbds.js(1).download"></script>
+<script data-cfasync="true" type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/index.js.download"></script>
+<!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-KV8B2T"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KV8B2T');</script>
+<!-- End Google Tag Manager -->
+<script>
+  var loadDeferredStyles = function() {
+    var addStylesNode = document.getElementById("deferred-styles");
+    var replacement = document.createElement("div");
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement)
+    addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>
+
+<link rel="stylesheet" type="text/css" href="./Using React with Webpack Tutorial _ RisingStack_files/cookieconsent.min.css">
+<script src="./Using React with Webpack Tutorial _ RisingStack_files/cookieconsent.min.js.download"></script>
+
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Using React with Webpack Tutorial _ RisingStack_files/widget_iframe.02a1dca8703a0f5962a962619634825b.html" style="display: none;"></iframe><div style="display: none; visibility: hidden;"><script>document.write('\x3cscript src\x3d"//load.sumome.com/" data-sumo-site-id\x3d"19a728093fe313666b234d080fe8c55098192f659a47e6fbec25d024c174f226" async\x3d"async"\x3e\x3c/script\x3e');</script><script src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource" data-sumo-site-id="19a728093fe313666b234d080fe8c55098192f659a47e6fbec25d024c174f226" async="async"></script></div><script type="text/javascript" id="">(function(){var a=window._fbq||(window._fbq=[]);if(!a.loaded){var b=document.createElement("script");b.async=!0;b.src="//connect.facebook.net/en_US/fbds.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);a.loaded=!0}a.push(["addPixelId","1412312612411866"])})();window._fbq=window._fbq||[];window._fbq.push(["track","PixelInitialized",{}]);</script>
+<noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1412312612411866&amp;amp;ev=PixelInitialized"&gt;</noscript><iframe style="display: none;" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(9).html"></iframe><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(10).html"></iframe><iframe id="sumome-jquery-iframe" title="Sumo Hidden Content" style="display: none;" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(11).html"></iframe><script type="text/javascript" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(1)"></script><a href="javascript:void(0);" title="Sumo" style="background-color: rgb(0, 115, 183); border-radius: 3px 0px 0px 3px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px; position: fixed; z-index: 2147483647; padding: 0px; width: 44px; height: 40px; text-indent: -10000px; opacity: 1; display: none !important;"><span style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Sumo</span><span style="display:block;width:40px;height:40px;background:white;margin-left:4px;-webkit-border-radius: 3px 0 0 3px;-moz-border-radius: 3px 0 0 3px;-ms-border-radius: 3px 0 0 3px;-o-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background-repeat:no-repeat;background-position:8px 8px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDQ3MUVFMDFFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDQ3MUVFMDBFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MWQ0NjIyOGEtNzVmNi00ZGU0LThiY2MtYTg3NTY0ZDI2MWE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8JtvywAAAKhQTFRFzOPxSJvLA3W4Mo7FBna5w97u8vj7EHy8a67VhbzdsdTpVaLPh73d9/v9C3m6QZfJbq/WXKbR3u32JIfB3ez1KorDir/eBHW4+/3+rtPoZarUG4K/LIvDDnu7ocvkf7nbdrTY9fr8E328WKPQO5PITJ3MPpXJstXptdbq+Pv9cbHXaq3VU6HOkMLgnMnjDHq62uv1/P3+6/T53Oz1cLDX/f7+AHO3////ptOZ5QAAADh0Uk5T/////////////////////////////////////////////////////////////////////////wA7XBHKAAAAmUlEQVR42sSRRxLCMAxFRSq9907ovebr/jdDMWYGxmZL3sIqbyFbJv4B/VlkVlerKALTD3G46Mx3AOR1UZ/TsDxW6W0gfYRNVfTCFu2AWpAMgMItMW+zQJU2UjWI29D0+e5KWNPMk+A9Om+B/UgOJyCuwMJCrpuziYkIsglfRByZ/XM3eXnBFEu1kpMpjq9dxQYp/OAXTwEGAB7Rc1xVnPemAAAAAElFTkSuQmCC);"></span></a><iframe style="display: none;" src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(12).html"></iframe><div style="position:fixed;top:0;left:0;overflow:hidden;"><label for="focus_retriever" style="position:absolute;left:-1000px;">Focus Retriever</label><input style="position:absolute;left:-1000px;" type="text" name="focus_retriever" value="" id="focus_retriever" readonly="true"></div><div class="sumome-share-client-wrapper sumome-share-client-wrapper-right-page sumome-share-client-light sumome-share-client-medium" style="top: 243.5px;"><div class="sumome-share-client-show"><span></span></div><div data-sumome-share-pos="rp" class="sumome-share-client sumome-share-client-right-page sumome-share-client-light sumome-share-client-medium"><div class="sumome-share-client-animated sumome-share-client-share sumome-share-client-share-share sumome-share-client-count" data-sumome-share="share" style="background: rgb(255, 255, 255); color: black; margin-bottom: 2px;"><span style="bottom: auto; top: -2.5px;"><strong>84</strong><br>Shares</span></div><a title="Facebook" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="facebook" href="javascript:void(0);" style="background: rgb(59, 89, 152); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/facebook-white-60.png" alt="Facebook"></a><a title="Reddit" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="reddit" href="javascript:void(0);" style="background: rgb(255, 87, 0); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/reddit-white-60.png" alt="Reddit"></a><a title="Twitter" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="twitter" href="javascript:void(0);" style="background: rgb(0, 172, 237); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/twitter-white-60.png" alt="Twitter"></a><a title="YC Hacker News" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="ychackernews" href="javascript:void(0);" style="background: rgb(252, 102, 32); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/ychackernews-white-60.png" alt="YC Hacker News"></a><a title="Pocket" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="pocket" href="javascript:void(0);" style="background: rgb(238, 64, 86); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/pocket-white-60.png" alt="Pocket"></a><a title="Flipboard" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="flipboard" href="javascript:void(0);" style="background: rgb(204, 7, 19); color: rgb(255, 255, 255); margin-bottom: 2px;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/flipboard-white-60.png" alt="Flipboard"></a></div><div class="sumome-share-client-hide"><span></span></div></div><img src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(2)" alt="" style="display: none;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(3)" alt="" style="display: none;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(4)" alt="" style="display: none;"><img src="./Using React with Webpack Tutorial _ RisingStack_files/saved_resource(5)" alt="" style="display: none;"></body></html>

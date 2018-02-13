@@ -1,0 +1,2 @@
+npm install npm@latest -g "This will install the latest official, tested version of npm."
+npm config set registry http://registry.npmjs.org/ --global "Improve modules installation speed"
