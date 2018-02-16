@@ -1,0 +1,147 @@
+var ADFMediaURLs='';
+var ADF_clickTag='https://adclick.g.doubleclick.net/aclk?sa=L&ai=C3pLArfmCWrL5IY3Mogbvw4GwC8XHn71NvtC4heUCwI23ARABIABgmfnPgYQFggEXY2EtcHViLTIwNDk5NDgxODAwNzkyNjTIAQmpAqrzB8OGQIY-4AIAqAMBqgTpAU_QpN_znSjpE5WNvq0_rtrEDdp-jq_J4B_OFmRQMzlVYRRdLx866xyLrWxPX73lBNkOxeRHjS7AXLD8mZIxX2Lf_lwgTwoTXDoDCv9vRvLCNQAOxZ1ZvsLApUta2iHjwBR2tWoA6hauffEgKeElrZiIHbI4VeNbKrsngxjdGa1MN9TBfH6zXQ21i1Fb90dCyh-CzCs4FZJMX4VKzOr4QisbC5_5bRi3LV0VTM7tKPefQFazYMEr8HQTi9aLEF0h-Fi2Ym73DvXL5TCSU4dc9FEsXvq5p7pSWv-ZxGYoka3pk78AamgAZWSG4AQBgAajifng37jd3iygBiGoB6a-G9gHANIIBQiAYRAB&num=1&sig=AOD64_0XmLrHSfEIZ8HrUVDyKRCF54JCyw&client=ca-pub-2049948180079264&adurl=https://a2.adform.net/C/?bn=21386717;crtbwp=WoL5rQAIfLIKyKYNAABh78Dkvy_XJJzKy6CZKw;crtbdata=x-QconeWRJrnXLMeaEHT6ntgyI21SGRoT4BavyjUj8Zr7kqb1TasMJLu5nsbY1mzhTi-Jpap3x7LtZk5H9d7SQCF4kt6RgfZ0CzCTJWhBTBtUpI1HFggx7EqC3Oj7Ci_SmfE53RP4Kf7QoAUcRJlIy0SQjoyPu5tODUBiU3MDf0exR5bUXfDEQq7t4aNahKIL3fqBEmoxwlKW4qFBdFvhKQF4kkqyKa7w3iI60gHGBc1;adfibeg=0;cdata=PNXPOdwofRU0145aIp2UKPSFo1bOgTmGdftZXuOsPhVx1TuGNZhF3e7PG0u6nivV_RNgG1_TJ2zsSypw6GeuKWMZNNnQo0Om0;;CREFURL=https%3a%2f%2fwww.sitepoint.com';
+var ADF_ClickEvent='';
+var ADFtagID='1x';
+var ADFafbanID='21386717';
+var FlashObjectID='FlashID1x';
+var ADFDomain='https://s2.adform.net/Banners/';
+var ADFDomainCDN='https://files.adform.net/Banners/';
+var ADFVideoCDN='rtmp://s1yx966tga68s8.cloudfront.net/cfx/st/';
+var ADFVideoCDNList=['rtmp://s1yx966tga68s8.cloudfront.net/cfx/st/'];
+var ADFBanVer='519';
+var ADFBanVerBak='0';
+var ADFbu=false;
+var ADFerrTimeout = 15*24*60*60*1000;
+var ADFTemplateVersion;
+var ADFClientSiteId;
+var ADFTemplateId;
+var ADFGroupId;
+var ADFbanID='17396024';
+var ADFmembID='1158056';
+var ADFcmpgnID='637812';
+var ADFassetID='0';
+var ADFbanPlacID='2135484';
+var ADFUnloadID='1466142390123538861';
+var ADFGeoData='14052;2998;152';
+Adform=window.Adform||{};
+Adform.cache="607";
+Adform.locationInfo={Country: 'Chile', Region: 'Region metro de santiago', City: 'Santiago', Latitude: '-33.4613', Longitude: '-70.6342'};
+
+(function () {
+try{
+var i = Adform.ADFBannerUtils.getInstance()
+i.addBannerAttribute("1x", "bn", 21386717);
+i.addBannerAttribute("1x", "rotseqno", "2");
+i.addBannerAttribute("1x", "cookieID", "5201766467192334713");
+i.addBannerAttribute("1x", "smid", "0");
+i.addBannerAttribute("1x", "unloadID", "1466142390123538861");
+i.addBannerAttribute("1x", "height", 90);
+i.addBannerAttribute("1x", "width", 728);
+i.addBannerAttribute("1x", "pm", "637812");
+i.addBannerAttribute("1x", "visibilityArea", [50]);
+i.addBannerAttribute("1x", "visibilityTime", [1]);
+i.addBannerAttribute("1x", "ms", "1158056");
+i.addBannerAttribute("1x", "ban", "17396024");
+i.addBannerAttribute("1x", "serverTime", 1518545378018);
+i.addBannerAttribute("1x", "bannerVersion", "519");
+i.addBannerAttribute("1x", "csImpressionUrl", "https://a2.adform.net/csimpr/?bn=21386717&csi=a6-ushI8DQ0xPHKDKv5uWJ6U5v04dfoIs-8DuqDLfCrLj8Jei-GatQO8_7rsP1jj0");
+i.addBannerAttribute("1x", "trackingSetupId", "206205");
+i.addBannerAttribute("1x", "bnpl", "2135484");
+i.addBannerAttribute("1x", "sendUnloadData", 1);
+i.addBannerAttribute("1x", "unloadScriptVersion", 13);
+i.addBannerAttribute("1x", "isDSPTag", true);
+i.addBannerAttribute("1x", "isEventsEnabled", 1);
+i.addBannerAttribute("1x", "rtbInventorySourceId", "1");
+i.addBannerAttribute("1x", "rtbReqId", "5a82f9ad00087cb20ac8a60db60061ef_1");
+i.addBannerAttribute("1x", "rtbdata", "x-QconeWRJrnXLMeaEHT6ntgyI21SGRoT4BavyjUj8Zr7kqb1TasMJLu5nsbY1mzhTi-Jpap3x7LtZk5H9d7SQCF4kt6RgfZ0CzCTJWhBTBtUpI1HFggx7EqC3Oj7Ci_SmfE53RP4Kf7QoAUcRJlIy0SQjoyPu5tODUBiU3MDf0exR5bUXfDEQq7t4aNahKIL3fqBEmoxwlKW4qFBdFvhKQF4kkqyKa7w3iI60gHGBc1");
+i.addBannerAttribute("1x", "rtbwp", "WoL5rQAIfLIKyKYNAABh78Dkvy_XJJzKy6CZKw");
+i.setBannerRegisteredStatus("1x");
+}catch(e){}
+})();
+
+
+
+<!--
+var ADFtagid1395788391 = (typeof(ADFafbanID)!="undefined") ? ADFafbanID : 0;
+var ADFclickTagString1395788391 = (typeof(ADF_clickTag)!="undefined") ? escape(ADF_clickTag) : escape('https://a2.adform.net/C/?bn='+ADFtagid1395788391);
+var ADFclickTagParameters1395788391 = (typeof(ADF_clickTagPars)!="undefined") ? escape(ADF_clickTagPars) : '';
+var ADFclickEventString = (typeof(ADF_ClickEvent) != "undefined") ? escape(ADF_ClickEvent) : escape('https://a2.adform.net/C/?bn='+ADFtagid1395788391+';bsqno=1;li=1;cset=');
+var FlashObjectID=(typeof(FlashObjectID)!="undefined") ? FlashObjectID : 'adftest';
+var ADFDomain=(typeof(ADFDomain)!="undefined") ? ADFDomain : '';
+var ADFDomainCDN=(typeof(ADFDomainCDN)!="undefined") ? ADFDomainCDN : '';
+var ADFVideoCDN=(typeof(ADFVideoCDN)!="undefined") ? ADFVideoCDN : '';
+var ADFClientSiteId=(typeof(ADFClientSiteId)!="undefined") ? ADFClientSiteId : '';
+var ADFTemplateVersion=(typeof(ADFTemplateVersion)!="undefined") ? ADFTemplateVersion : '1395788391';
+var ADFTemplateId=(typeof(ADFTemplateId)!="undefined") ? ADFTemplateId : '';
+var ADFGroupId=(typeof(ADFGroupId)!="undefined") ? ADFGroupId : '';
+var ADFGeoData=(typeof ADFGeoData != "undefined" || ADFGeoData != null) ? ADFGeoData : '0;0;0';
+var ADFBanVer=(typeof(ADFBanVer)!="undefined") ? ADFBanVer : '1395788391';
+var ADFBanVerBak=(typeof(ADFBanVerBak)!="undefined") ? ADFBanVerBak : '1395788391';
+var ADFtagID=(typeof(ADFtagID)!="undefined") ? ADFtagID : '1x';
+if (typeof(ADFbu)=="undefined") ADFbu=false;
+
+var ADFcmpgnID = (typeof(ADFcmpgnID) != "undefined") ? ADFcmpgnID : '0';
+var ADFmembID = (typeof(ADFmembID) != "undefined") ? ADFmembID : '0';
+var ADFbanID = (typeof(ADFbanID) != "undefined") ? ADFbanID : '0';
+var ADFbanPlacID = (typeof(ADFbanPlacID) != "undefined") ? ADFbanPlacID : '0';
+var ADFUnloadID = (typeof(ADFUnloadID) != "undefined") ? ADFUnloadID : '0';
+
+
+var ADFclickTagVariables1395788391 = 'clickTAG='+ADFclickTagString1395788391+';C=1'+ADFclickTagParameters1395788391+'&backupClickUrl='+ADFclickTagString1395788391+';C=2'+ADFclickTagParameters1395788391+'';
+if (ADFMediaURLs) ADFclickTagVariables1395788391 = ADFMediaURLs;
+
+
+
+if(typeof Adform == "undefined") {var Adform = {};};
+Adform.BannerData                    = {};
+Adform.Data                          = Adform.BannerData;
+Adform.RMBData                       = Adform.BannerData;
+Adform.RMBData.type                  = 'standard';
+Adform.RMBData.subtype               = 'rmb';
+Adform.BannerData.timestamp          = '201802091051348393'; // std @timestamp@ rev. @version@
+Adform.BannerData.ADFFlash           =  ADFDomain +'Elements/Files/20849/1633704/LATAM_a_728x90_cursiva_hoja_Adform_HTML_main_asset/1633704.js?ADFassetID=1633704&bv='+ADFBanVer;
+Adform.BannerData.ADFBuckup          =  ADFDomain +'Elements/Files/20849/1633705.gif?bv='+ADFBanVerBak;
+
+Adform.BannerData.ADFBuckupClickURL  =  ADF_clickTag+';C=2';
+Adform.BannerData.width              = "728";
+Adform.BannerData.height             = "90";
+Adform.BannerData.ADFid              = ADFtagID;
+Adform.BannerData.ADFban             = (typeof(ADFafbanID)!="undefined") ? ADFafbanID : 0;
+Adform.BannerData.wmode              = "opaque";
+Adform.RMBData.landingPageTarget     = "_blank";
+Adform.BannerData.quality            = "Autohigh";
+Adform.BannerData.bannerAlign        = "";
+Adform.BannerData.clicktags          = 'cid='+ADFClientSiteId+'&geo='+ADFGeoData+'&gid='+ADFGroupId+'&tv='+ADFTemplateVersion+'&tid='+ADFTemplateId+'&domain='+ ADFDomain +'&bv='+ADFBanVer+'&ADFid='+ADFtagID+'&'+ADFclickTagVariables1395788391+'';
+Adform.BannerData.clicktags         += '&ADFcmpgnID='+ADFcmpgnID+'&ADFmembID='+ADFmembID+'&ADFbanID='+ADFbanID+'&ADFbanPlacID='+ADFbanPlacID+'&unloadID='+ADFUnloadID;
+Adform.BannerData.clicktags         += "&bn="+ADFtagid1395788391;
+Adform.BannerData.clicktags         += "&wmode=opaque";
+Adform.BannerData.clicktags         += "&evtBaseLink="+ADFclickEventString;
+
+Adform.BannerData.clicktags         += "&settingsXML=" +  ADFDomain + ADFbanID  + "/settings.xml?bv="+ADFBanVer;
+Adform.BannerData.clicktags         += "&ADFDomain=" + ( ADFDomain ).replace(/\/$/, "");
+
+
+
+
+
+Adform.RMBData.css =  ADFDomain  + "scripts/assets/css/Adform.RMB.css?bv="+ADFBanVer;
+
+
+
+
+
+
+
+
+
+Adform.BannerList = Adform.BannerList || [];
+Adform.BannerList.push(Adform.BannerData);
+
+if (!Adform.RMB || !Adform.RMB.AdConstructor) {
+	// Load constructor script
+	document.write('<scr' + 'ipt type="text/javascript" src="'+ ADFDomain +'scripts/rmb/Adform.RMB.js?bv='+ Adform.cache +'"></scr' + 'ipt>');
+} else {
+	// Run loaded constructor
+	Adform.RMB.AdConstructor.build();
+}
+//-->

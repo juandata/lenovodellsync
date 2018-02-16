@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>How-to setup Webpack on an ES6 React Application with SASS? - Jonathan Petitcolas</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://www.jonathan-petitcolas.com/atom.xml" rel="alternate" title="Jonathan Petitcolas" type="application/atom+xml">
+    <link href="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/style.css">
+    
+    
+    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript" async="" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/ga.js.download"></script><script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2016151-9']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    <!-- End of Google Analytics -->
+<script type="text/javascript" async="" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/embed.js.download"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.2d848eddee1b8c12749b72a04b2b33dc.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.845ead53749f15d0bd8a5ee344c8f06e.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.8241ae5fc761eb94635acdc63f5fd29f.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"></head>
+<body>
+    <header>
+        <div>
+            <a href="https://www.jonathan-petitcolas.com/">
+                <img src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/jonathan-petitcolas.jpg" alt="Jonathan Petitcolas - Photo : © Lucille Caballero http://www.lucillecaballero.com" title="Jonathan Petitcolas - Photo : © Lucille Caballero http://www.lucillecaballero.com">
+            </a>
+            <h1><a href="https://www.jonathan-petitcolas.com/">Jonathan Petitcolas</a></h1>
+            <h2>JavaScript and open-source enthusiast</h2>
+            <nav>
+                <p>
+                    <a href="https://www.jonathan-petitcolas.com/">Home</a> •
+                    <a href="https://www.jonathan-petitcolas.com/resume">Resume</a> •
+                    <a href="https://www.jonathan-petitcolas.com/archives">Archives</a>
+                </p>
+            </nav>
+            <ul class="social-networks">
+                <li>
+                    <a href="https://twitter.com/intent/user?screen_name=Sethpolma">
+                        <img src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/twitter.png" alt="Follow me on Twitter: @Sethpolma" title="Follow me on Twitter: @Sethpolma">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/+JonathanPetitcolas">
+                        <img src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/google-plus.png" alt="Follow me on Google+: +Jonathan.Petitcolas" title="Follow me on Google+: +Jonathan.Petitcolas">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jpetitcolas">
+                        <img src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/github.png" alt="Follow me on GitHub: @jpetitcolas" title="Follow me on GitHub: @jpetitcolas">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="content"><article>
+    <h1>How-to setup Webpack on an ES6 React Application with SASS?</h1>
+    
+    
+    <p>I spent some time lately to play with <a href="https://github.com/webpack/webpack">Webpack</a>. As Grunt or Gulp, Webpack is a JavaScript bundler, allowing to turn our messy and numerous JavaScript into a single minified and optimized script. I used to use Gulp, but taking a look on Webpack and all its features made me switch pretty quickly, especially because of its <code class="highlighter-rouge">webpack-dev-server</code> and <code class="highlighter-rouge">react-hot-loader</code> killing features, increasing drastically our development workflow.</p>
+
+<p>The only blot with this tool is its documentation. There are a lot of pages about all the available options, but not a real-world get started tutorial. After spending days to figure out the best way to handle with my application, here is a summary for an ES6 React application using some SASS.</p>
+
+<h2 id="setting-up-webpack">Setting up Webpack</h2>
+
+<p>Let’s write a very simple and useless application splitted into two files:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// js/hello.js</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// js/world.js</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'World'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Including these two scripts into our page outputs <code class="highlighter-rouge">Hello World!</code>. Nothing to write home about for the moment. Then fetch Webpack:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+npm install <span class="nt">--save-dev</span> webpack
+</code></pre></div></div>
+
+<p>It’s time to write our <code class="highlighter-rouge">webpack.config.js</code> file to tell Webpack to concatenate these two files together:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">helloWorld</span><span class="p">:</span> <span class="s1">'./js/helloworld'</span>
+    <span class="p">},</span>
+    <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">filename</span><span class="p">:</span> <span class="s1">'public/[name].js'</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>This file says Webpack to take <code class="highlighter-rouge">./js/helloworld</code> as an input and to process it into a <code class="highlighter-rouge">public/helloWorld.js</code> file.</p>
+
+<p>Here is the content of our new <code class="highlighter-rouge">helloworld.js</code> script:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="s1">'./hello'</span><span class="p">);</span>
+<span class="nx">require</span><span class="p">(</span><span class="s1">'./world'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Let’s compile our entry using the following command line:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/webpack/bin/webpack.js
+</code></pre></div></div>
+
+<p>There is a new file in <code class="highlighter-rouge">public</code> folder, containing a lot of code, especially the definition of a <code class="highlighter-rouge">__webpack__require__</code> function. Adding this generated script alone into our page still displays the same message in the console. That’s the default behavior of Webpack: concatenating all your dependencies into a single file, preventing from sending a bench of different HTTP requests.</p>
+
+<p>That’s fine, it reduces number of requests. But size is still the addition of my two dependency, plus size of all Webpack internals. Fortunately, you also can minify your scripts with Webpack. Just give it a <code class="highlighter-rouge">--production</code> (or <code class="highlighter-rouge">-p</code>) flag:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/webpack/bin/webpack.js <span class="nt">-p</span>
+</code></pre></div></div>
+
+<p>With such a simple case, we pass from 1.7kb to 305 bytes.</p>
+
+<h2 id="live-reload-with-webpack">Live-Reload with Webpack</h2>
+
+<p>One of the most useful features in my daily developer life is live-reload. Concept is pretty simple: when you save a file, it automatically refreshes your browser. No need to press F5 anymore. Looks like a lazy developer tip, but it really increases your productivity, especially with dual-screen.</p>
+
+<h3 id="setting-up-webpack-dev-server">Setting up Webpack Dev Server</h3>
+
+<p>Currently, we had to launch the webpack compilation command to refresh our file. Let’s take a step further using the <code class="highlighter-rouge">webpack-dev-server</code>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> webpack-dev-server
+</code></pre></div></div>
+
+<p>This module serves all your compiled files through a web server (by default on <code class="highlighter-rouge">localhost:8080</code>). This way, all our files are computed in RAM. Thus, computing diffs and refreshing files don’t include any disk I/O, providing a really blazing fast live reload.</p>
+
+<p>For development, instead of using the <code class="highlighter-rouge">webpack</code> command, rather use the following one to launch dev server:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./node_modules/webpack-dev-server/bin/webpack-dev-server.js <span class="nt">--progress</span> <span class="nt">--colors</span>
+</code></pre></div></div>
+<p>Replace your <code class="highlighter-rouge">script</code> tag by the following:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://localhost:8080/public/helloWorld.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Look at the console. It should display “Hello World”. If we replace “World” by “John Doe” and simply save our file, we expect our console to be refreshed. Yet, nothing happens.</p>
+
+<p>Webpack uses <a href="http://socket.io/">Socket.io</a> to know when to refresh browser. We launched the Socket.io server, but didn’t update our client script. Webpack eases our work with a pre-built module. Just modify your <code class="highlighter-rouge">entry</code> parameter:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">entry</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">helloWorld</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s1">'webpack-dev-server/client?http://localhost:8080'</span><span class="p">,</span>
+            <span class="s1">'./js/helloworld.js'</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>If we relaunch our dev server and refresh manually our browser, a Socket.io connection is then initialized. Switching <code class="highlighter-rouge">John Doe</code> to <code class="highlighter-rouge">Alice Brown</code> into our file now automatically reloads the page in the browser. Hurrah! Live-reload is working!</p>
+
+<h3 id="webpack-dev-server-and-production">Webpack dev server and production?</h3>
+
+<p>Of course, we won’t deploy our dev server in production. One solution is to use an environment variable. Let’s use <code class="highlighter-rouge">NODE_ENV</code> to check if we should embed the dev server client:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getEntrySources</span><span class="p">(</span><span class="nx">sources</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">sources</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'webpack-dev-server/client?http://localhost:8080'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">sources</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nl">entry</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">helloWorld</span><span class="p">:</span> <span class="nx">getEntrySources</span><span class="p">([</span>
+            <span class="s1">'./js/helloworld.js'</span>
+        <span class="p">])</span>
+    <span class="p">},</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Compiling for production would then looks like:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">NODE_ENV</span><span class="o">=</span><span class="nx">production</span> <span class="p">.</span><span class="o">/</span><span class="nx">node_modules</span><span class="o">/</span><span class="nx">webpack</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">webpack</span><span class="p">.</span><span class="nx">js</span> <span class="o">-</span><span class="nx">p</span>
+</code></pre></div></div>
+
+<p>Another issue is the script <code class="highlighter-rouge">src</code> attribute. In development, we should embed it as a dev server served resource (using <code class="highlighter-rouge">http://localhost:8080</code>). In production, it would either be served from a CDN, or directly from <code class="highlighter-rouge">public</code> folder.</p>
+
+<p>To differentiate these usages, I simply use a template variable. For instance, using Swig and Node.js:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">cdn</span> <span class="o">=</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">'production'</span> <span class="p">?</span> <span class="s1">'/'</span> <span class="p">:</span> <span class="s1">'http://localhost:8080/'</span><span class="p">);</span>
+
+<span class="nx">swig</span><span class="p">.</span><span class="nx">setDefaults</span><span class="p">({</span>
+    <span class="na">locals</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// Global variables</span>
+        <span class="na">cdn</span><span class="p">:</span> <span class="nx">cdn</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">"{{ cdn }}helloWorld.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="webpack-and-reactjs">Webpack and React.js</h2>
+
+<p>I suppose in this part that you are already familiar with <a href="https://facebook.github.io/react/">React.js</a>. If not, please, go ahead to discover this amazing framework.</p>
+
+<h3 id="setting-up-a-basic-hello-world-application">Setting up a Basic “Hello World!” Application</h3>
+
+<p>Let’s build a simple “Hello World!” application, allowing the user to enter their name.</p>
+
+<p>First, install React.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> react
+</code></pre></div></div>
+
+<p>We install it as a dev dependency. Indeed, we won’t use it directly in production, as it will be embedded into our compiled output.</p>
+
+<p>Let’s write our application, using the far less verbose JSX notation.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'react'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">HelloSayer</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+    <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/p&gt;</span><span class="se">)</span><span class="err">;
+</span>    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">HelloSayer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">HelloSayer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./HelloSayer'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'react'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">HelloForm</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+    <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="na">name</span><span class="p">:</span> <span class="s1">'world'</span>
+        <span class="p">};</span>
+    <span class="p">},</span>
+
+    <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">"hello-form"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">HelloSayer</span> <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="se">)</span><span class="err">;
+</span>    <span class="p">},</span>
+
+    <span class="na">onChange</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+            <span class="na">name</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">HelloForm</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">HelloForm</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./HelloForm'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'react'</span><span class="p">);</span>
+
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">HelloForm</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>These are some basic React components. I won’t cover this code as this is not the purpose of this post. Even if it should not work at this state, here is the final expected component for a better visualisation:</p>
+
+<div class="labs" id="react-hello-form"></div>
+<script src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/react-hello-form.js.download"></script>
+
+<h3 id="transforming-jsx-on-the-fly">Transforming JSX on the fly</h3>
+
+<p>Even if you can use pure JavaScript, React is greatly simplified if you use JSX syntax, as above. Yet, JSX is understandable neither by browsers nor Webpack. So, to circumvent this issue, we have to transform JSX into pure JS <strong>before</strong> Webpack handles it.</p>
+
+<p>The Webpack ecosystem has a lot of loaders available. A loader is simply a transformer, applied on all files matching a regular expression. So, implement a JSX loader to deal with our components:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> jsx-loader
+</code></pre></div></div>
+
+<p>Modify our configuration accordingly:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="nl">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nl">loaders</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
+                <span class="na">loader</span><span class="p">:</span> <span class="s1">'jsx'</span><span class="p">,</span>
+                <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+    <span class="c1">// ...  </span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>So, all files whose path finish with <code class="highlighter-rouge">.js</code> will be transformed by <code class="highlighter-rouge">jsx-loader</code>, except those under <code class="highlighter-rouge">node_modules</code> folder (for performances reason). This time, Webpack should not complain and should display your widget correctly.</p>
+
+<p>Note that you can omit the suffix <code class="highlighter-rouge">-loader</code> for the <code class="highlighter-rouge">loader</code> property. In above code, we may have replaced <code class="highlighter-rouge">jsx</code> by <code class="highlighter-rouge">jsx-loader</code>.</p>
+
+<h3 id="installing-react-hot-loader">Installing React Hot Loader</h3>
+
+<p>We already enabled live-reload. However, if you want to change the <code class="highlighter-rouge">HelloSayer</code> component, it will reload the whole page, losing the data you entered in the <code class="highlighter-rouge">input</code> field.</p>
+
+<p>We can go a step further into our live-reload implementation, using <a href="http://gaearon.github.io/react-hot-loader/">react-hot-loader</a>. This tool reloads only the React component you changed. In our case, modifying the <code class="highlighter-rouge">HelloSayer</code> should have no impact on the input, which is outside its scope.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span> <span class="nx">react</span><span class="o">-</span><span class="nx">hot</span><span class="o">-</span><span class="nx">loader</span>
+</code></pre></div></div>
+
+<p>We have to tweak some of our <code class="highlighter-rouge">webpack.config.js</code> file. First, we have to embed a new watching script for React Hot Loader:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+
+<span class="kd">function</span> <span class="nx">getEntrySources</span><span class="p">(</span><span class="nx">sources</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">!==</span> <span class="s1">'production'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+        <span class="nx">sources</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">'webpack/hot/only-dev-server'</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Then, we add the <code class="highlighter-rouge">react-hot</code> loader to our React component files (in this case, all the <code class="highlighter-rouge">.js</code> files):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// webpack.config.js</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
+                <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span><span class="s1">'react-hot'</span><span class="p">,</span> <span class="s1">'jsx'</span><span class="p">],</span> <span class="c1">// &lt;-- changed line</span>
+                <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now, you have to launch your <code class="highlighter-rouge">webpack-dev-server</code> with a <code class="highlighter-rouge">--hot</code> option to enable React Hot Reload:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/webpack-dev-server/bin/webpack-dev-server.js <span class="nt">--hot</span> <span class="nt">--progress</span> <span class="nt">--colors</span>
+</code></pre></div></div>
+<p>Because of some browser restrictions, we can’t open our page with <code class="highlighter-rouge">file://</code> protocol anymore: we need a HTTP server. Let’s use the simple no-configuration one: <a href="https://github.com/indexzero/http-server">http-server</a>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> http-server
+</code></pre></div></div>
+
+<p>Running it is as simple as:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./node_modules/http-server/bin/http-server <span class="nt">-p</span> 3000 <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>We run our server on port 3000 and set the web root to current folder (this is <code class="highlighter-rouge">public</code> by default).</p>
+
+<p>If we launch our application in current state, React Hot Loader would try to fetch its update on current host, ie on port 3000. As Webpack dev server is bound to port 8080, we have to force use of absolute URL, using the <code class="highlighter-rouge">publicPath</code> property:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">publicPath</span><span class="p">:</span> <span class="s1">'http://localhost:8080/'</span><span class="p">,</span> <span class="c1">// &lt;-- New line!</span>
+        <span class="na">filename</span><span class="p">:</span> <span class="s1">'public/[name].js'</span>
+    <span class="p">}</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Relaunch your server, and admire!</p>
+
+<h2 id="webpack-and-es6-using-babel">Webpack and ES6 using Babel</h2>
+
+<p>Let’s prepare the future for our application using <a href="https://github.com/lukehoban/es6features">EcmaScript6</a>. ES6 is the new standard of JavaScript, embedding nice features, such as classes or template strings. Unfortunately, not all browsers are compatible with this language evolution: we have to transpile ES6 into good old ES5.</p>
+
+<p>There are two main transpilers: Babel and Traceur. My <a href="http://www.jonathan-petitcolas.com/2015/03/09/transpiling-es6-to-es5-using-babel.html">choice is made on Babel</a>, so let’s use it with Webpack.</p>
+
+<p>As usual, we use a loader:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save</span> babel-loader
+</code></pre></div></div>
+
+<p>Just add it to all your JS files, after the JSX loader, as Babel won’t understand HTML tags into your JavaScript files:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
+                <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span><span class="s1">'react-hot'</span><span class="p">,</span> <span class="s1">'jsx'</span><span class="p">,</span> <span class="s1">'babel'</span><span class="p">],</span> <span class="c1">// &lt;-- changed line</span>
+                <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Be careful to your loaders order: they are applied from right to left. So, we first transpile our ES6 code, then we turn our ES5 JSX to pure JS, and then we watch for the hot reload.</p>
+
+<p>Webpack now transpiles ES6 into ES5. Let’s check it converting one of our component into ES6:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="s1">'react'</span><span class="p">;</span>
+
+<span class="kd">class</span> <span class="nx">HelloSayer</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">!&lt;</span><span class="sr">/p&gt;</span><span class="err">;
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HelloSayer</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Our app still works. We are done! Dead simple isn’t it?</p>
+
+<h2 id="compiling-sass-with-webpack">Compiling SASS with Webpack</h2>
+
+<p>Webpack is the Swiss-army knife of Web bundler. It can also handle SASS compilation for you. Let’s see how it works.</p>
+
+<h3 id="sass-css-and-style-loaders">SASS, CSS, and style loaders</h3>
+
+<p>Let’s create a very basic SASS file for our component:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.hello-form</span> <span class="p">{</span>
+    <span class="err">p</span> <span class="err">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<p>To compile SASS files, you need a SASS loader of course, but also a CSS and a style loaders. Indeed, Webpack understands only JS. Basically explained, when we write a <code class="highlighter-rouge">require('style.scss')</code>, SASS loader turns it into <code class="highlighter-rouge">style.css</code>, which should then be turned into JavaScript with CSS loader, and finally embedded as styles using the style loader.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> sass-loader css-loader style-loader
+</code></pre></div></div>
+
+<p>As usual, add a new loader into our configuration:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span>
+            <span class="c1">// ...</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">scss$/</span><span class="p">,</span>
+                <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span><span class="s1">'style'</span><span class="p">,</span> <span class="s1">'css'</span><span class="p">,</span> <span class="s1">'sass'</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, if you include your SCSS file into your <code class="highlighter-rouge">HelloForm</code> JavaScript file:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">(</span><span class="s1">'../sass/HelloForm.scss'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Your style should be loaded. Some may find it really weird to include some SCSS into a JavaScript file. After playing several weeks with it, I must admit this is really nice. All your components are now better isolated, each one containing its own style and logic. Far better for maintainability and reuse.</p>
+
+<h4 id="fixing-uv__finish_close-error">Fixing uv__finish_close error</h4>
+
+<p>There is an issue with the current version of <code class="highlighter-rouge">sass-loader</code>:</p>
+
+<blockquote>
+  <p>build modulesnode: ../deps/uv/src/unix/core.c:199: uv__finish_close: Assertion `0’ failed.</p>
+</blockquote>
+
+<p>To fix it, just downgrade your <code class="highlighter-rouge">sass-loader</code> version to 0.5, editing your <code class="highlighter-rouge">package.json</code> file and redoing a new <code class="highlighter-rouge">npm install</code>.</p>
+
+<h3 id="move-css-in-external-stylesheet">Move CSS in external stylesheet</h3>
+
+<p>Taking a closer look at the generated code, we may notice that styles are included using a <code class="highlighter-rouge">&lt;style&gt;</code> tag. That’s a bad practice, as it prevents browsers from caching CSS. So, let’s move it into a dedicated file.</p>
+
+<p>We are going to use the <code class="highlighter-rouge">ExtractTextPlugin</code>, which moves the generated content into a file:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install <span class="nt">--save-dev</span> extract-text-webpack-plugin
+</code></pre></div></div>
+
+<p>Then, update your config:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">ExtractTextPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'extract-text-webpack-plugin'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span>
+            <span class="c1">// ...</span>
+            <span class="p">{</span>
+                <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">scss$/</span><span class="p">,</span>
+                <span class="na">loader</span><span class="p">:</span> <span class="nx">ExtractTextPlugin</span><span class="p">.</span><span class="nx">extract</span><span class="p">(</span><span class="s1">'css!sass'</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">ExtractTextPlugin</span><span class="p">(</span><span class="s1">'public/style.css'</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">allChunks</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">})</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>We first replace our <code class="highlighter-rouge">loaders</code> with a single <code class="highlighter-rouge">loader</code>, provided by the <code class="highlighter-rouge">ExtractTextPlugin</code>. We apply two filters to it, first <code class="highlighter-rouge">sass</code> then <code class="highlighter-rouge">css</code>. We removed the <code class="highlighter-rouge">style</code> one, as we don’t want to embed styles directly in the page anymore.</p>
+
+<p>Then, we effectively move the styles into <code class="highlighter-rouge">public/style.css</code>, embedding all the individual compiled chunks into a single file.</p>
+
+<p>Just include a <code class="highlighter-rouge">link</code> tag on your page, and your styles should still be here.</p>
+
+<p>The whole project is available on GitHub: <a href="https://github.com/jpetitcolas/webpack-react">jpetitcolas/webpack-react</a>. Don’t hesitate to browse through all commits, each one corresponding to a step of this post.</p>
+
+</article>
+
+
+<div id="disqus_thread"><iframe id="dsq-app2043" name="dsq-app2043" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 6929px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 900px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 900px !important; max-width: 900px !important; position: fixed !important; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none !important;" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 900px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 900px !important; max-width: 900px !important; position: fixed !important; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none !important;" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/saved_resource(2).html"></iframe></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'jonathanpetitcolas'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+</div>
+    <script src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/build.js.download"></script>
+
+
+<iframe style="display: none;" src="./How-to setup Webpack on an ES6 React Application with SASS_ - Jonathan Petitcolas_files/saved_resource(3).html"></iframe></body></html>

@@ -1,0 +1,14 @@
+/**/ _ate.cbs.rcb_3h620({
+   "share": {
+      "comment_count": 0,
+      "share_count": 5
+   },
+   "og_object": {
+      "id": "927643850698724",
+      "description": "Modules are a key concept to understand Node.js projects. We cover Node modules: require, exports and the future import.",
+      "title": "Getting started with Node.js modules: require, exports, imports and beyond",
+      "type": "article",
+      "updated_time": "2018-02-02T17:35:50+0000"
+   },
+   "id": "http://adrianmejia.com/blog/2016/08/12/Getting-started-with-Node-js-modules-require-exports-imports-npm-and-beyond/"
+});

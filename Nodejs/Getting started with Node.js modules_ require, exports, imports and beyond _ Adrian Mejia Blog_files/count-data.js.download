@@ -1,0 +1,5 @@
+var DISQUSWIDGETS;
+
+if (typeof DISQUSWIDGETS != 'undefined') {
+    DISQUSWIDGETS.displayCount({"text":{"and":"and","comments":{"zero":"0 Comments","multiple":"{num} Comments","one":"1 Comment"}},"counts":[{"id":"http:\/\/adrianmejia.com\/blog\/2016\/08\/12\/Getting-started-with-Node-js-modules-require-exports-imports-npm-and-beyond\/","comments":5}]});
+}
