@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://www.npmjs.com/package/prop-types -->
+<html lang="en" prefix="og: http://ogp.me/ns#" class=" js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.autocomplete-container {  overflow: visible;}.autocomplete-suggestions {  border: 1px solid #999;  background: #FFF;  overflow-x: hidden;  overflow-y: auto;  cursor: default;}.autocomplete-suggestion {  padding: 2px 5px;  white-space: nowrap;  overflow: hidden;}.autocomplete-selected {  background: #F0F0F0;}.autocomplete-container strong {  font-weight: bold;}#powered-by-constructor-io {  font-size: 0.8em;  text-align:right;  background-color:rgb(255,255,192);  font-family:sans-serif;  padding: 4px 10px;  position: absolute;  border: 1px solid #999;}#constructorio-backing-node {  background-color:rgb(255,255,255);  padding: 4px 10px;  position: absolute;  border: 1px solid #FFF;}.autocomplete-suggestion-image {  float:left;  padding-right: 10px;}#autocomplete-direct-results:before {  content:'Products'}#autocomplete-search-container:before {  content:'Search Suggestions'}.autocomplete-suggestion-description {  font-size: 0.8em;  display: block;  margin-left: 10px;  line-height: 1.0em;}.autocomplete-suggestion[data-ac-facet='true'] > .autocomplete-suggestion-item {  padding-left: 10px;}</style>
+  
+  
+  <title>prop-types</title>
+
+    <meta name="description" content="Runtime type checking for React props and similar objects.">
+    <meta property="og:description" content="Runtime type checking for React props and similar objects.">
+    <meta property="og:title" content="prop-types">
+    <meta property="og:url" content="https://www.npmjs.com/package/prop-types">
+    <meta property="og:site_name" content="npm">
+    <meta name="keywords" content="react">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.npmjs.com/package/prop-types">
+    <meta name="twitter:title" content="npm: prop-types">
+    <meta name="twitter:description" content="Runtime type checking for React props and similar objects.">
+  
+  
+  <meta http-equiv="cleartype" content="on">
+  
+  <meta name="apple-mobile-web-app-capable" content="no">
+  
+  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
+  
+  <meta name="x-npm:ga:id" content="UA-47041310-1">
+  <meta name="x-npm:ga:dimensions" content="{&quot;aboveChrome&quot;:&quot;dimension1&quot;,&quot;belowHeader&quot;:&quot;dimension3&quot;,&quot;packagePage&quot;:&quot;dimension2&quot;}">
+  
+  <link rel="canonical" href="https://www.npmjs.com/package/prop-types">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.npmjs.com/opensearch.xml" title="npm">
+
+    <link rel="stylesheet" media="all" href="./prop-types_files/index.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script type="text/javascript" async="" src="./prop-types_files/ec.js.download"></script><script async="" src="./prop-types_files/analytics.js.download"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PZL5X6M');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="./prop-types_files/css">
+  
+    <script src="./prop-types_files/index.min.js.download"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-230x230.png" sizes="230x230">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/coast-228x228.png" sizes="228x228">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="https://www.npmjs.com/static/images/touch-icons/manifest.json">
+  <link rel="yandex-tableau-widget" href="https://www.npmjs.com/static/images/touch-icons/yandex-browser-manifest.json">
+  <meta property="og:image" content="https://www.npmjs.com/static/images/touch-icons/open-graph.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#cb3837">
+  <meta name="msapplication-TileImage" content="/static/images/touch-icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/static/images/touch-icons/browserconfig.xml">
+  <meta name="theme-color" content="#cb3837">
+
+<style id="iconic-responsive-css" type="text/css">/* Iconic Responsive Support Styles */
+.iconic-property-fill, .iconic-property-text {stroke: none !important;}
+.iconic-property-stroke {fill: none !important;}
+svg.iconic.iconic-fluid {height:100% !important;width:100% !important;}
+svg.iconic.iconic-sm:not(.iconic-size-md):not(.iconic-size-lg), svg.iconic.iconic-size-sm{width:16px;height:16px;}
+svg.iconic.iconic-md:not(.iconic-size-sm):not(.iconic-size-lg), svg.iconic.iconic-size-md{width:32px;height:32px;}
+svg.iconic.iconic-lg:not(.iconic-size-sm):not(.iconic-size-md), svg.iconic.iconic-size-lg{width:128px;height:128px;}
+svg.iconic-sm > g.iconic-md, svg.iconic-sm > g.iconic-lg, svg.iconic-md > g.iconic-sm, svg.iconic-md > g.iconic-lg, svg.iconic-lg > g.iconic-sm, svg.iconic-lg > g.iconic-md {display: none;}
+svg.iconic.iconic-icon-sm > g.iconic-lg, svg.iconic.iconic-icon-md > g.iconic-lg {display:none;}
+svg.iconic-sm:not(.iconic-icon-md):not(.iconic-icon-lg) > g.iconic-sm, svg.iconic-md.iconic-icon-sm > g.iconic-sm, svg.iconic-lg.iconic-icon-sm > g.iconic-sm {display:inline;}
+svg.iconic-md:not(.iconic-icon-sm):not(.iconic-icon-lg) > g.iconic-md, svg.iconic-sm.iconic-icon-md > g.iconic-md, svg.iconic-lg.iconic-icon-md > g.iconic-md {display:inline;}
+svg.iconic-lg:not(.iconic-icon-sm):not(.iconic-icon-md) > g.iconic-lg, svg.iconic-sm.iconic-icon-lg > g.iconic-lg, svg.iconic-md.iconic-icon-lg > g.iconic-lg {display:inline;}</style><style>.autocomplete-container, .autocomplete-suggestions, #powered-by-constructor-io { width: NaNpx !important }</style></head>
+
+<body itemscope="" itemtype="http://schema.org/WebSite" data-crumb="nYhLzSZGovLEhjUrNROjELLRjjMSnWndj1W1efrlfGF">
+  <meta itemprop="url" content="https://www.npmjs.com/">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZL5X6M"
+  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <header class="anonymous   ">
+  <!-- logo -->
+  <div class="header-item brand-container">
+    <div class="logo-container" id="npm-logo">
+      <a href="https://www.npmjs.com/"><svg viewBox="0 0 18 7">
+	<path fill="#CB3837" d="M0,0v6h5v1h4v-1h9v-6"></path>
+	<path fill="#FFF" d="M1,1v4h2v-3h1v3h1v-4h1v5h2v-4h1v2h-1v1h2v-4h1v4h2v-3h1v3h1v-3h1v3h1v-4"></path>
+</svg></a>
+    </div>
+  </div>
+  <!-- /logo -->
+
+  <!-- search -->
+  <div class="header-item header-search-container">
+    <form class="site-search" id="npm-search" action="https://www.npmjs.com/search" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.npmjs.com/search?q={q}">
+      <div id="site-search-container">
+          <input name="q" value="" type="search" id="site-search" placeholder="find packages" tabindex="1" autocorrect="off" autocapitalize="off" itemprop="query-input" autocomplete="off">
+      </div>
+      <button tabindex="2" type="submit">
+        <span class="a11y-only">Search</span>
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor">
+    <ellipse stroke-width="3" cx="16" cy="15" rx="12" ry="12"></ellipse>
+    <path d="M26 26 l 8 8" stroke-width="3" stroke-linecap="square"></path>
+</svg>
+      </button>
+    </form>
+  </div>
+
+
+  <!-- menu 1 -->
+  <div class="header-item user-info-container">
+    <div class="user-info">
+        <ul class="user-info-salutation single">
+          <li><a href="https://www.npmjs.com/signup">sign up</a> or <a href="https://www.npmjs.com/login">log in</a></li>
+          <li><a href="https://www.npmjs.com/login"><span class="a11y-only">log in</span><svg viewBox="-2765 2857 1080 1080">
+  <path fill="#986844" d="M-1811.2 3598.5c-.1-4.3-.3-11.3-.8-20.3-.9-15.8-2.7-40.9-6.6-70.7-6.9-52.6-21.6-130.1-52.6-200.4-22.3-50.4-53.5-97.1-90.3-135.2-4.4-20.5-16.7-66.5-43.5-104.8l-5-7.2-54 35.5c-44.5-22.4-91-33.7-138.6-33.7-47.5 0-94.1 11.3-138.6 33.7l-54-35.5-5 7.2c-26.8 38.3-39 84.3-43.5 104.8-36.8 38.1-68 84.8-90.3 135.3-31.1 70.3-45.8 147.8-52.6 200.4-6.1 46.6-7.2 81.6-7.5 93.8 16.6 14 31.3 29.8 46.9 45 17.2 16.7 39.4 28.2 59.1 41.6 1.7 1.1 3.1 2.6 4.2 4.1 15.7 10.4 31 15.4 50.2 19.5 19.2 4.1 35.6 5.6 55.6 7.3 38.7 3.2 77 7.7 115.5 12.6 43.1 5.4 86.5 11.5 130 13.1 41.6 1.5 81.8-9 121.8-19.3 8.9-2.3 17.9-4.5 26.8-6.8.6-4.2 3-8.1 6.7-10.4 40.1-25 81.2-48.2 122-72 5.9-3.5 13.7-1.9 17.9 3.3 9-8.9 17.1-18.2 24.3-27.9l.2-.2.2-.2c1.7-2.6 1.8-2.7 1.5-12.6z"></path>
+  <path fill="#FFF" d="M-1808.7 3494.8c-6.9-53.2-21.8-131.7-53.4-203.2-22.3-50.5-53.5-97.5-90.3-136.1-5.5-24.4-18.2-68.2-44.5-105.7l-10.6-15.1-57.3 37.7c-44.3-21.4-90.6-32.2-137.9-32.2-47.2 0-93.6 10.8-137.9 32.2l-57.3-37.7-10.6 15.1c-26.2 37.5-39 81.2-44.5 105.7-36.7 38.5-67.9 85.5-90.3 136.1-31.6 71.4-46.5 149.9-53.4 203.2-7.5 57.7-7.6 98-7.6 99.7v6.3l3.8 5.1c26 35 62.9 64.7 109.6 88.3 36.9 18.6 80 33.6 128.3 44.4 82.2 18.5 151.8 19 159.5 19h.6c7.7 0 77.3-.5 159.5-19 48.3-10.8 91.4-25.8 128.3-44.4 46.7-23.6 83.6-53.3 109.6-88.3l3.7-5v-6.3c.4-1.8.2-42.3-7.3-99.8zm-118.3 174.3c-34.8 17.6-75.8 31.8-121.8 42.1-80.7 18.1-150.4 18.3-153.4 18.3h-.6c-2.9 0-72.7-.2-153.4-18.3-46-10.3-87-24.5-121.8-42.1-41.7-21.1-74.7-47.2-98-77.6.4-22.5 5.1-167.5 58.6-288.5 21.8-49.3 52.4-94.9 88.5-131.8l1.8-1.9.5-2.6c2.7-13.1 12.9-56.4 36.3-93.4l37.2 24.5-7.3 16.6 22.8-11.9c43.3-22.6 88.7-34.1 135-34.1s91.7 11.5 135 34.1l22.8 11.9-7.3-16.6 37.2-24.5c23.4 37 33.6 80.4 36.3 93.4l.5 2.6 1.8 1.9c36.1 36.9 66.7 82.5 88.5 131.8 53.5 121 58.2 266.1 58.6 288.5-23.2 30.4-56.1 56.5-97.8 77.6zm-163-13c0 30.1-50.4 54.4-112.5 54.4s-112.5-24.4-112.5-54.4c0-30.1 50.4-54.4 112.5-54.4s112.5 24.3 112.5 54.4zm-223.5-65.3c0 12.3-10 22.3-22.3 22.3s-22.3-10-22.3-22.3 10-22.3 22.3-22.3c12.3-.1 22.3 9.9 22.3 22.3zm267.8 0c0 12.3-10 22.3-22.3 22.3s-22.3-10-22.3-22.3 10-22.3 22.3-22.3c12.3-.1 22.3 9.9 22.3 22.3z"></path>
+</svg></a></li>
+        </ul>
+    </div> <!-- .user-info -->
+  </div>
+  <!-- /menu 1 -->
+
+  <!-- menu 2 -->
+  <div class="header-item header-nav-menu-container">
+    <a href="https://www.npmjs.com/package/prop-types#" id="npm-expansions" class="npm-expansions" data-event-trigger="click" data-event-name="npm-expansions">Nightclub Party Music</a>
+
+    <div class="nav-menu-container" role="navigation">
+      <a class="nav-toggle drop-down-menu-toggle" href="https://www.npmjs.com/package/prop-types#product-navigation"><span class="a11y-only">Toggle Navigation</span>
+        <svg viewBox="0 0 44 44">
+    <rect x="4" y="12" fill="currentColor" width="36" height="2"></rect>
+    <rect x="4" y="20" fill="currentColor" width="36" height="2"></rect>
+    <rect x="4" y="28" fill="currentColor" width="36" height="2"></rect>
+</svg>
+      </a>
+
+
+      <div class="drop-down-menu-container" role="menu">
+        <nav id="product-navigation" class="product-navigation drop-down-menu">
+          <ul class="drop-down-menu-section products-list">
+            <li><a id="nav-enterprise-link" href="https://www.npmjs.com/npm/enterprise">npm Enterprise</a></li>
+            <li><a id="nav-features-link" href="https://www.npmjs.com/features" data-event-trigger="click" data-event-name="features-nav-link">features</a></li>
+            <li><a id="nav-pricing-link" href="https://www.npmjs.com/pricing">pricing</a></li>
+            <li><a id="nav-docs-link" href="https://docs.npmjs.com/">documentation</a></li>
+            <li><a id="nav-support-link" href="https://www.npmjs.com/support">support</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- /menu 2 -->
+
+
+
+</header>
+
+
+
+
+  
+
+    <div class="container content">
+      
+<div class="content-column">
+
+  <h1 class="package-name">
+    <a href="https://www.npmjs.com/package/prop-types" class="active">prop-types</a>
+      <i class="icon-public"></i>
+  </h1>
+
+  <form class="star">
+    <input type="hidden" name="name" value="prop-types">
+    <input id="star-input" type="checkbox" name="isStarred" value="true">
+    <label for="star-input" class="icon-star"></label>
+      <input type="hidden" name="crumb" value="nYhLzSZGovLEhjUrNROjELLRjjMSnWndj1W1efrlfGF">
+  </form>
+
+  <div id="readme" class="markdown">
+      <!-- this HTML was generated using marky-markdown version 11.2.0. see an issue? file at https://github.com/npm/marky-markdown/issues. please include the version in your issue. thanks for using marky! to learn more, visit https://github.com/npm/marky-markdown.  -->
+<h1 class="package-name-redundant"><a id="user-content-prop-types" class="deep-link" href="https://www.npmjs.com/package/prop-types#prop-types" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>prop-types</h1>
+<p class="package-description-redundant">Runtime type checking for React props and similar objects.</p>
+<p>You can use prop-types to document the intended types of properties passed to
+components. React (and potentially other libraries—see the checkPropTypes()
+reference below) will check props passed to your components against those
+definitions, and warn in development if they don’t match.</p>
+<h2><a id="user-content-installation" class="deep-link" href="https://www.npmjs.com/package/prop-types#installation" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<div class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>npm&nbsp;install&nbsp;--save&nbsp;prop-types</span></span></div></pre></div>
+<h2><a id="user-content-importing" class="deep-link" href="https://www.npmjs.com/package/prop-types#importing" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Importing</h2>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta import js"><span class="keyword control js"><span>import</span></span><span>&nbsp;</span><span class="variable other module js"><span>PropTypes</span></span><span>&nbsp;</span><span class="keyword control js"><span>from</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop-types</span><span class="punctuation definition string end js"><span>'</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;ES6</span></span></span></div><div class="line"><span class="source js"><span class="storage type js"><span>var</span></span><span>&nbsp;PropTypes&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta function-call js"><span class="support function js"><span>require</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop-types</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;ES5&nbsp;with&nbsp;npm</span></span></span></div></pre></div>
+<p>If you prefer a <code>&lt;script&gt;</code> tag, you can get it from <code>window.PropTypes</code> global:</p>
+<div class="highlight"><pre class="editor editor-colors"><div class="line"><span class="text html"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span><span>&nbsp;development&nbsp;version&nbsp;</span><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>script</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>src</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span class="markup underline link hyperlink"><span>https://unpkg.com/prop-types/prop-types.js</span></span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>script</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html"><span>&nbsp;</span></span></div><div class="line"><span class="text html"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span><span>&nbsp;production&nbsp;version&nbsp;</span><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div><div class="line"><span class="text html"><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>script</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>src</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>"</span></span><span class="markup underline link hyperlink"><span>https://unpkg.com/prop-types/prop-types.min.js</span></span><span class="punctuation definition string end html"><span>"</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>script</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div></pre></div>
+<h2><a id="user-content-usage" class="deep-link" href="https://www.npmjs.com/package/prop-types#usage" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>PropTypes was originally exposed as part of the React core module, and is
+commonly used with React components.
+Here is an example of using PropTypes with a React component, which also
+documents the different validators provided:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta import js"><span class="keyword control js"><span>import</span></span><span>&nbsp;</span><span class="variable other module js"><span>React</span></span><span>&nbsp;</span><span class="keyword control js"><span>from</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>react</span><span class="punctuation definition string end js"><span>'</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta import js"><span class="keyword control js"><span>import</span></span><span>&nbsp;</span><span class="variable other module js"><span>PropTypes</span></span><span>&nbsp;</span><span class="keyword control js"><span>from</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop-types</span><span class="punctuation definition string end js"><span>'</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="meta class js"><span class="storage type class js"><span>class</span></span><span>&nbsp;</span><span class="entity name type class js"><span>MyComponent</span></span><span>&nbsp;</span><span class="storage modifier js"><span>extends</span></span><span>&nbsp;</span><span class="entity other js"><span>React</span></span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>Component</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta function method definition js"><span class="entity name function js"><span>render</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;...&nbsp;do&nbsp;things&nbsp;with&nbsp;the&nbsp;props</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>MyComponent</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>propTypes</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;declare&nbsp;that&nbsp;a&nbsp;prop&nbsp;is&nbsp;a&nbsp;specific&nbsp;JS&nbsp;primitive.&nbsp;By&nbsp;default,&nbsp;these</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;are&nbsp;all&nbsp;optional.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalArray</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>array</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalBool</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>bool</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalFunc</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>func</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalNumber</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalObject</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="support variable dom js"><span>object</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalString</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>string</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalSymbol</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>symbol</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Anything&nbsp;that&nbsp;can&nbsp;be&nbsp;rendered:&nbsp;numbers,&nbsp;strings,&nbsp;elements&nbsp;or&nbsp;an&nbsp;array</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;(or&nbsp;fragment)&nbsp;containing&nbsp;these&nbsp;types.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalNode</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>node</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;A&nbsp;React&nbsp;element.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalElement</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>element</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;also&nbsp;declare&nbsp;that&nbsp;a&nbsp;prop&nbsp;is&nbsp;an&nbsp;instance&nbsp;of&nbsp;a&nbsp;class.&nbsp;This&nbsp;uses</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;JS's&nbsp;instanceof&nbsp;operator.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalMessage</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>instanceOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span>Message</span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;ensure&nbsp;that&nbsp;your&nbsp;prop&nbsp;is&nbsp;limited&nbsp;to&nbsp;specific&nbsp;values&nbsp;by&nbsp;treating</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;it&nbsp;as&nbsp;an&nbsp;enum.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalEnum</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>oneOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>News</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>Photos</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta brace square js"><span>]</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;An&nbsp;object&nbsp;that&nbsp;could&nbsp;be&nbsp;one&nbsp;of&nbsp;many&nbsp;types</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalUnion</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>oneOfType</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>string</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>instanceOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span>Message</span><span class="punctuation definition end round js"><span>)</span></span></span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;</span><span class="meta brace square js"><span>]</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;An&nbsp;array&nbsp;of&nbsp;a&nbsp;certain&nbsp;type</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalArrayOf</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>arrayOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;An&nbsp;object&nbsp;with&nbsp;property&nbsp;values&nbsp;of&nbsp;a&nbsp;certain&nbsp;type</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalObjectOf</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>objectOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;An&nbsp;object&nbsp;taking&nbsp;on&nbsp;a&nbsp;particular&nbsp;shape</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;optionalObjectWithShape</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="support variable dom js"><span>shape</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;color</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>string</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;fontSize</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;chain&nbsp;any&nbsp;of&nbsp;the&nbsp;above&nbsp;with&nbsp;`isRequired`&nbsp;to&nbsp;make&nbsp;sure&nbsp;a&nbsp;warning</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;is&nbsp;shown&nbsp;if&nbsp;the&nbsp;prop&nbsp;isn't&nbsp;provided.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;requiredFunc</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>func</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>isRequired</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;A&nbsp;value&nbsp;of&nbsp;any&nbsp;data&nbsp;type</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;requiredAny</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other object js"><span>any</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>isRequired</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;also&nbsp;specify&nbsp;a&nbsp;custom&nbsp;validator.&nbsp;It&nbsp;should&nbsp;return&nbsp;an&nbsp;Error</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;object&nbsp;if&nbsp;the&nbsp;validation&nbsp;fails.&nbsp;Don't&nbsp;`console.warn`&nbsp;or&nbsp;throw,&nbsp;as&nbsp;this</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;won't&nbsp;work&nbsp;inside&nbsp;`oneOfType`.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>customProp</span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="storage type function js"><span>function</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>props</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>propName</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>componentName</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>if</span></span><span>&nbsp;</span><span class="meta brace round js"><span>(</span></span><span class="keyword operator logical js"><span>!</span></span><span class="string regexp js"><span class="punctuation definition string begin js"><span>/</span></span><span>matchme</span><span class="punctuation definition string end js"><span>/</span></span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="support function js"><span>test</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span>props</span><span class="meta brace square js"><span>[</span></span><span>propName</span><span class="meta brace square js"><span>]</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="meta class instance constructor js"><span class="keyword operator js"><span>new</span></span><span>&nbsp;</span><span class="entity name type instance js"><span>Error</span></span></span><span class="meta brace round js"><span>(</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>Invalid&nbsp;prop&nbsp;`</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;propName&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>`&nbsp;supplied&nbsp;to</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>&nbsp;`</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;componentName&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>`.&nbsp;Validation&nbsp;failed.</span><span class="punctuation definition string end js"><span>'</span></span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;You&nbsp;can&nbsp;also&nbsp;supply&nbsp;a&nbsp;custom&nbsp;validator&nbsp;to&nbsp;`arrayOf`&nbsp;and&nbsp;`objectOf`.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;It&nbsp;should&nbsp;return&nbsp;an&nbsp;Error&nbsp;object&nbsp;if&nbsp;the&nbsp;validation&nbsp;fails.&nbsp;The&nbsp;validator</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;will&nbsp;be&nbsp;called&nbsp;for&nbsp;each&nbsp;key&nbsp;in&nbsp;the&nbsp;array&nbsp;or&nbsp;object.&nbsp;The&nbsp;first&nbsp;two</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;arguments&nbsp;of&nbsp;the&nbsp;validator&nbsp;are&nbsp;the&nbsp;array&nbsp;or&nbsp;object&nbsp;itself,&nbsp;and&nbsp;the</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;current&nbsp;item's&nbsp;key.</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;customArrayProp</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>arrayOf</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable function js"><span>propValue</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>key</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>componentName</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>location</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="variable function js"><span>propFullName</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span>&nbsp;</span><span class="punctuation definition function begin curly js"><span>{</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>if</span></span><span>&nbsp;</span><span class="meta brace round js"><span>(</span></span><span class="keyword operator logical js"><span>!</span></span><span class="string regexp js"><span class="punctuation definition string begin js"><span>/</span></span><span>matchme</span><span class="punctuation definition string end js"><span>/</span></span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="support function js"><span>test</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span>propValue</span><span class="meta brace square js"><span>[</span></span><span>key</span><span class="meta brace square js"><span>]</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="meta brace round js"><span>)</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword control js"><span>return</span></span><span>&nbsp;</span><span class="meta class instance constructor js"><span class="keyword operator js"><span>new</span></span><span>&nbsp;</span><span class="entity name type instance js"><span>Error</span></span></span><span class="meta brace round js"><span>(</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>Invalid&nbsp;prop&nbsp;`</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;propFullName&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>`&nbsp;supplied&nbsp;to</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>&nbsp;`</span><span class="punctuation definition string end js"><span>'</span></span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;componentName&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>`.&nbsp;Validation&nbsp;failed.</span><span class="punctuation definition string end js"><span>'</span></span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta js"><span class="meta js"><span>&nbsp;&nbsp;</span><span class="punctuation definition function end curly js"><span>}</span></span><span class="punctuation definition end round js"><span>)</span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></div>
+<p>Refer to the <a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">React documentation</a> for more information.</p>
+<h2><a id="user-content-migrating-from-reactproptypes" class="deep-link" href="https://www.npmjs.com/package/prop-types#migrating-from-reactproptypes" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Migrating from React.PropTypes</h2>
+<p>Check out <a href="https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html#migrating-from-react.proptypes">Migrating from React.PropTypes</a> for details on how to migrate to <code>prop-types</code> from <code>React.PropTypes</code>.</p>
+<p>Note that this blog posts <strong>mentions a codemod script that performs the conversion automatically</strong>.</p>
+<p>There are also important notes below.</p>
+<h2><a id="user-content-how-to-depend-on-this-package" class="deep-link" href="https://www.npmjs.com/package/prop-types#how-to-depend-on-this-package" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to Depend on This Package?</h2>
+<p>For apps, we recommend putting it in <code>dependencies</code> with a caret range.
+For example:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>dependencies</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>prop-types</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>^15.5.7</span><span class="punctuation definition string end js"><span>"</span></span></span><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div></pre></div>
+<p>For libraries, we <em>also</em> recommend leaving it in <code>dependencies</code>:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>dependencies</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>prop-types</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>^15.5.7</span><span class="punctuation definition string end js"><span>"</span></span></span><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>peerDependencies</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>react</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>^15.5.0</span><span class="punctuation definition string end js"><span>"</span></span></span><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div></pre></div>
+<p><strong>Note:</strong> there are known issues in versions before 15.5.7 so we recommend using it as the minimal version.</p>
+<p>Make sure that the version range uses a caret (<code>^</code>) and thus is broad enough for npm to efficiently deduplicate packages.</p>
+<p>For UMD bundles of your components, make sure you <strong>don’t</strong> include <code>PropTypes</code> in the build. Usually this is done by marking it as an external (the specifics depend on your bundler), just like you do with React.</p>
+<h2><a id="user-content-compatibility" class="deep-link" href="https://www.npmjs.com/package/prop-types#compatibility" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compatibility</h2>
+<h3><a id="user-content-react-014" class="deep-link" href="https://www.npmjs.com/package/prop-types#react-014" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React 0.14</h3>
+<p>This package is compatible with <strong>React 0.14.9</strong>. Compared to 0.14.8 (which was released a year ago), there are no other changes in 0.14.9, so it should be a painless upgrade.</p>
+<div class="highlight shell"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span class="comment line number-sign shell"><span class="punctuation definition comment shell"><span>#</span></span><span>&nbsp;ATTENTION:&nbsp;Only&nbsp;run&nbsp;this&nbsp;if&nbsp;you&nbsp;still&nbsp;use&nbsp;React&nbsp;0.14!</span><span>&nbsp;</span></span></span></div><div class="line"><span class="source shell"><span>npm&nbsp;install&nbsp;--save&nbsp;react@^0.14.9&nbsp;react-dom@^0.14.9</span></span></div></pre></div>
+<h3><a id="user-content-react-15" class="deep-link" href="https://www.npmjs.com/package/prop-types#react-15" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>React 15+</h3>
+<p>This package is compatible with <strong>React 15.3.0</strong> and higher.</p>
+<pre><code>npm install --save react@^15.3.0 react-dom@^15.3.0
+</code></pre><h3><a id="user-content-what-happens-on-other-react-versions" class="deep-link" href="https://www.npmjs.com/package/prop-types#what-happens-on-other-react-versions" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What happens on other React versions?</h3>
+<p>It outputs warnings with the message below even though the developer doesn’t do anything wrong. Unfortunately there is no solution for this other than updating React to either 15.3.0 or higher, or 0.14.9 if you’re using React 0.14.</p>
+<h2><a id="user-content-difference-from-reactproptypes--dont-call-validator-functions" class="deep-link" href="https://www.npmjs.com/package/prop-types#difference-from-reactproptypes--dont-call-validator-functions" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Difference from <code>React.PropTypes</code>: Don’t Call Validator Functions</h2>
+<p>First of all, <strong>which version of React are you using</strong>? You might be seeing this message because a component library has updated to use <code>prop-types</code> package, but your version of React is incompatible with it. See the <a href="https://www.npmjs.com/package/prop-types#compatibility">above section</a> for more details.</p>
+<p>Are you using either React 0.14.9 or a version higher than React 15.3.0? Read on.</p>
+<p>When you migrate components to use the standalone <code>prop-types</code>, <strong>all validator functions will start throwing an error if you call them directly</strong>. This makes sure that nobody relies on them in production code, and it is safe to strip their implementations to optimize the bundle size.</p>
+<p>Code like this is still fine:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="variable other object js"><span>MyComponent</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>propTypes</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;myProp</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>bool</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></div>
+<p>However, code like this will not work with the <code>prop-types</code> package:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Will&nbsp;not&nbsp;work&nbsp;with&nbsp;`prop-types`&nbsp;package!</span></span></span></div><div class="line"><span class="source js"><span class="storage type js"><span>var</span></span><span>&nbsp;errorOrNull&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>bool</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="constant numeric decimal js"><span>42</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>myProp</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>MyComponent</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></div>
+<p>It will throw an error:</p>
+<pre><code>Calling PropTypes validators directly is not supported by the `prop-types` package.
+Use PropTypes.checkPropTypes() to call them.
+</code></pre><p>(If you see <strong>a warning</strong> rather than an error with this message, please check the <a href="https://www.npmjs.com/package/prop-types#compatibility">above section about compatibility</a>.)</p>
+<p>This is new behavior, and you will only encounter it when you migrate from <code>React.PropTypes</code> to the <code>prop-types</code> package. For the vast majority of components, this doesn’t matter, and if you didn’t see <a href="https://facebook.github.io/react/warnings/dont-call-proptypes.html">this warning</a> in your components, your code is safe to migrate. This is not a breaking change in React because you are only opting into this change for a component by explicitly changing your imports to use <code>prop-types</code>. If you temporarily need the old behavior, you can keep using <code>React.PropTypes</code> until React 16.</p>
+<p><strong>If you absolutely need to trigger the validation manually</strong>, call <code>PropTypes.checkPropTypes()</code>. Unlike the validators themselves, this function is safe to call in production, as it will be replaced by an empty function:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Works&nbsp;with&nbsp;standalone&nbsp;PropTypes</span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>checkPropTypes</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span class="variable other object js"><span>MyComponent</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>propTypes</span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;props</span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>MyComponent</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre></div>
+<p>See below for more info.</p>
+<p><strong>You might also see this error</strong> if you’re calling a <code>PropTypes</code> validator from your own custom <code>PropTypes</code> validator. In this case, the fix is to make sure that you are passing <em>all</em> of the arguments to the inner function. There is a more in-depth explanation of how to fix it <a href="https://facebook.github.io/react/warnings/dont-call-proptypes.html#fixing-the-false-positive-in-third-party-proptypes">on this page</a>. Alternatively, you can temporarily keep using <code>React.PropTypes</code> until React 16, as it would still only warn in this case.</p>
+<p>If you use a bundler like Browserify or Webpack, don’t forget to <a href="https://facebook.github.io/react/docs/installation.html#development-and-production-versions">follow these instructions</a> to correctly bundle your application in development or production mode. Otherwise you’ll ship unnecessary code to your users.</p>
+<h2><a id="user-content-proptypescheckproptypes" class="deep-link" href="https://www.npmjs.com/package/prop-types#proptypescheckproptypes" aria-hidden="true"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PropTypes.checkPropTypes</h2>
+<p>React will automatically check the propTypes you set on the component, but if
+you are using PropTypes without React then you may want to manually call
+<code>PropTypes.checkPropTypes</code>, like so:</p>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage type js"><span>const</span></span><span>&nbsp;</span><span class="constant other js"><span>myPropTypes</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;name</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>string</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;age</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="variable other object js"><span>PropTypes</span></span><span class="meta delimiter period js"><span>.</span></span><span class="variable other js"><span>number</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;...&nbsp;define&nbsp;your&nbsp;prop&nbsp;validations</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="storage type js"><span>const</span></span><span>&nbsp;</span><span class="constant other js"><span>props</span></span><span>&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;name</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>hello</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;is&nbsp;valid</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;age</span><span class="keyword operator assignment js"><span>:</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>world</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;not&nbsp;valid</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Let's&nbsp;say&nbsp;your&nbsp;component&nbsp;is&nbsp;called&nbsp;'MyComponent'</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Works&nbsp;with&nbsp;standalone&nbsp;PropTypes</span></span></span></div><div class="line"><span class="source js"><span class="variable other object js"><span>PropTypes</span></span><span class="meta js"><span class="meta delimiter method period js"><span>.</span></span><span class="entity name function js"><span>checkPropTypes</span></span><span class="meta js"><span class="punctuation definition begin round js"><span>(</span></span><span>myPropTypes</span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;props</span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>prop</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span>&nbsp;</span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>MyComponent</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="punctuation definition end round js"><span>)</span></span></span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;This&nbsp;will&nbsp;warn&nbsp;as&nbsp;follows:</span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;Warning:&nbsp;Failed&nbsp;prop&nbsp;type:&nbsp;Invalid&nbsp;prop&nbsp;`age`&nbsp;of&nbsp;type&nbsp;`string`&nbsp;supplied&nbsp;to</span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js"><span class="punctuation definition comment js"><span>//</span></span><span>&nbsp;`MyComponent`,&nbsp;expected&nbsp;`number`.</span></span></span></div></pre></div>
+
+  </div>
+
+</div>
+
+<div class="sidebar">
+
+
+    <div class="autoselect-wrapper npm-install icon-download">
+      <input type="text" value="npm install prop-types" readonly="">
+      <p><a href="https://www.npmjs.com/package/prop-types/tutorial">how? learn more</a></p>
+    </div>
+
+  <ul class="box">
+
+      <li class="last-publisher">
+          <a href="https://www.npmjs.com/~sophiebits">
+            <img src="./prop-types_files/ed6362734a9f3af1ca6c804abbc50e35" alt="sophiebits">
+            <span>sophiebits</span>
+          </a>
+          published
+          <span data-date="2017-09-25T23:44:46.308Z" data-date-format="relative">5 months ago</span>
+      </li>
+
+    <li>
+      <strong>15.6.0</strong>
+      is the latest
+        of 17 releases
+    </li>
+
+      <li>
+        <a href="https://github.com/reactjs/prop-types">github.com/reactjs/prop-types</a>
+      </li>
+
+      <li>
+        <a href="https://facebook.github.io/react/">facebook.github.io/react</a>
+      </li>
+
+      <li>
+          <a href="http://spdx.org/licenses/MIT.html">MIT</a>
+      </li>
+
+  </ul>
+
+    <h3 title="collaborators">
+      Collaborators
+      <small><a href="https://www.npmjs.com/package/prop-types/access">list</a></small>
+    </h3>
+
+    <ul class="humans collaborators">
+        <li>
+            <a href="https://www.npmjs.com/~acdlite" rel="tipsy" original-title="acdlite">
+                <img src="./prop-types_files/2a62cfdb95b0e03f2336e349eb4e1b68" alt="acdlite">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~sophiebits" rel="tipsy" original-title="sophiebits">
+                <img src="./prop-types_files/ed6362734a9f3af1ca6c804abbc50e35" alt="sophiebits">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~brianvaughn" rel="tipsy" original-title="brianvaughn">
+                <img src="./prop-types_files/a71ce151d9f1990b16153c8c13dd54da" alt="brianvaughn">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~fb" rel="tipsy" original-title="fb">
+                <img src="./prop-types_files/5cf596be33208e5d0f87b703bdc8f2d0" alt="fb">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~gaearon" rel="tipsy" original-title="gaearon">
+                <img src="./prop-types_files/6d53507494cadf3a930696364e634992" alt="gaearon">
+            </a>
+        </li>
+
+
+    </ul>
+
+    <h3>Stats</h3>
+    <ul class="box">
+
+        <li>
+          <strong class="pretty-number daily-downloads">366,791</strong>
+          downloads in the last day
+        </li>
+        <li>
+          <strong class="pretty-number weekly-downloads">1,883,697</strong>
+          downloads in the last week
+        </li>
+        <li>
+          <strong class="pretty-number monthly-downloads">8,183,461</strong>
+          downloads in the last month
+        </li>
+
+        <li id="issues" data-ghapi="https://api.github.com/repos/reactjs/prop-types">
+          <span class="original" style="display: none;">Have an issue? <a href="https://github.com/reactjs/prop-types/issues">65 open issues</a></span>
+            <span class="enhanced" style="">
+              <a href="https://github.com/reactjs/prop-types/issues">65 open issues</a> on GitHub
+            </span>
+        </li>
+
+        <li id="pull_requests" style="">
+          <a href="https://github.com/reactjs/prop-types/pulls">13 open pull requests</a> on GitHub
+        </li>
+
+    </ul>
+
+        <h3>Try it out</h3>
+        <ul class="box">
+          <li class="runkit"><a href="https://runkit.com/npm/prop-types" target="_blank">Test prop-types in your browser.</a></li>
+        </ul>
+
+
+  <h3>Keywords</h3>
+  <p class="list-of-links">
+        <a href="https://www.npmjs.com/browse/keyword/react">react</a>
+  </p>
+
+  <h3>Dependencies (3)</h3>
+  <p class="list-of-links">
+          <a href="https://www.npmjs.com/package/fbjs">fbjs</a>,
+          <a href="https://www.npmjs.com/package/loose-envify">loose-envify</a>,
+                <a href="https://www.npmjs.com/package/object-assign">object-assign</a>
+  </p>
+
+    <h3><a href="https://www.npmjs.com/browse/depended/prop-types">Dependents (12260)</a></h3>
+    <p class="list-of-links dependents">
+
+          <a href="https://www.npmjs.com/package/react-explorer-components">react-explorer-components</a>,
+        
+          <a href="https://www.npmjs.com/package/react-horizontal-router-dom">react-horizontal-router-dom</a>,
+        
+          <a href="https://www.npmjs.com/package/@gdatabraid/github-widget2">@gdatabraid/github-widget2</a>,
+        
+          <a href="https://www.npmjs.com/package/react-native-extend-indicator">react-native-extend-indicator</a>,
+        
+          <a href="https://www.npmjs.com/package/react-hub">react-hub</a>,
+        
+          <a href="https://www.npmjs.com/package/griddle-react-with-advanced-search">griddle-react-with-advanced-search</a>,
+        
+          <a href="https://www.npmjs.com/package/virtual-router">virtual-router</a>,
+        
+          <a href="https://www.npmjs.com/package/santa-boilerplate">santa-boilerplate</a>,
+        
+          <a href="https://www.npmjs.com/package/griddle-react-master-fix-row-onclick">griddle-react-master-fix-row-onclick</a>,
+        
+          <a href="https://www.npmjs.com/package/redux-pagestate">redux-pagestate</a>,
+        
+          <a href="https://www.npmjs.com/package/jw-components">jw-components</a>,
+        
+          <a href="https://www.npmjs.com/package/zenith-workers">zenith-workers</a>,
+        
+          <a href="https://www.npmjs.com/package/gona-site">gona-site</a>,
+        
+          <a href="https://www.npmjs.com/package/video-react">video-react</a>,
+        
+          <a href="https://www.npmjs.com/package/kurator-featured-page">kurator-featured-page</a>,
+        
+          <a href="https://www.npmjs.com/package/react-ripples">react-ripples</a>,
+        
+          <a href="https://www.npmjs.com/package/honey-charts">honey-charts</a>,
+        
+          <a href="https://www.npmjs.com/package/react-webpack-node">react-webpack-node</a>,
+        
+          <a href="https://www.npmjs.com/package/rc-steps">rc-steps</a>,
+        
+          <a href="https://www.npmjs.com/package/react-tooltip">react-tooltip</a>,
+        
+          <a href="https://www.npmjs.com/package/react-jss">react-jss</a>,
+        
+          <a href="https://www.npmjs.com/package/react-i18n-polyglot">react-i18n-polyglot</a>,
+        
+          <a href="https://www.npmjs.com/package/react-bluekit">react-bluekit</a>,
+        
+          <a href="https://www.npmjs.com/package/redux-query">redux-query</a>,
+        
+          <a href="https://www.npmjs.com/package/zuck">zuck</a>,
+        
+          <a href="https://www.npmjs.com/package/react-dropzone">react-dropzone</a>,
+        
+          <a href="https://www.npmjs.com/package/react-dnd-multi-backend">react-dnd-multi-backend</a>,
+        
+          <a href="https://www.npmjs.com/package/react-tags-searchbox">react-tags-searchbox</a>,
+        
+          <a href="https://www.npmjs.com/package/linked-data-reactor">linked-data-reactor</a>,
+        
+          <a href="https://www.npmjs.com/package/react-awesome-placeholder">react-awesome-placeholder</a>,
+        
+          <a href="https://www.npmjs.com/package/react-rater">react-rater</a>,
+        
+          <a href="https://www.npmjs.com/package/react-select-me">react-select-me</a>,
+        
+          <a href="https://www.npmjs.com/package/react-redux-toastr">react-redux-toastr</a>,
+        
+          <a href="https://www.npmjs.com/package/treactr-slider">treactr-slider</a>,
+        
+          <a href="https://www.npmjs.com/package/react-country-region-selector">react-country-region-selector</a>,
+        
+          <a href="https://www.npmjs.com/package/standalone-react-css-transition-group">standalone-react-css-transition-group</a>,
+        
+          <a href="https://www.npmjs.com/package/zooid-page">zooid-page</a>,
+        
+          <a href="https://www.npmjs.com/package/zooid-heading">zooid-heading</a>,
+        
+          <a href="https://www.npmjs.com/package/react-i18n-wrapper">react-i18n-wrapper</a>,
+        
+          <a href="https://www.npmjs.com/package/rrc">rrc</a>,
+        
+          <a href="https://www.npmjs.com/package/aor-rich-text-input">aor-rich-text-input</a>,
+        
+          <a href="https://www.npmjs.com/package/ui-react.swipe">ui-react.swipe</a>,
+        
+          <a href="https://www.npmjs.com/package/react-tiny-virtual-list">react-tiny-virtual-list</a>,
+        
+          <a href="https://www.npmjs.com/package/react-sortable-hoc">react-sortable-hoc</a>,
+        
+          <a href="https://www.npmjs.com/package/rc-tween-one">rc-tween-one</a>,
+        
+          <a href="https://www.npmjs.com/package/react-zx">react-zx</a>,
+        
+          <a href="https://www.npmjs.com/package/rc-input-number">rc-input-number</a>,
+        
+          <a href="https://www.npmjs.com/package/react-clingy">react-clingy</a>,
+        
+          <a href="https://www.npmjs.com/package/react-component-of">react-component-of</a>,
+                  <a href="https://www.npmjs.com/package/react-howler">react-howler</a>,
+        <a href="https://www.npmjs.com/browse/depended/prop-types">and more</a>
+    </p>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "prop-types",
+      "description": "Runtime type checking for React props and similar objects.",
+      "url": "https://www.npmjs.com/package/prop-types",
+      "keywords": "react",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+         "@type": "Offer",
+         "price": "0.00"
+      }
+    }
+  </script>
+
+    <div class="hiring-container" data-template="sidebar"><div class="ad">
+  <p>
+    <a href="https://applydigital.co/#careers" title="Apply Digital">Apply Digital</a> is hiring.
+    <a class="quiet" href="https://www.npmjs.com/whoshiring">View more…</a>
+  </p>
+</div></div>
+</div>
+
+
+    </div>
+
+  <footer class="pane bg-npm-navy-1">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h3 class="h4 type-npm-pastel-3">You Need Help</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://docs.npmjs.com/">Documentation</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/support">Support / Contact Us</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="http://status.npmjs.org/">Registry Status</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/www/issues">Website Issues</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/npm/issues">CLI Issues</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/security">Security</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-6 col-md-offset-1">
+          <h3 class="h4 type-npm-pastel-3">About npm</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/about">About npm, Inc</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/jobs">Jobs</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/npm-weekly">npm Weekly</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="http://blog.npmjs.org/">Blog</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://twitter.com/npmjs">Twitter</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm">GitHub</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-6 col-md-offset-1">
+          <h3 class="h4 type-npm-pastel-3">Legal Stuff</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/terms">Terms of Use</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/conduct">Code of Conduct</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/disputes">Package Name Disputes</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/privacy">Privacy Policy</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/receiving-reports">Reporting Abuse</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/">Other policies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="txt-c container">
+      <a class="npm-loves-you type-neutral-11" href="https://www.npmjs.com/">
+        npm loves you
+      </a>
+    </div>
+  </footer>
+
+  <script defer="" async="" src="./prop-types_files/3318080746.js.download"></script>
+  <script defer="" async="" src="./prop-types_files/elqCfg.min.js.download"></script><!-- Eloqua -->
+
+
+
+<!-- pid&#x3D;8504 8765c95baa6c01585c6fd817e1710b7721abb36e https://www.npmjs.com www-18-west.internal.npmjs.com  -->
+<div class="drop-down-menu-overlay" data-drop-down-menu="product-navigation"></div><div class="autocomplete-container" style="position: absolute; display: none; max-height: 400px; z-index: 9999;"><div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 400px; z-index: 9999;"></div></div></body></html>

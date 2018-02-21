@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/identify"></script><script type="text/javascript" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/visit"></script>
+    
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Controlled and uncontrolled form inputs in React don't have to be complicated - Gosha Arinich</title>
+    <meta name="author" content="Gosha Arinich">
+
+    <meta property="og:title" content="Controlled and uncontrolled form inputs in React don&#39;t have to be complicated">
+    <meta property="og:locale" content="en_US">
+
+    
+      <meta property="description" content="There are many articles saying you should use setState, and the docs claim refs are bad. So contradictory. How are you supposed to make forms?">
+      <meta property="og:description" content="There are many articles saying you should use setState, and the docs claim refs are bad. So contradictory. How are you supposed to make forms?">
+    
+
+    <link rel="canonical" href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">
+    <meta property="og:url" content="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">
+
+    <meta property="og:site_name" content="Gosha Arinich">
+
+    
+      <meta property="og:image" content="https://goshakkk.name/assets/images/controlled-vs-uncontrolled-cover.png">
+      <meta name="twitter:card" content="summary_large_image">
+    
+
+    
+      <meta property="og:type" content="article">
+      <meta property="article:published_time" content="2016-11-07T00:00:00+00:00">
+      
+
+    <meta name="twitter:site" content="@goshakkk">
+    <meta name="twitter:creator" content="@goshakkk">
+
+    <script type="text/javascript" async="" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/1363715.js.download"></script><script type="application/ld+json">
+      {"@context":"http://schema.org","@type":"BlogPosting","headline":"Controlled and uncontrolled form inputs in React don't have to be complicated","author":{"@type":"Person","name":"Gosha Arinich"},"image":"/assets/images/controlled-vs-uncontrolled-cover.png","datePublished":"2016-11-07T00:00:00+00:00","description":"There are many articles saying you should use setState, and the docs claim refs are bad. So contradictory. How are you supposed to make forms?","url":"https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/"}
+    </script>
+
+    <link rel="alternate" type="application/atom+xml" href="https://feeds.feedburner.com/GoshaArinich">
+    <link media="screen" rel="stylesheet" type="text/css" href="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/style.css">
+    <link rel="apple-touch-icon" href="https://goshakkk.name/apple-touch-icon.png">
+  <script src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/embed.js.download" data-timestamp="1519246883293"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.2d848eddee1b8c12749b72a04b2b33dc.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.845ead53749f15d0bd8a5ee344c8f06e.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.8241ae5fc761eb94635acdc63f5fd29f.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><script src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/alfie.f51946af45e0b561c60f768335c9eb79.js.download" async="" charset="UTF-8"></script><style type="text/css">
+  /* === Form-Specific Styles === */
+
+  #drip-25653 {
+  }
+
+  #drip-25653 .drip-header {
+    background-color: #404c66 !important;
+  }
+
+  #drip-25653 .drip-content h3 {
+    color: #404c66 !important;
+    font-size: 23px !important;
+  }
+
+  #drip-25653 .drip-submit-button {
+    background-color: #404c66 !important;
+    font-size: 15px !important;
+  }
+
+  #drip-25653 .drip-submit-button:hover {
+    background-color: #3d4861 !important;
+  }
+
+  #drip-25653 .drip-submit-button:active {
+    background-color: #3a445c !important;
+  }
+
+  #drip-25653 dl dt,
+  #drip-25653 .drip-content .drip-description,
+  #drip-25653 .drip-errors {
+    font-size: 14px !important;
+  }
+
+  #drip-25653 .drip-text-field {
+    font-size: 14px !important;
+  }
+
+  /* === Reset styles === */
+
+  .drip-tab h1,
+  .drip-tab h2,
+  .drip-tab h3,
+  .drip-tab div,
+  .drip-tab dl,
+  .drip-tab dt,
+  .drip-tab dd,
+  .drip-tab p,
+  .drip-tab a,
+  .drip-tab .drip-text-field,
+  .drip-tab .drip-text-field:focus,
+  .drip-tab .drip-submit-button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    float: none;
+    width: auto;
+    background-image: none;
+    letter-spacing: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+    -webkit-text-shadow: none !important;
+       -moz-text-shadow: none !important;
+            text-shadow: none !important;
+  }
+
+  .drip-tab a {
+    text-decoration: none;
+  }
+
+  .drip-tab :focus {
+    outline: 0;
+  }
+
+  /* === Clearfix === */
+
+  .drip-clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  * html .drip-clearfix             { zoom: 1; } /* IE6 */
+  *:first-child+html .drip-clearfix { zoom: 1; } /* IE7 */
+
+  /* === Main Container === */
+
+  .drip-tab-container * {
+    box-sizing: content-box;
+  }
+
+  /* === Content === */
+
+  .drip-tab .drip-content {
+    margin: 0;
+    padding: 0;
+    width: 380px;
+    position: fixed;
+    font-size: 100%;
+    font: inherit;
+    z-index: 10000;
+    color: #333;
+    vertical-align: baseline;
+    text-align: left;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+       -moz-box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+            box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+  }
+
+  .drip-tab.bottom .drip-content {
+    bottom: -800px;
+    -webkit-border-radius: 8px 8px 0 0;
+       -moz-border-radius: 8px 8px 0 0;
+            border-radius: 8px 8px 0 0;
+    -webkit-transition: bottom 200ms ease-in;
+       -moz-transition: bottom 200ms ease-in;
+         -o-transition: bottom 200ms ease-in;
+            transition: bottom 200ms ease-in;
+  }
+
+  .drip-tab.bottom.left .drip-content {
+    left: 40px;
+  }
+
+  .drip-tab.bottom.right .drip-content {
+    right: 40px;
+  }
+
+  .drip-tab.side-image .drip-content {
+    width: 650px;
+  }
+
+  .drip-tab.side .drip-content {
+    top: 10%;
+  }
+
+  .drip-tab.side.right .drip-content {
+    right: -675px;
+    -webkit-border-radius: 8px 0 0 8px;
+       -moz-border-radius: 8px 0 0 8px;
+            border-radius: 8px 0 0 8px;
+    -webkit-transition: right 200ms ease-in;
+       -moz-transition: right 200ms ease-in;
+         -o-transition: right 200ms ease-in;
+            transition: right 200ms ease-in;
+  }
+
+  .drip-tab.side.left .drip-content {
+    left: -675px;
+    -webkit-border-radius: 0 8px 8px 0;
+       -moz-border-radius: 0 8px 8px 0;
+            border-radius: 0 8px 8px 0;
+    -webkit-transition: left 200ms ease-in;
+       -moz-transition: left 200ms ease-in;
+         -o-transition: left 200ms ease-in;
+            transition: left 200ms ease-in;
+  }
+
+  .drip-tab.mobile .drip-content {
+    width: 100% !important;
+    bottom: -800px;
+    left: 0;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-transition: bottom 200ms ease-in;
+       -moz-transition: bottom 200ms ease-in;
+         -o-transition: bottom 200ms ease-in;
+            transition: bottom 200ms ease-in;
+  }
+
+  .drip-tab.drip-scrollable .drip-content {
+    overflow-y: scroll;
+  }
+
+  /* === Header === */
+
+  .drip-tab .drip-header {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    font-size: 100%;
+    font: inherit;
+    z-index: 10000;
+    color: #333;
+    vertical-align: baseline;
+    text-align: left;
+    -webkit-border-radius: 8px 8px 0 0;
+       -moz-border-radius: 8px 8px 0 0;
+            border-radius: 8px 8px 0 0;
+    -webkit-box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+       -moz-box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+            box-shadow: 0px 10px 28px rgba(0,0,0,0.36);
+  }
+
+  .drip-tab.bottom .drip-header {
+    width: 380px;
+    bottom: 0;
+    -webkit-transition: bottom 200ms ease-in;
+       -moz-transition: bottom 200ms ease-in;
+         -o-transition: bottom 200ms ease-in;
+            transition: bottom 200ms ease-in;
+  }
+
+  .drip-tab.bottom .drip-header.drip-hidden {
+    bottom: -800px;
+  }
+
+  .drip-tab.bottom.left .drip-header {
+    left: 40px;
+  }
+
+  .drip-tab.bottom.right .drip-header {
+    right: 40px;
+  }
+
+  .drip-tab.bottom.image-left .drip-header,
+  .drip-tab.bottom.image-right .drip-header {
+    width: 510px;
+  }
+
+  .drip-tab.side .drip-header {
+    width: 340px;
+    top: 10%;
+  }
+
+  .drip-tab.side.right .drip-header {
+    right: -100px;
+    -webkit-transition: right 400ms ease-in;
+       -moz-transition: right 400ms ease-in;
+         -o-transition: right 400ms ease-in;
+            transition: right 400ms ease-in;
+    -webkit-transform: rotate(-90deg) !important;
+       -moz-transform: rotate(-90deg) !important;
+        -ms-transform: rotate(-90deg) !important;
+         -o-transform: rotate(-90deg) !important;
+            transform: rotate(-90deg) !important;
+    -webkit-transform-origin: right center;
+       -moz-transform-origin: right center;
+         -o-transform-origin: right center;
+            transform-origin: right center;
+  }
+
+  .drip-tab.side.right .drip-header.drip-hidden {
+    right: -100px;
+  }
+
+  .drip-tab.side.left .drip-header {
+    left: -100px;
+    -webkit-transition: left 400ms ease-in;
+       -moz-transition: left 400ms ease-in;
+         -o-transition: left 400ms ease-in;
+            transition: left 400ms ease-in;
+    -webkit-transform: rotate(90deg) !important;
+       -moz-transform: rotate(90deg) !important;
+        -ms-transform: rotate(90deg) !important;
+         -o-transform: rotate(90deg) !important;
+            transform: rotate(90deg) !important;
+    -webkit-transform-origin: left center;
+       -moz-transform-origin: left center;
+         -o-transform-origin: left center;
+            transform-origin: left center;
+  }
+
+  .drip-tab.side.left .drip-header.drip-hidden {
+    left: -100px;
+  }
+
+  .drip-tab.mobile .drip-header {
+    width: 100% !important;
+    bottom: 0;
+    left: 0;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    -webkit-transition: bottom 200ms ease-in;
+       -moz-transition: bottom 200ms ease-in;
+         -o-transition: bottom 200ms ease-in;
+            transition: bottom 200ms ease-in;
+  }
+
+  .drip-tab.mobile .drip-header.drip-hidden {
+    bottom: -300px;
+  }
+
+  /* === Header Toggle === */
+
+  .drip-tab .drip-toggle {
+    display: block;
+    text-decoration: none;
+    padding: 10px 50px 10px 25px; /* extra padding for the arrow */
+  }
+
+  /* === Teaser === */
+
+  .drip-tab .drip-header h2 {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    color: #fff !important;
+    clear: none !important;
+    letter-spacing: 0 !important;
+    width: auto !important;
+  }
+
+  /* === Arrows === */
+
+  .drip-tab .drip-header span.drip-arrow {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    top: 20px;
+    right: 32px;
+  }
+
+  /* === Panel === */
+
+  .drip-tab .drip-content > div.drip-panel {
+    padding: 25px;
+    background-color: #fff;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+
+  .drip-tab.bottom .drip-content > div.drip-panel {
+    -webkit-border-radius: 6px 6px 0 0;
+       -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+  }
+
+  .drip-tab.side.left .drip-content > div.drip-panel {
+    -webkit-border-radius: 0 6px 6px 0;
+       -moz-border-radius: 0 6px 6px 0;
+            border-radius: 0 6px 6px 0;
+  }
+
+  .drip-tab.side.right .drip-content > div.drip-panel  {
+    -webkit-border-radius: 6px 0 0 6px;
+       -moz-border-radius: 6px 0 0 6px;
+            border-radius: 6px 0 0 6px;
+  }
+
+  /* === Powered By === */
+
+  .drip-tab .drip-powered-by {
+    padding: 8px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 16px;
+    color: #A8ACB9;
+    text-align: right;
+    margin-right: 25px;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .drip-tab .drip-powered-by a {
+    color: #A8ACB9 !important;
+    text-decoration: underline !important;
+    margin-left: 6px;
+  }
+
+  /* === Content Sections === */
+
+  .drip-tab.side-image .drip-form-aside {
+    width: 245px;
+    text-align: center;
+  }
+
+  .drip-tab.image-left .drip-form-main {
+    margin-left: 270px;
+  }
+
+  .drip-tab.image-right .drip-form-main {
+    margin-right: 270px;
+  }
+
+  .drip-tab.image-left .drip-form-aside {
+    float: left;
+  }
+
+  .drip-tab.image-right .drip-form-aside {
+    float: right;
+  }
+
+  @media screen and (max-width: 650px) {
+    .drip-tab.side-image .drip-content {
+      width: 380px;
+    }
+
+    .drip-tab.side-image .drip-form-main {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .drip-tab.side-image .drip-form-aside {
+      display: none;
+    }
+  }
+
+  /* === Content Headings & Paragraphs === */
+
+  .drip-tab .drip-content h3 {
+    display: block;
+    margin: 0 20px 0 0 !important;
+    padding: 0 0 15px 0 !important;
+    line-height: 1.4 !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    color: #4477bd !important;
+    clear: none !important;
+  }
+
+  .drip-tab .drip-content .drip-description {
+    margin: 0;
+    padding: 0 0 20px 0;
+    line-height: 1.4;
+    text-align: left;
+    color: #4F5362;
+  }
+
+  .drip-tab .drip-content .drip-post-submission {
+    padding: 0;
+  }
+
+  .drip-tab .drip-content .drip-description a {
+    text-decoration: underline;
+  }
+
+  .drip-tab .drip-content .drip-description em {
+    font-style: italic;
+  }
+
+  .drip-tab .drip-content .drip-description ul,
+  .drip-tab .drip-content .drip-description ol {
+    list-style-position: outside;
+    margin: 8px 0 8px 30px;
+  }
+
+  .drip-tab .drip-content .drip-description ul li
+  .drip-tab .drip-content .drip-description ol li {
+    padding: 0;
+  }
+
+  .drip-tab .drip-content .drip-image-center-helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .drip-tab .drip-content img.drip-image {
+    max-width: 245px;
+    vertical-align: middle;
+  }
+
+  .drip-tab .drip-content a.drip-close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
+
+  .drip-tab .drip-content a.drip-close:hover {
+    cursor: pointer;
+  }
+
+  /* === Content Subscribe Form === */
+
+  .drip-tab form {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .drip-tab dl {
+    display: block;
+    margin: 0;
+    padding: 0 0 5px 0;
+  }
+
+  .drip-tab dl dt {
+    display: block;
+    padding: 0 0 5px 0;
+    font-weight: bold;
+    color: #4F5362;
+  }
+
+  .drip-tab dl.no-labels dt {
+    display: none;
+  }
+
+  .drip-tab dl dd {
+    display: block;
+    padding: 0 0 8px 0;
+  }
+
+  .drip-tab .drip-text-field {
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    height: auto !important;
+    width: 100% !important;
+    color: #4F5362 !important;
+    background-color: #fff !important;
+    border: 1px solid #A8ACB9 !important;
+    -webkit-border-radius: 3px !important;
+       -moz-border-radius: 3px !important;
+            border-radius: 3px !important;
+    -webkit-box-sizing: border-box !important;
+       -moz-box-sizing: border-box !important;
+        -ms-box-sizing: border-box !important;
+            box-sizing: border-box !important;
+    background-image: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .drip-tab .drip-text-field::-webkit-input-placeholder { /* WebKit browsers */
+    color: #A8ACB9 !important;
+  }
+  .drip-tab .drip-text-field:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #A8ACB9 !important;
+  }
+  .drip-tab .drip-text-field::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #A8ACB9 !important;
+  }
+  .drip-tab .drip-text-field:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #A8ACB9 !important;
+  }
+
+  .drip-tab .drip-text-field:focus {
+    border-color: #9398a9 !important;
+    outline: 0;
+    background-image: none;
+    background-color: #fff !important;
+  }
+
+  .drip-tab.mobile .drip-text-field {
+    font-size: 16px;
+  }
+
+  .drip-tab .drip-errors {
+    padding: 5px 0 0 0;
+    font-weight: normal;
+    color: red;
+  }
+
+  .drip-tab .drip-submit-button {
+    padding: 6px 26px !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    line-height: 1.6 !important;
+    border: 0 !important;
+    -webkit-border-radius: 3px !important;
+       -moz-border-radius: 3px !important;
+            border-radius: 3px !important;
+    cursor: pointer !important;
+    background-image: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto;
+    transition: background 0.2s ease !important;
+  }
+
+  .drip-tab .drip-submit-button:hover {
+    background-image: none !important;
+  }
+
+  .drip-tab .drip-submit-button:active {
+    background-image: none !important;
+  }
+
+</style></head>
+
+  <body>
+    
+      <header class="header compact">
+        <div class="container">
+          <a class="logo" href="https://goshakkk.name/">
+            <img src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/apple-touch-icon.png">
+            
+              Gosha Arinich
+            
+          </a>
+
+          <nav role="navigation">
+            <ul>
+              <li><a href="https://goshakkk.name/">articles</a></li>
+              <li><a href="https://goshakkk.name/services/mobile-mvp/">available for hire</a></li>
+              <li><a href="https://goshakkk.name/the-missing-forms-handbook-of-react/">forms book</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    
+
+    <section class="container content " role="main">
+      <article>
+  <header>
+    <h2><a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/">Controlled and uncontrolled form inputs in React don't have to be complicated</a></h2>
+    <p class="date">07 Nov 2016</p>
+    
+      <p><img alt="Controlled and uncontrolled form inputs in React don&#39;t have to be complicated" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/controlled-vs-uncontrolled-cover.png"></p>
+    
+  </header>
+
+  
+<p>You may have seen many articles saying <strong>“you shouldn’t use <code class="highlighter-rouge">setState</code>,”</strong> and the docs are claiming <strong>“<code class="highlighter-rouge">ref</code>s are bad”</strong>…
+That is so contradictory.
+It’s hard to understand how to “get it right” and even what are the criteria for choosing.</p>
+
+<p>How the hell are you supposed to make forms?</p>
+
+<p>After all, forms <em>are</em> central to many web apps out there.
+And yet, form handling in React seems to be a bit of a… corner stone?</p>
+
+<p>Fear no more.
+Let me show you the differences between the approaches, as well as when you should use each.</p>
+
+<h2 id="the-uncontrolled">The Uncontrolled</h2>
+
+<p><strong>Uncontrolled inputs</strong> are like traditional HTML form inputs:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Form</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type=</span><span class="s2">"text"</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>They remember what you typed.
+You can then get their value using <a href="https://facebook.github.io/react/docs/refs-and-the-dom.html">a ref</a>.
+For example, in <code class="highlighter-rouge">onClick</code> handler of a button:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Form</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">handleSubmitClick</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_name</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+    <span class="c1">// do something with `name`</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type=</span><span class="s2">"text"</span> <span class="na">ref=</span><span class="si">{</span><span class="nx">input</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_name</span> <span class="o">=</span> <span class="nx">input</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleSubmitClick</span><span class="si">}</span><span class="p">&gt;</span>Sign up<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In other words, <strong>you have to ‘pull’ the value from the field when you need it</strong>.
+This can happen when the form is submitted.</p>
+
+<p>That is the simplest way to implement the form inputs.
+There certainly are valid cases for using it: in simple forms in the real world; and when learning React.</p>
+
+<p>It’s not as powerful, though, so let’s see those controlled inputs next.</p>
+
+<p><em>For what it’s worth, I’m giving away two chapters of my book about forms. Get it below if you want; and continue reading the article.</em></p>
+
+<div class="sign-up-form sign-up-form--freebie">
+  <div class="the-form">
+    <img class="freebie-preview" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/tmfhr.jpg" alt="Preview">
+    
+  <h4>What if you could implement the form experience your users deserve?</h4>
+  <p><a href="https://goshakkk.name/the-missing-forms-handbook-of-react">The Missing Forms Handbook of React</a> can help you breeze through your React forms. The excerpt contains a table of contents and two chapters: on building an intuition for forms and handling various form controls.</p>
+
+
+    <form action="https://www.getdrip.com/forms/90822328/submissions" method="post" target="_blank" onsubmit="ga(&#39;send&#39;, &#39;event&#39;, &#39;Content Upgrade&#39;, &#39;Submitted&#39;, &#39;tmfhr-sample_contr-vs-uncontr-mid-article&#39;)">
+      <input type="text" value="" required="" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+      <input type="email" value="" required="" name="fields[email]" placeholder="Email" autocomplete="email">
+      <input type="hidden" value="/controlled-vs-uncontrolled-inputs-react/" name="fields[_source]">
+
+      <button type="submit" formtarget="_blank">Get your free chapters!</button>
+    </form>
+
+    <span class="note">No spam. I will occasionally send you my posts on JavaScript and React.</span>
+  </div>
+
+  <div class="call-to-share">
+    <img class="freebie-preview" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/tmfhr.jpg" alt="Preview">
+    
+  <h4>What if you could implement the form experience your users deserve?</h4>
+  <p><a href="https://goshakkk.name/the-missing-forms-handbook-of-react">The Missing Forms Handbook of React</a> can help you breeze through your React forms. The excerpt contains a table of contents and two chapters: on building an intuition for forms and handling various form controls.</p>
+
+
+    <form action="https://www.getdrip.com/forms/90822328/submissions" method="post" target="_blank" novalidate="" onsubmit="ga(&#39;send&#39;, &#39;event&#39;, &#39;Content Upgrade&#39;, &#39;Submitted&#39;, &#39;tmfhr-sample_contr-vs-uncontr-mid-article&#39;)">
+      <input type="hidden" value="" class="---name" name="fields[first_name]" placeholder="First name">
+      <input type="hidden" value="" class="---email" name="fields[email]" placeholder="Email">
+
+      <button type="submit" formtarget="_blank">Get your free chapters! to <span class="email"></span></button>
+    </form>
+  </div>
+</div>
+
+<p><em>Article continues:</em></p>
+
+<h2 id="the-controlled">The Controlled</h2>
+
+<p>A <strong>controlled input</strong> accepts its current value as a prop, as well as a callback to change that value.
+You could say it’s a more “React way” of approaching this (which doesn’t mean you should <strong>always</strong> use it).</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">someValue</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleChange</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>Which is fine and all… but the value of this input <em>has</em> to live in the <code class="highlighter-rouge">state</code> somewhere.
+Typically, the component that renders the input (aka the form component) saves that in its <code class="highlighter-rouge">state</code>:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Form</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">name</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="nx">handleNameChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span>
+          <span class="na">type=</span><span class="s2">"text"</span>
+          <span class="na">value=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span>
+          <span class="na">onChange=</span><span class="si">{</span><span class="k">this</span><span class="p">.</span><span class="nx">handleNameChange</span><span class="si">}</span>
+        <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>(Of course, it can be in the state of another component, or even in the separate state store, <a href="https://goshakkk.name/should-i-put-form-state-into-redux/">like Redux</a>.)</p>
+
+<p>Every time you type a new character, <code class="highlighter-rouge">handleNameChange</code> is called.
+It takes in the new value of the input and sets it in the state.</p>
+
+<p><img src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/controlled-flow.png" alt=""></p>
+
+<ul>
+  <li>
+    <p>It starts out as an empty string — <code class="highlighter-rouge">''</code>.</p>
+  </li>
+  <li>
+    <p>You type <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">handleNameChange</code> gets an <code class="highlighter-rouge">a</code> and calls <code class="highlighter-rouge">setState</code>.
+The input is then re-rendered to have the value of <code class="highlighter-rouge">a</code>.</p>
+  </li>
+  <li>
+    <p>You type <code class="highlighter-rouge">b</code>. <code class="highlighter-rouge">handleNameChange</code> gets the value of <code class="highlighter-rouge">ab</code> and sets that to the state.
+The input is re-rendered once more, now with <code class="highlighter-rouge">value="ab"</code>.</p>
+  </li>
+</ul>
+
+<p><strong>This flow kind of ‘pushes’ the value changes to the form component</strong>, so the <code class="highlighter-rouge">Form</code> component always has the current value of the input, without needing to ask for it explicitly.</p>
+
+<p>This means your data (state) and UI (inputs) are always in sync.
+The state gives the value to the input, and the input asks the <code class="highlighter-rouge">Form</code> to change the current value.</p>
+
+<p>This also means that the form component can respond to input changes immediately; for example, by:</p>
+
+<ul>
+  <li>in-place feedback, like validations</li>
+  <li><a href="https://goshakkk.name/form-recipe-disable-submit-button-react/">disabling the button unless all fields have valid data</a></li>
+  <li>enforcing a specific input format, like credit card numbers</li>
+</ul>
+
+<p>But if you don’t need any of that and consider uncontrolled to be simpler, go for it.</p>
+
+<h3 id="what-makes-an-element-controlled">What makes an element “controlled”</h3>
+
+<p>There are other form elements, of course.
+You have checkboxes and radios and <code class="highlighter-rouge">select</code>s and textareas.</p>
+
+<p>A form element becomes “controlled” if you set its value via a prop.
+That’s all.</p>
+
+<p>Each of the form elements, though, has a different prop for setting that value, so here’s a little table to summarize:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Value property</th>
+      <th>Change callback</th>
+      <th>New value in the callback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;input type="text" /&gt;</code></td>
+      <td><code class="highlighter-rouge">value="string"</code></td>
+      <td><code class="highlighter-rouge">onChange</code></td>
+      <td><code class="highlighter-rouge">event.target.value</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;input type="checkbox" /&gt;</code></td>
+      <td><code class="highlighter-rouge">checked={boolean}</code></td>
+      <td><code class="highlighter-rouge">onChange</code></td>
+      <td><code class="highlighter-rouge">event.target.checked</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;input type="radio" /&gt;</code></td>
+      <td><code class="highlighter-rouge">checked={boolean}</code></td>
+      <td><code class="highlighter-rouge">onChange</code></td>
+      <td><code class="highlighter-rouge">event.target.checked</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;textarea /&gt;</code></td>
+      <td><code class="highlighter-rouge">value="string"</code></td>
+      <td><code class="highlighter-rouge">onChange</code></td>
+      <td><code class="highlighter-rouge">event.target.value</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;select /&gt;</code></td>
+      <td><code class="highlighter-rouge">value="option value"</code></td>
+      <td><code class="highlighter-rouge">onChange</code></td>
+      <td><code class="highlighter-rouge">event.target.value</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Both the controlled and uncontrolled form fields have their merit.
+<strong>Evaluate your specific situation and pick the approach</strong> — what works for you is good enough.</p>
+
+<p>If your form is incredibly simple in terms of UI feedback, uncontrolled with refs is entirely fine.
+You don’t have to listen to what the various articles are saying is “bad.”</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>feature</th>
+      <th>uncontrolled</th>
+      <th>controlled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>one-time value retrieval (e.g. on submit)</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><a href="https://goshakkk.name/submit-time-validation-react/">validating on submit</a></td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><a href="https://goshakkk.name/instant-form-fields-validation-react/">instant field validation</a></td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><a href="https://goshakkk.name/form-recipe-disable-submit-button-react/">conditionally disabling submit button</a></td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>enforcing input format</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>several inputs for one piece of data</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><a href="https://goshakkk.name/array-form-inputs/">dynamic inputs</a></td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Also, this is not an once-and-for-all decision: you can always migrate to controlled inputs.
+<a href="https://goshakkk.name/turn-uncontrolled-into-controlled/">Going from uncontrolled to controlled inputs is not hard</a>.</p>
+
+<p>Finally, here’s <a href="https://goshakkk.name/on-forms-react/">the organized list of my posts about forms in React</a>.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://facebook.github.io/react/docs/forms.html">Forms page on the official React docs</a></li>
+  <li><a href="https://facebook.github.io/react/docs/events.html">Supported events</a></li>
+  <li><a href="https://facebook.github.io/react/docs/refs-and-the-dom.html">Refs</a></li>
+</ul>
+
+</article>
+
+<div style="padding: 0 20px;">
+  
+
+  <p style="margin-top: 0.1em; margin-bottom: 0.1em;">
+    Think your friends would dig this article, too?
+  </p>
+  <div style="font-size: 10px; margin-bottom: 30px;">
+    <!-- Sharingbutton Facebook -->
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgoshakkk.name%2Fcontrolled-vs-uncontrolled-inputs-react%2F" target="_blank" aria-label="Facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"></path></svg>
+  </div>Facebook</div>
+</a>
+
+<!-- Sharingbutton Twitter -->
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Controlled+and+uncontrolled+form+inputs+in+React+don%27t+have+to+be+complicated&amp;url=https%3A%2F%2Fgoshakkk.name%2Fcontrolled-vs-uncontrolled-inputs-react%2F" target="_blank" aria-label="Twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"></path></svg>
+  </div>Twitter</div>
+</a>
+
+<!-- Sharingbutton Google+ -->
+<a class="resp-sharing-button__link" href="https://plus.google.com/share?url=https%3A%2F%2Fgoshakkk.name%2Fcontrolled-vs-uncontrolled-inputs-react%2F" target="_blank" aria-label="Google+">
+  <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3"></path></svg>
+  </div>Google+</div>
+</a>
+
+<!-- Sharingbutton Tumblr -->
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Controlled+and+uncontrolled+form+inputs+in+React+don%27t+have+to+be+complicated&amp;caption=Controlled+and+uncontrolled+form+inputs+in+React+don%27t+have+to+be+complicated&amp;content=https%3A%2F%2Fgoshakkk.name%2Fcontrolled-vs-uncontrolled-inputs-react%2F&amp;canonicalUrl=https%3A%2F%2Fgoshakkk.name%2Fcontrolled-vs-uncontrolled-inputs-react%2F&amp;shareSource=tumblr_share_button" target="_blank" aria-label="Tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--medium"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.5v5h5v4h-5V15c0 5 3.5 4.4 6 2.8v4.4c-6.7 3.2-12 0-12-4.2V9.5h-3V6.7c1-.3 2.2-.7 3-1.3.5-.5 1-1.2 1.4-2 .3-.7.6-1.7.7-3h3.8z"></path></svg>
+  </div>Tumblr</div>
+</a>
+
+  </div>
+</div>
+
+
+  
+    <div class="sign-up-form sign-up-form--freebie">
+  <div class="the-form">
+    <img class="freebie-preview" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/tmfhr.jpg" alt="Preview">
+    
+      <h4>Know how you tear your hair out when your designer asks to make a nice form?</h4>
+      <p>But what if you could implement the form experience your users deserve?</p>
+      <p><a href="https://goshakkk.name/the-missing-forms-handbook-of-react/">The Missing Forms Handbook of React</a> can help you breeze through your React forms. You will learn how forms fit into React and see how to implement common form patterns.</p>
+      <p>The excerpt contains a table of contents and two chapters: on building an intuition for forms and handling various form controls.</p>
+    
+
+    <form action="https://www.getdrip.com/forms/90822328/submissions" method="post" target="_blank" onsubmit="ga(&#39;send&#39;, &#39;event&#39;, &#39;Content Upgrade&#39;, &#39;Submitted&#39;, &#39;tmfhr-sample_post-end&#39;)">
+      <input type="text" value="" required="" name="fields[first_name]" placeholder="First name" autocomplete="given-name">
+      <input type="email" value="" required="" name="fields[email]" placeholder="Email" autocomplete="email">
+      <input type="hidden" value="/controlled-vs-uncontrolled-inputs-react/" name="fields[_source]">
+
+      <button type="submit" formtarget="_blank">Get your free sample!</button>
+    </form>
+
+    <span class="note">No spam. I will occasionally send you my posts on JavaScript and React.</span>
+  </div>
+
+  <div class="call-to-share">
+    <img class="freebie-preview" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/tmfhr.jpg" alt="Preview">
+    
+      <h4>Know how you tear your hair out when your designer asks to make a nice form?</h4>
+      <p>But what if you could implement the form experience your users deserve?</p>
+      <p><a href="https://goshakkk.name/the-missing-forms-handbook-of-react/">The Missing Forms Handbook of React</a> can help you breeze through your React forms. You will learn how forms fit into React and see how to implement common form patterns.</p>
+      <p>The excerpt contains a table of contents and two chapters: on building an intuition for forms and handling various form controls.</p>
+    
+
+    <form action="https://www.getdrip.com/forms/90822328/submissions" method="post" target="_blank" novalidate="" onsubmit="ga(&#39;send&#39;, &#39;event&#39;, &#39;Content Upgrade&#39;, &#39;Submitted&#39;, &#39;tmfhr-sample_post-end&#39;)">
+      <input type="hidden" value="" class="---name" name="fields[first_name]" placeholder="First name">
+      <input type="hidden" value="" class="---email" name="fields[email]" placeholder="Email">
+
+      <button type="submit" formtarget="_blank">Get your free sample! to <span class="email"></span></button>
+    </form>
+  </div>
+</div>
+
+  
+
+
+
+  <div class="related">
+    <h4>More about forms in React:</h4>
+    <ul>
+      <li><a href="https://goshakkk.name/on-forms-react/">Guide to forms</a></li>
+      
+        <li><a href="https://goshakkk.name/should-i-put-form-state-into-redux/">Should you store your form state in Redux?</a></li>
+      
+        <li><a href="https://goshakkk.name/form-recipe-disable-submit-button-react/">Form recipe: Conditionally disabling the Submit button</a></li>
+      
+        <li><a href="https://goshakkk.name/wizard-form-collect-info/">Collecting data from a wizard form</a></li>
+      
+        <li><a href="https://goshakkk.name/instant-form-fields-validation-react/">Instant form field validation with React's controlled inputs</a></li>
+      
+        <li><a href="https://goshakkk.name/array-form-inputs/">Making dynamic form inputs with React</a></li>
+      
+        <li><a href="https://goshakkk.name/react-forms-for-editing/">How do you make a React form start out with some values prefilled when editing?</a></li>
+      
+        <li><a href="https://goshakkk.name/y-no-field-level-validations/">Why not field-level validations?</a></li>
+      
+        <li><a href="https://goshakkk.name/turn-uncontrolled-into-controlled/">Transitioning from uncontrolled inputs to controlled</a></li>
+      
+        <li><a href="https://goshakkk.name/submit-time-validation-react/">Validating a React form upon submit</a></li>
+      
+        <li><a href="https://goshakkk.name/validations-several-fields/">How to handle validations involving several fields?</a></li>
+      
+        <li><a href="https://goshakkk.name/prep-forms-for-redux/">Here's what you can do to make migrating your forms to Redux easier in the future</a></li>
+      
+      <li><a href="https://goshakkk.name/the-missing-forms-handbook-of-react/">The Missing Forms Handbook of React</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+
+<small markdown="1">
+  If you need a mobile app built for your business or your idea, there's a chance I could <a href="https://goshakkk.name/services/mobile-mvp/">help you with that</a>.<br>
+  Leave your email <a href="https://goshakkk.name/services/mobile-mvp/">here</a> and I will get back to you shortly.
+</small>
+
+<div id="disqus_thread" style="margin-top: 20px;"><iframe id="dsq-app1667" name="dsq-app1667" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 3203px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 760px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 760px !important; max-width: 760px !important; position: fixed !important; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none !important;" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 760px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 760px !important; max-width: 760px !important; position: fixed !important; z-index: 2147483646 !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; display: none !important;" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/saved_resource(2).html"></iframe></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/";
+this.page.identifier = "/controlled-vs-uncontrolled-inputs-react/";
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = '//goshakkk.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+
+    </section>
+
+    
+      <footer class="footer">
+        <div class="container">
+        </div>
+        <div class="container">
+          <div class="columns" role="navigation">
+            <div class="column">
+              <a href="https://goshakkk.name/"><h3>Posts</h3></a>
+
+              <p><a href="https://goshakkk.name/on-react">on React</a></p>
+              <p><a href="https://goshakkk.name/on-forms-react">on Forms in React</a></p>
+              <p><a href="https://goshakkk.name/on-react-native">on React Native</a></p>
+              <p><a href="https://goshakkk.name/on-rails">on Rails</a></p>
+
+              <a href="https://goshakkk.name/"><h3>Products</h3></a>
+              <p><a href="https://goshakkk.name/the-missing-forms-handbook-of-react/" class="pick">The Missing Forms<br>Handbook of React</a></p>
+            </div>
+
+            <div class="column">
+              <h3>Hire me</h3>
+              <p><a href="https://goshakkk.name/services/mobile-mvp/">Do you need a mobile app?</a></p>
+              <p><a href="https://goshakkk.name/works">Previous works</a></p>
+            </div>
+
+            <div class="column">
+              <h3>Contact</h3>
+
+              <p class="without-name"><a href="https://goshakkk.name/subscribe/">Subscribe</a></p>
+              <p><a href="https://twitter.com/goshakkk">Twitter</a></p>
+              <p><a href="https://github.com/goshakkk">GitHub</a></p>
+              <p><a href="mailto:me@goshakkk.name">Email</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+
+    
+
+    <script data-cfasync="false" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/email-decode.min.js.download"></script><script>
+  var config = {
+    topTagCount: 3,
+    suggestionCount: 3,
+    interestThreshold: 0.1,
+    formClass: 'sign-up-form',
+    formIgnoreClass: 'sign-up-form--mini',
+    alwaysClass: 'always',
+    nameTextClass: 'name',
+    emailTextClass: 'email',
+    nameValueClass: '---name',
+    emailValueClass: '---email',
+    personalizedClass: 'with-name',
+    anonymousClass: 'without-name',
+    personalizedFormClass: 'the-form',
+    ctsClass: 'call-to-share',
+    suggestionClass: 'suggestions',
+    dripWidgetClass: 'drip-tab-container',
+    viewedTagPrefix: 'Viewed - ',
+  };
+
+  var postsTags = {
+    "/why-i-mock-api-in-mobile-apps/": ["React Native",],"/get-inspired-for-react-native-ui/": ["React Native","React",],"/tips-finally-learn-react/": ["React",],"/detect-state-change-redux-saga/": ["React","Redux",],"/prep-forms-for-redux/": ["React","Redux","Forms",],"/validations-several-fields/": ["React","Forms",],"/submit-time-validation-react/": ["React","Forms",],"/next-steps-official-react-tutorial/": ["React",],"/floating-label-input-rn-animated/": ["React","React Native","Animations",],"/jsx-relevancy-options/": ["React",],"/turn-uncontrolled-into-controlled/": ["React","Forms",],"/analytics-easy-redux-saga/": ["React",],"/react-native-activity-indicator-fetch/": ["React","React Native",],"/y-no-field-level-validations/": ["React","Forms",],"/is-expo-worth-it/": ["React","React Native",],"/integrating-react-with-rails-php-backends/": ["React",],"/auth-in-react-native-apps/": ["React","React Native",],"/how-do-you-go-from-react-to-react-native/": ["React","React Native",],"/react-native-animated-appearance-disappearance/": ["React","React Native","Animations",],"/react-forms-for-editing/": ["React","Forms",],"/react-native-animated-building-blocks/": ["React","React Native","Animations",],"/redux-side-effect-approaches/": ["React","Redux",],"/array-form-inputs/": ["React","Forms",],"/no-tutorial-for-everything/": ["React",],"/instant-form-fields-validation-react/": ["React","Forms",],"/wizard-form-collect-info/": ["React","Forms",],"/different-mobile-desktop-tablet-layouts-react/": ["React",],"/form-recipe-disable-submit-button-react/": ["React","Forms",],"/should-i-put-form-state-into-redux/": ["React","Redux","Forms",],"/controlled-vs-uncontrolled-inputs-react/": ["React","Forms",],"/lazy-auth-redux-saga-flow/": ["React","Redux",],"/javascript-generators-understanding-sample-use-cases/": ["JavaScript","React","Redux",],"/react-native-camera-roll-image-picker/": ["React","React Native",],"/redux-no-ajax-by-default/": ["React","Redux",],"/redux-antipattern-mapstatetoprops/": ["React","Redux",],"/one-way-not-to-abuse-redux/": ["React","Redux",],"/learning-project-ideas/": ["React",],"/is-your-developer-ripping-you-off/": [],"/redux-vs-mobx-vs-flux-etoomanychoices/": ["React",],"/you-dont-need-learn-webpack-first-with-react/": ["React",],"/react-custom-renderers/": ["React","Canvas",],"/multitenancy/": ["Rails",],"/rails-hosting-options/": [],"/enough-css-to-psd/": ["CSS",],"/cut-mobile-costs/": ["Mobile","Hybrid",],"/should-you-use-mongodb-as-a-drop-in-replacement-for-sql/": ["MongoDB","SQL",],"/finished-hartl-tutorial-whats-next/": ["Rails",],"/squash-clutter-migrations/": ["Rails",],"/rails-developers-dont-be-afraid-of-sql/": [],"/am-i-ready-for-that-junior-rails-developer-position/": ["Rails",],"/rails-activerecord-query-or/": ["Rails",],"/bundler-offline/": ["Ruby",],"/state-ageism-and-cryptocurrencies/": [],"/introducing-sleek/": [],"/analytics-analyzing-tracked-events/": ["MongoDB","Analytics","Ruby",],"/tracking-events-in-analytics-systems/": ["MongoDB","Analytics","Ruby",],"/on-being-a-polyglot/": [],"/my-toolbox/": [],"/freelancing/": [],"/objective-c-rubyists-insight/": ["Ruby","Objective-C",],
+  };
+  var postsTitles = {
+    "/why-i-mock-api-in-mobile-apps/": "Reasons I use a mock API in React Native apps","/get-inspired-for-react-native-ui/": "4 places to draw inspiration from for practicing React Native","/tips-finally-learn-react/": "5 practical tips to finally learn React in 2018","/detect-state-change-redux-saga/": "Detecting state changes with Redux-Saga","/prep-forms-for-redux/": "Here's what you can do to make migrating your forms to Redux easier in the future","/validations-several-fields/": "How to handle validations involving several fields?","/submit-time-validation-react/": "Validating a React form upon submit","/next-steps-official-react-tutorial/": "So you completed the official React tutorial. What's next?","/floating-label-input-rn-animated/": "The making of a floating-label input with React Native's Animated API","/jsx-relevancy-options/": "Is JSX still relevant? Are there other options?","/turn-uncontrolled-into-controlled/": "Transitioning from uncontrolled inputs to controlled","/analytics-easy-redux-saga/": "Analytics on easy mode with Redux-Saga","/react-native-activity-indicator-fetch/": "How to show an iOS network activity indicator when a request is in progress?","/y-no-field-level-validations/": "Why not field-level validations?","/is-expo-worth-it/": "What do you get out of Expo?","/integrating-react-with-rails-php-backends/": "How to integrate React with a Rails/PHP/X backend?","/auth-in-react-native-apps/": "Where does authentication fit in a React Native app?","/how-do-you-go-from-react-to-react-native/": "How do you go from React to React Native?","/react-native-animated-appearance-disappearance/": "Animating appearance & disappearance in React Native","/react-forms-for-editing/": "How do you make a React form start out with some values prefilled when editing?","/react-native-animated-building-blocks/": "The building blocks of React Native animations","/redux-side-effect-approaches/": "3 common approaches to side-effects in Redux apps","/array-form-inputs/": "Making dynamic form inputs with React","/no-tutorial-for-everything/": "You don't need a tutorial for every-freaking-thing","/instant-form-fields-validation-react/": "Instant form field validation with React's controlled inputs","/wizard-form-collect-info/": "Collecting data from a wizard form","/different-mobile-desktop-tablet-layouts-react/": "Different mobile and desktop layouts with React","/form-recipe-disable-submit-button-react/": "Form recipe: Conditionally disabling the Submit button","/should-i-put-form-state-into-redux/": "Should you store your form state in Redux?","/controlled-vs-uncontrolled-inputs-react/": "Controlled and uncontrolled form inputs in React don't have to be complicated","/lazy-auth-redux-saga-flow/": "Lazy registration with Redux and Sagas","/javascript-generators-understanding-sample-use-cases/": "3 cases where JavaScript generators rock (+ understanding them)","/react-native-camera-roll-image-picker/": "Using iOS Image Picker with React Native","/redux-no-ajax-by-default/": "Why doesn't Redux support AJAX out of the box?","/redux-antipattern-mapstatetoprops/": "Redux anti-pattern: dumb mapStateToProps","/one-way-not-to-abuse-redux/": "One way NOT to abuse Redux","/learning-project-ideas/": "Where do I get ideas for my learning projects?","/is-your-developer-ripping-you-off/": "Is your developer ripping you off?","/redux-vs-mobx-vs-flux-etoomanychoices/": "Redux vs MobX vs Flux vs... Do you even need that?","/you-dont-need-learn-webpack-first-with-react/": "Do I need to learn Webpack when starting with React?","/react-custom-renderers/": "Making custom renderers for React","/multitenancy/": "Getting started with multi-tenancy on Rails","/rails-hosting-options/": "3 Rails hosting options","/enough-css-to-psd/": "Learn enough CSS to mark up a PSD","/cut-mobile-costs/": "Can hybrid apps cut your mobile development costs?","/should-you-use-mongodb-as-a-drop-in-replacement-for-sql/": "Should you use MongoDB as a drop-in SQL replacement?","/finished-hartl-tutorial-whats-next/": "Just finished the Hartl tutorial and wondering what's next?","/squash-clutter-migrations/": "How to squash work-in-progress migrations","/rails-developers-dont-be-afraid-of-sql/": "Are you a Rails developer and afraid of SQL? Don't be!","/am-i-ready-for-that-junior-rails-developer-position/": "5 signs you are ready for that Junior Rails Developer position","/rails-activerecord-query-or/": "How to accomplish OR operator with Rails 4 (and lower) query?","/bundler-offline/": "How to use bundler if the target node has no internet connection?","/state-ageism-and-cryptocurrencies/": "State Ageism and Cryptocurrencies","/introducing-sleek/": "Introducing Sleek","/analytics-analyzing-tracked-events/": "Analytics: Analyzing tracked events","/tracking-events-in-analytics-systems/": "Tracking events in analytics systems","/on-being-a-polyglot/": "On being a polyglot","/my-toolbox/": "My toolbox","/freelancing/": "Freelancing","/objective-c-rubyists-insight/": "Objective-C: Rubyist's insight",
+  };
+  function uniq(ary) { return ary.filter(function(item, idx) { return ary.indexOf(item) === idx }); }
+  function flatten(acc, x) { return acc.concat(x); }
+  function shuffle(a) {
+    var j, x, i;
+    a = a.slice();
+    for (i = a.length; i; i--) {
+      j = Math.floor(Math.random() * i);
+      x = a[i - 1];
+      a[i - 1] = a[j];
+      a[j] = x;
+    }
+    return a;
+  }
+  var allTags = uniq(Object.keys(postsTags).map(function(post) { return postsTags[post] }).reduce(flatten));
+  var postsByTags = allTags.reduce(function(acc, tag) {
+    var posts = Object.keys(postsTags).filter(function(post) { return postsTags[post].indexOf(tag) !== -1 });
+    acc[tag] = posts;
+    return acc;
+  }, {});
+  function percentagesByTag(viewed) {
+    var interestMatches = allTags.reduce(function(acc, tag) {
+      var posts = postsByTags[tag];
+      var viewedTag = posts.filter(function(post) { return viewed.indexOf(post) !== -1 });
+      acc[tag] = viewedTag.length / posts.length;
+      return acc;
+    }, {});
+    return interestMatches;
+  }
+  function compareGt(a, b) {
+    if (a === b) return 0;
+    return a < b ? 1 : -1;
+  }
+  function postsOfInterest(viewed) {
+    var interestMatches = percentagesByTag(viewed);
+    var tagsOfInterest = Object.keys(interestMatches).filter(function(tag) {
+      return interestMatches[tag] > config.interestThreshold && interestMatches[tag] < 1
+    }).sort(function(a, b) {
+      return compareGt(interestMatches[a], interestMatches[b]);
+    }).slice(0, config.topTagCount);
+    var postsOfInterest = tagsOfInterest.map(function(tag) { return postsByTags[tag] }).reduce(flatten);
+    return uniq(postsOfInterest);
+  }
+  function unreadSuggestions(viewed) {
+    var posts = postsOfInterest(viewed);
+    var unread = posts.filter(function(post) { return viewed.indexOf(post) === -1 });
+    return shuffle(unread).slice(0, config.suggestionCount);
+  }
+  function renderSuggestions(suggestions, cts) {
+    var p = document.createElement('p');
+    p.textContent = 'You will also ❤️ love these:';
+    cts.appendChild(p);
+
+    var list = document.createElement('ul');
+    suggestions.forEach(function(post) {
+      var item = document.createElement('li');
+      item.innerHTML = '<a href="' + post + '">' + postsTitles[post] + '</a>';
+      list.appendChild(item);
+    });
+    cts.appendChild(list);
+  }
+  function getElements(className) {
+    return [].slice.call(document.getElementsByClassName(className));
+  }
+  function setValues(className, attributeSetter) {
+    getElements(className).forEach(attributeSetter);
+  }
+  function setDisplay(value) {
+    return function(el) { el.style.display = value; }
+  }
+  function setAttr(attr, value) {
+    return function(el) { el[attr] = value; }
+  }
+  function getViewedPages(tags) {
+    return tags.filter(function(tag) { return tag.indexOf(config.viewedTagPrefix) === 0 }).map(function(tag) { return tag.replace(config.viewedTagPrefix, '') });
+  }
+  function personalizePage(name, email) {
+    setValues(config.nameTextClass, setAttr('textContent', name));
+    setValues(config.emailTextClass, setAttr('textContent', email));
+    setValues(config.nameValueClass, setAttr('value', name));
+    setValues(config.emailValueClass, setAttr('value', email));
+    setValues(config.personalizedClass, setDisplay('inherit'));
+    setValues(config.anonymousClass, setDisplay('none'));
+    setValues(config.dripWidgetClass, setDisplay('none'));
+  }
+  function personalizeForms(name, email, tags) {
+    try {
+      personalizePage(name, email);
+      var viewed = getViewedPages(tags);
+      getElements(config.formClass).forEach(function(form) {
+        if (form.classList.contains(config.alwaysClass)) return;
+        if (form.classList.contains(config.formIgnoreClass)) {
+          form.style.display = 'none';
+        } else {
+          var suggestions = unreadSuggestions(viewed);
+          var theForm = form.getElementsByClassName(config.personalizedFormClass)[0];
+          var cts = form.getElementsByClassName(config.ctsClass)[0];
+          var suggestionsBlock = cts && cts.getElementsByClassName(config.suggestionsClass)[0];
+          if (suggestions.length > 0 && suggestionsBlock) {
+            renderSuggestions(suggestions, suggestionsBlock);
+          }
+          theForm.style.display = 'none';
+          if (cts) {
+            cts.style.display = 'block';
+          }
+        }
+      });
+    } catch(e) {console.error(e)}
+  }
+</script>
+
+    <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-40693449-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script async="" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/analytics.js.download"></script>
+
+    <script type="text/javascript">
+  var _dcq = _dcq || [];
+  var _dcs = _dcs || {};
+  _dcs.account = '1363715';
+
+  (function() {
+    var dc = document.createElement('script');
+    dc.type = 'text/javascript'; dc.async = true;
+    dc.src = '//tag.getdrip.com/1363715.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(dc, s);
+  })();
+
+  var lsKey = '--anon-tags';
+  function readAnonTags() {
+    try {
+      var item = localStorage.getItem(lsKey);
+      return item ? JSON.parse(item) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function writeAnonTags(newTags) {
+    try {
+      localStorage.setItem(lsKey, JSON.stringify(newTags));
+    } catch (e) {
+    }
+  }
+
+  var pageTag = 'Viewed - ' + window.location.pathname;
+  var anonTags = readAnonTags();
+  var totalTags = [pageTag].concat(anonTags);
+
+  function chunkArray(arr, chunkSize) {
+    var groups = [], i;
+    for (i = 0; i < arr.length; i += chunkSize) {
+      groups.push(arr.slice(i, i + chunkSize));
+    }
+    return groups;
+  }
+
+  _dcq.push(['identify', {
+    tags: [pageTag],
+    success: function(user) {
+      if (!user.anonymous && user.email) {
+        personalizeForms(user.custom_fields.first_name, user.email, user.tags);
+
+        if (anonTags.length > 0) {
+          var chunks = chunkArray(anonTags, 40);
+          var currentChunkIdx = 0;
+
+          var id = function() {
+            _dcq.push(['identify', {
+              tags: chunks[currentChunkIdx],
+              success: function() {
+                currentChunkIdx += 1;
+                if (chunks[currentChunkIdx]) {
+                  id();
+                } else {
+                  writeAnonTags([]);
+                }
+              }
+            }]);
+          };
+
+          id();
+        }
+
+        ga('set', 'userId', user.visitor_uuid);
+      } else {
+        writeAnonTags(totalTags);
+      }
+    },
+  }]);
+</script>
+
+    <script>
+  var loadDeferredStyles = function() {
+    var addStylesNode = document.getElementById("deferred-styles");
+    var replacement = document.createElement("div");
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement)
+    addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>
+
+  
+
+<div>
+      <link href="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/css" rel="stylesheet">
+    </div><iframe style="display: none;" src="./Controlled and uncontrolled form inputs in React don&#39;t have to be complicated - Gosha Arinich_files/saved_resource(3).html"></iframe><div class="drip-tab-container">
+  <div id="drip-25653" class="drip-tab bottom right no-image">
+    <div id="drip-header-25653" class="drip-header">
+      <a href="https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/#" id="drip-toggle-25653" class="drip-toggle">
+        <h2 id="drip-teaser-25653">Never miss a post</h2>
+        <span id="drip-tab-up-25653" class="drip-arrow up">
+          <svg width="12px" height="8px" viewBox="1362 659 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon id="right_angle" stroke="none" fill="#FFFFFF" fill-rule="evenodd" transform="translate(1368.000000, 662.703125) rotate(-90.000000) translate(-1368.000000, -662.703125) " points="1364.29688 667.296875 1368.89062 662.703125 1364.29688 658.109375 1365.70312 656.703125 1371.70312 662.703125 1365.70312 668.703125"></polygon>
+          </svg>
+        </span>
+        <span id="drip-tab-down-25653" class="drip-arrow down" style="display: none"></span>
+      </a>
+    </div>
+    <div id="drip-content-25653" class="drip-content drip-clearfix" style="height: auto; bottom: -594px;">
+      <a id="drip-close-25653" class="drip-close">
+        <svg width="12px" height="12px" viewBox="630 19 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon id="x" stroke="none" fill="#A8ACB9" fill-rule="evenodd" points="641.376687 30.1740899 636.49366 24.436669 641.095466 19 639.510399 19 635.701126 23.6038176 631.866288 19 630.281221 19 634.883028 24.436669 630 30.1740899 631.585067 30.1740899 635.701126 25.2463857 639.791621 30.1740899"></polygon>
+        </svg>
+      </a>
+
+      <div id="drip-form-panel-25653" class="drip-panel drip-clearfix" style="display: block;">
+        
+
+        <div class="drip-form-main">
+          <h3 id="drip-content-header-25653">Never miss a post</h3>
+          <div id="drip-scroll-25653" class="drip-scroll">
+            <div class="drip-description">If you like what you're reading, enter your email and I'll ping you about my new articles!</div>
+            <form id="drip-form-25653">
+              <div style="display: none">
+                <input type="hidden" name="form_id" value="25653">
+              </div>
+              <dl class="no-labels">
+                
+                  <dt>First name</dt>
+                  <dd>
+                    
+                      <input type="text" name="fields[first_name]" value="" placeholder="First name" class="drip-text-field">
+                      <div id="drip-errors-for-custom-fields-first-name-25653" class="drip-errors"></div>
+                    
+                  </dd>
+                
+                  <dt>Email Address</dt>
+                  <dd>
+                    
+                      <input type="email" name="fields[email]" value="" placeholder="Email Address" class="drip-text-field">
+                      <div id="drip-errors-for-email-25653" class="drip-errors"></div>
+                    
+                  </dd>
+                
+              </dl>
+              <div class="form-controls">
+                <input type="submit" name="submit" value="I want to be the first to know!" id="drip-submit-25653" class="drip-submit-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="drip-success-panel-25653" class="drip-success drip-panel drip-clearfix" style="display: none">
+        <h3>Thank you for signing up!</h3>
+        <p class="drip-description drip-post-submission">Please check your email and click the link provided to confirm your subscription.</p>
+      </div>
+
+      
+        <div id="drip-powered-by" class="drip-powered-by">
+          Powered By <a href="https://www.drip.com/" target="_blank"><svg width="16px" height="21px" viewBox="0 0 16 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path fill="#F224F2" d="M15.4256545,13.125 C15.4287406,13.2024 15.4305922,13.2792 15.4305922,13.356 C15.4305922,17.9418 11.572975,21 7.71535784,21 C3.85774064,21 0.00012344375,17.9418 0.00012344375,13.356 C0.00012344375,13.2792 0.00135788125,13.2024 0.00444397501,13.125 L2.31469376,13.125 L2.31469376,13.356 C2.31469376,16.6872 5.11810133,18.75 7.71535784,18.75 C10.3119971,18.75 13.1160219,16.6872 13.1160219,13.356 L13.1160219,13.125 L15.4256545,13.125 Z M9.25828128,9.6375 C9.25828128,10.4661 8.56761349,11.1375 7.7152344,11.1375 C6.8628553,11.1375 6.17218752,10.4661 6.17218752,9.6375 C6.17218752,8.8089 6.8628553,8.1375 7.7152344,8.1375 C8.56761349,8.1375 9.25828128,8.8089 9.25828128,9.6375 Z M13.8874219,9.6375 C13.8874219,10.4661 13.1967541,11.1375 12.344375,11.1375 C11.4919959,11.1375 10.8013282,10.4661 10.8013282,9.6375 C10.8013282,8.8089 11.4919959,8.1375 12.344375,8.1375 C13.1967541,8.1375 13.8874219,8.8089 13.8874219,9.6375 Z M4.62914064,9.6375 C4.62914064,10.4661 3.93847286,11.1375 3.08609376,11.1375 C2.23371466,11.1375 1.54304688,10.4661 1.54304688,9.6375 C1.54304688,8.8089 2.23371466,8.1375 3.08609376,8.1375 C3.93847286,8.1375 4.62914064,8.8089 4.62914064,9.6375 Z M7.7152344,2.85762 L6.06170536,5.02482 L3.14472954,5.02482 C5.2796892,2.17182 7.7152344,-0.00018 7.7152344,-0.00018 C7.7152344,-0.00018 10.1507796,2.17182 12.2857393,5.02482 L9.36876343,5.02482 L7.7152344,2.85762 Z"></path>
+          </svg></a>
+        </div>
+      
+    </div>
+  </div>
+</div></body></html>
