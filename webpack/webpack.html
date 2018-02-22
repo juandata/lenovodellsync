@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://www.npmjs.com/package/webpack -->
+<html lang="en" prefix="og: http://ogp.me/ns#" class="js gr__npmjs_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.autocomplete-container {  overflow: visible;}.autocomplete-suggestions {  border: 1px solid #999;  background: #FFF;  overflow-x: hidden;  overflow-y: auto;  cursor: default;}.autocomplete-suggestion {  padding: 2px 5px;  white-space: nowrap;  overflow: hidden;}.autocomplete-selected {  background: #F0F0F0;}.autocomplete-container strong {  font-weight: bold;}#powered-by-constructor-io {  font-size: 0.8em;  text-align:right;  background-color:rgb(255,255,192);  font-family:sans-serif;  padding: 4px 10px;  position: absolute;  border: 1px solid #999;}#constructorio-backing-node {  background-color:rgb(255,255,255);  padding: 4px 10px;  position: absolute;  border: 1px solid #FFF;}.autocomplete-suggestion-image {  float:left;  padding-right: 10px;}#autocomplete-direct-results:before {  content:'Products'}#autocomplete-search-container:before {  content:'Search Suggestions'}.autocomplete-suggestion-description {  font-size: 0.8em;  display: block;  margin-left: 10px;  line-height: 1.0em;}.autocomplete-suggestion[data-ac-facet='true'] > .autocomplete-suggestion-item {  padding-left: 10px;}</style>
+  
+  
+  <title>webpack</title>
+
+    <meta name="description" content="Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.">
+    <meta property="og:description" content="Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.">
+    <meta property="og:title" content="webpack">
+    <meta property="og:url" content="https://www.npmjs.com/package/webpack">
+    <meta property="og:site_name" content="npm">
+    <meta name="keywords" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.npmjs.com/package/webpack">
+    <meta name="twitter:title" content="npm: webpack">
+    <meta name="twitter:description" content="Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.">
+  
+  
+  <meta http-equiv="cleartype" content="on">
+  
+  <meta name="apple-mobile-web-app-capable" content="no">
+  
+  
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1,user-scalable=yes">
+  
+  <meta name="x-npm:ga:id" content="UA-47041310-1">
+  <meta name="x-npm:ga:dimensions" content="{&quot;aboveChrome&quot;:&quot;dimension1&quot;,&quot;belowHeader&quot;:&quot;dimension3&quot;,&quot;packagePage&quot;:&quot;dimension2&quot;}">
+  
+  <link rel="canonical" href="https://www.npmjs.com/package/webpack">
+  <link rel="search" type="application/opensearchdescription+xml" href="https://www.npmjs.com/opensearch.xml" title="npm">
+
+    <link rel="stylesheet" media="all" href="./webpack_files/index.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Tag Manager -->
+  <script type="text/javascript" async="" src="./webpack_files/ec.js.download"></script><script async="" src="./webpack_files/analytics.js.download"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PZL5X6M');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="./webpack_files/css">
+  
+    <script src="./webpack_files/index.min.js.download"></script>
+  <link rel="apple-touch-icon" sizes="57x57" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.npmjs.com/static/images/touch-icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-230x230.png" sizes="230x230">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/coast-228x228.png" sizes="228x228">
+  <link rel="icon" type="image/png" href="https://www.npmjs.com/static/images/touch-icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="https://www.npmjs.com/static/images/touch-icons/manifest.json">
+  <link rel="yandex-tableau-widget" href="https://www.npmjs.com/static/images/touch-icons/yandex-browser-manifest.json">
+  <meta property="og:image" content="https://www.npmjs.com/static/images/touch-icons/open-graph.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#cb3837">
+  <meta name="msapplication-TileImage" content="/static/images/touch-icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/static/images/touch-icons/browserconfig.xml">
+  <meta name="theme-color" content="#cb3837">
+
+<style id="iconic-responsive-css" type="text/css">/* Iconic Responsive Support Styles */
+.iconic-property-fill, .iconic-property-text {stroke: none !important;}
+.iconic-property-stroke {fill: none !important;}
+svg.iconic.iconic-fluid {height:100% !important;width:100% !important;}
+svg.iconic.iconic-sm:not(.iconic-size-md):not(.iconic-size-lg), svg.iconic.iconic-size-sm{width:16px;height:16px;}
+svg.iconic.iconic-md:not(.iconic-size-sm):not(.iconic-size-lg), svg.iconic.iconic-size-md{width:32px;height:32px;}
+svg.iconic.iconic-lg:not(.iconic-size-sm):not(.iconic-size-md), svg.iconic.iconic-size-lg{width:128px;height:128px;}
+svg.iconic-sm > g.iconic-md, svg.iconic-sm > g.iconic-lg, svg.iconic-md > g.iconic-sm, svg.iconic-md > g.iconic-lg, svg.iconic-lg > g.iconic-sm, svg.iconic-lg > g.iconic-md {display: none;}
+svg.iconic.iconic-icon-sm > g.iconic-lg, svg.iconic.iconic-icon-md > g.iconic-lg {display:none;}
+svg.iconic-sm:not(.iconic-icon-md):not(.iconic-icon-lg) > g.iconic-sm, svg.iconic-md.iconic-icon-sm > g.iconic-sm, svg.iconic-lg.iconic-icon-sm > g.iconic-sm {display:inline;}
+svg.iconic-md:not(.iconic-icon-sm):not(.iconic-icon-lg) > g.iconic-md, svg.iconic-sm.iconic-icon-md > g.iconic-md, svg.iconic-lg.iconic-icon-md > g.iconic-md {display:inline;}
+svg.iconic-lg:not(.iconic-icon-sm):not(.iconic-icon-md) > g.iconic-lg, svg.iconic-sm.iconic-icon-lg > g.iconic-lg, svg.iconic-md.iconic-icon-lg > g.iconic-lg {display:inline;}</style><style>.autocomplete-container, .autocomplete-suggestions, #powered-by-constructor-io { width: NaNpx !important }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body itemscope="" itemtype="http://schema.org/WebSite" data-crumb="90915tYCK7063kTMtWIF9duMPo_IwTyEsciAEFtDSmE" data-gr-c-s-loaded="true">
+  <meta itemprop="url" content="https://www.npmjs.com/">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZL5X6M"
+  height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+
+  <header class="anonymous   ">
+  <!-- logo -->
+  <div class="header-item brand-container">
+    <div class="logo-container" id="npm-logo">
+      <a href="https://www.npmjs.com/"><svg viewBox="0 0 18 7">
+	<path fill="#CB3837" d="M0,0v6h5v1h4v-1h9v-6"></path>
+	<path fill="#FFF" d="M1,1v4h2v-3h1v3h1v-4h1v5h2v-4h1v2h-1v1h2v-4h1v4h2v-3h1v3h1v-3h1v3h1v-4"></path>
+</svg></a>
+    </div>
+  </div>
+  <!-- /logo -->
+
+  <!-- search -->
+  <div class="header-item header-search-container">
+    <form class="site-search" id="npm-search" action="https://www.npmjs.com/search" method="get" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+      <meta itemprop="target" content="https://www.npmjs.com/search?q={q}">
+      <div id="site-search-container">
+          <input name="q" value="" type="search" id="site-search" placeholder="find packages" tabindex="1" autocorrect="off" autocapitalize="off" itemprop="query-input" autocomplete="off">
+      </div>
+      <button tabindex="2" type="submit">
+        <span class="a11y-only">Search</span>
+        <svg viewBox="0 0 34 34" fill="none" stroke="currentColor">
+    <ellipse stroke-width="3" cx="16" cy="15" rx="12" ry="12"></ellipse>
+    <path d="M26 26 l 8 8" stroke-width="3" stroke-linecap="square"></path>
+</svg>
+      </button>
+    </form>
+  </div>
+
+
+  <!-- menu 1 -->
+  <div class="header-item user-info-container">
+    <div class="user-info">
+        <ul class="user-info-salutation single">
+          <li><a href="https://www.npmjs.com/signup">sign up</a> or <a href="https://www.npmjs.com/login">log in</a></li>
+          <li><a href="https://www.npmjs.com/login"><span class="a11y-only">log in</span><svg viewBox="-2765 2857 1080 1080">
+  <path fill="#986844" d="M-1811.2 3598.5c-.1-4.3-.3-11.3-.8-20.3-.9-15.8-2.7-40.9-6.6-70.7-6.9-52.6-21.6-130.1-52.6-200.4-22.3-50.4-53.5-97.1-90.3-135.2-4.4-20.5-16.7-66.5-43.5-104.8l-5-7.2-54 35.5c-44.5-22.4-91-33.7-138.6-33.7-47.5 0-94.1 11.3-138.6 33.7l-54-35.5-5 7.2c-26.8 38.3-39 84.3-43.5 104.8-36.8 38.1-68 84.8-90.3 135.3-31.1 70.3-45.8 147.8-52.6 200.4-6.1 46.6-7.2 81.6-7.5 93.8 16.6 14 31.3 29.8 46.9 45 17.2 16.7 39.4 28.2 59.1 41.6 1.7 1.1 3.1 2.6 4.2 4.1 15.7 10.4 31 15.4 50.2 19.5 19.2 4.1 35.6 5.6 55.6 7.3 38.7 3.2 77 7.7 115.5 12.6 43.1 5.4 86.5 11.5 130 13.1 41.6 1.5 81.8-9 121.8-19.3 8.9-2.3 17.9-4.5 26.8-6.8.6-4.2 3-8.1 6.7-10.4 40.1-25 81.2-48.2 122-72 5.9-3.5 13.7-1.9 17.9 3.3 9-8.9 17.1-18.2 24.3-27.9l.2-.2.2-.2c1.7-2.6 1.8-2.7 1.5-12.6z"></path>
+  <path fill="#FFF" d="M-1808.7 3494.8c-6.9-53.2-21.8-131.7-53.4-203.2-22.3-50.5-53.5-97.5-90.3-136.1-5.5-24.4-18.2-68.2-44.5-105.7l-10.6-15.1-57.3 37.7c-44.3-21.4-90.6-32.2-137.9-32.2-47.2 0-93.6 10.8-137.9 32.2l-57.3-37.7-10.6 15.1c-26.2 37.5-39 81.2-44.5 105.7-36.7 38.5-67.9 85.5-90.3 136.1-31.6 71.4-46.5 149.9-53.4 203.2-7.5 57.7-7.6 98-7.6 99.7v6.3l3.8 5.1c26 35 62.9 64.7 109.6 88.3 36.9 18.6 80 33.6 128.3 44.4 82.2 18.5 151.8 19 159.5 19h.6c7.7 0 77.3-.5 159.5-19 48.3-10.8 91.4-25.8 128.3-44.4 46.7-23.6 83.6-53.3 109.6-88.3l3.7-5v-6.3c.4-1.8.2-42.3-7.3-99.8zm-118.3 174.3c-34.8 17.6-75.8 31.8-121.8 42.1-80.7 18.1-150.4 18.3-153.4 18.3h-.6c-2.9 0-72.7-.2-153.4-18.3-46-10.3-87-24.5-121.8-42.1-41.7-21.1-74.7-47.2-98-77.6.4-22.5 5.1-167.5 58.6-288.5 21.8-49.3 52.4-94.9 88.5-131.8l1.8-1.9.5-2.6c2.7-13.1 12.9-56.4 36.3-93.4l37.2 24.5-7.3 16.6 22.8-11.9c43.3-22.6 88.7-34.1 135-34.1s91.7 11.5 135 34.1l22.8 11.9-7.3-16.6 37.2-24.5c23.4 37 33.6 80.4 36.3 93.4l.5 2.6 1.8 1.9c36.1 36.9 66.7 82.5 88.5 131.8 53.5 121 58.2 266.1 58.6 288.5-23.2 30.4-56.1 56.5-97.8 77.6zm-163-13c0 30.1-50.4 54.4-112.5 54.4s-112.5-24.4-112.5-54.4c0-30.1 50.4-54.4 112.5-54.4s112.5 24.3 112.5 54.4zm-223.5-65.3c0 12.3-10 22.3-22.3 22.3s-22.3-10-22.3-22.3 10-22.3 22.3-22.3c12.3-.1 22.3 9.9 22.3 22.3zm267.8 0c0 12.3-10 22.3-22.3 22.3s-22.3-10-22.3-22.3 10-22.3 22.3-22.3c12.3-.1 22.3 9.9 22.3 22.3z"></path>
+</svg></a></li>
+        </ul>
+    </div> <!-- .user-info -->
+  </div>
+  <!-- /menu 1 -->
+
+  <!-- menu 2 -->
+  <div class="header-item header-nav-menu-container">
+    <a href="https://www.npmjs.com/package/webpack#" id="npm-expansions" class="npm-expansions" data-event-trigger="click" data-event-name="npm-expansions">Napoleon's Penguin Mascot</a>
+
+    <div class="nav-menu-container" role="navigation">
+      <a class="nav-toggle drop-down-menu-toggle" href="https://www.npmjs.com/package/webpack#product-navigation"><span class="a11y-only">Toggle Navigation</span>
+        <svg viewBox="0 0 44 44">
+    <rect x="4" y="12" fill="currentColor" width="36" height="2"></rect>
+    <rect x="4" y="20" fill="currentColor" width="36" height="2"></rect>
+    <rect x="4" y="28" fill="currentColor" width="36" height="2"></rect>
+</svg>
+      </a>
+
+
+      <div class="drop-down-menu-container" role="menu">
+        <nav id="product-navigation" class="product-navigation drop-down-menu">
+          <ul class="drop-down-menu-section products-list">
+            <li><a id="nav-enterprise-link" href="https://www.npmjs.com/npm/enterprise">npm Enterprise</a></li>
+            <li><a id="nav-features-link" href="https://www.npmjs.com/features" data-event-trigger="click" data-event-name="features-nav-link">features</a></li>
+            <li><a id="nav-pricing-link" href="https://www.npmjs.com/pricing">pricing</a></li>
+            <li><a id="nav-docs-link" href="https://docs.npmjs.com/">documentation</a></li>
+            <li><a id="nav-support-link" href="https://www.npmjs.com/support">support</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- /menu 2 -->
+
+
+
+</header>
+
+
+
+
+  
+
+    <div class="container content">
+      
+<div class="content-column">
+
+  <h1 class="package-name">
+    <a href="https://www.npmjs.com/package/webpack" class="active">webpack</a>
+      <i class="icon-public"></i>
+  </h1>
+
+  <form class="star">
+    <input type="hidden" name="name" value="webpack">
+    <input id="star-input" type="checkbox" name="isStarred" value="true">
+    <label for="star-input" class="icon-star"></label>
+      <input type="hidden" name="crumb" value="90915tYCK7063kTMtWIF9duMPo_IwTyEsciAEFtDSmE">
+  </form>
+
+  <div id="readme" class="markdown">
+      <!-- this HTML was generated using marky-markdown version 12.0.0. see an issue? file at https://github.com/npm/marky-markdown/issues. please include the version in your issue. thanks for using marky! to learn more, visit https://github.com/npm/marky-markdown.  -->
+<div>
+  <a href="https://github.com/webpack/webpack" rel="nofollow">
+    <img width="200" src="./webpack_files/icon-square-big.svg">
+  </a>
+  <br>
+  <br>
+<p><a href="https://npmjs.com/package/webpack" rel="nofollow"><img src="./webpack_files/webpack.svg" alt="npm"></a></p>
+<p><a href="https://nodejs.org/" rel="nofollow"><img src="./webpack_files/webpack(1).svg" alt="node"></a>
+<a href="https://david-dm.org/webpack/webpack" rel="nofollow"><img src="./webpack_files/webpack(2).svg" alt="deps"></a>
+<a href="https://travis-ci.org/webpack/webpack" rel="nofollow"><img src="./webpack_files/master.svg" alt="tests"></a>
+<a href="https://ci.appveyor.com/project/sokra/webpack/branch/master" rel="nofollow"><img src="./webpack_files/webpack" alt="builds"></a>
+<a href="https://coveralls.io/r/webpack/webpack/" rel="nofollow"><img src="./webpack_files/webpack(3).svg" alt="coverage"></a>
+<a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fwebpack%2Fwebpack?ref=badge_shield" rel="nofollow"><img src="./webpack_files/git+https_%2F%2Fgithub.com%2Fwebpack%2Fwebpack.svg" alt="licenses"></a></p>
+  <br>
+	<a href="https://npmjs.com/package/webpack" rel="nofollow">
+		<img src="./webpack_files/webpack(4).svg">
+	</a>
+	<a href="https://opencollective.com/webpack#backer" rel="nofollow">
+		<img src="./webpack_files/badge.svg">
+	</a>
+	<a href="https://opencollective.com/webpack#sponsors" rel="nofollow">
+		<img src="./webpack_files/badge(1).svg">
+	</a>
+	<a href="https://github.com/webpack/webpack/graphs/contributors" rel="nofollow">
+		<img src="./webpack_files/webpack(5).svg">
+	</a>
+	<a href="https://gitter.im/webpack/webpack" rel="nofollow">
+		<img src="./webpack_files/webpack(6).svg">
+	</a>
+  <h1>webpack</h1>
+  <p>
+    webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+  </p><p>
+</p></div>
+<h2 align="center">Install</h2>
+<p>Install with npm:</p>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>npm&nbsp;install&nbsp;--save-dev&nbsp;webpack</span></span></div></pre></div>
+<p>Install with yarn:</p>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>yarn&nbsp;add&nbsp;webpack&nbsp;--dev</span></span></div></pre></div>
+<h2 align="center">Introduction</h2>
+<blockquote>
+<p>This README reflects Webpack v2.x and v3.x. The Webpack v1.x <a href="https://webpack.github.io/docs/?utm_source=github&amp;utm_medium=readme&amp;utm_campaign=top" rel="nofollow">documentation can be found here</a>.</p>
+</blockquote>
+<p>webpack is a bundler for modules. The main purpose is to bundle JavaScript
+files for usage in a browser, yet it is also capable of transforming, bundling,
+or packaging just about any resource or asset.</p>
+<p><strong>TL;DR</strong></p>
+<ul>
+<li>Bundles <a href="http://www.2ality.com/2014/09/es6-modules-final.html" rel="nofollow">ES Modules</a>, <a href="http://wiki.commonjs.org/" rel="nofollow">CommonJS</a> and <a href="https://github.com/amdjs/amdjs-api/wiki/AMD" rel="nofollow">AMD</a> modules (even combined).</li>
+<li>Can create a single bundle or multiple chunks that are asynchronously loaded at runtime (to reduce initial loading time).</li>
+<li>Dependencies are resolved during compilation, reducing the runtime size.</li>
+<li>Loaders can preprocess files while compiling, e.g. TypeScript to JavaScript, Handlebars strings to compiled functions, images to Base64, etc.</li>
+<li>Highly modular plugin system to do whatever else your application requires.</li>
+</ul>
+<h3><a id="user-content-get-started" class="deep-link" href="https://www.npmjs.com/package/webpack#get-started" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get Started</h3>
+<p>Check out webpack's quick <a href="https://webpack.js.org/get-started/" rel="nofollow"><strong>Get Started</strong></a> guide and the <a href="https://webpack.js.org/guides/" rel="nofollow">other guides</a>.</p>
+<h2 align="center">Concepts</h2>
+<h3><a id="user-content-plugins" class="deep-link" href="https://www.npmjs.com/package/webpack#plugins" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://webpack.js.org/plugins/" rel="nofollow">Plugins</a></h3>
+<p>webpack has a <a href="https://webpack.js.org/plugins/" rel="nofollow">rich plugin
+interface</a>. Most of the features
+within webpack itself use this plugin interface. This makes webpack very
+<strong>flexible</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/webpack/blob/master/lib/optimize/CommonsChunkPlugin.js" rel="nofollow">common-chunks-webpack-plugin</a></td>
+<td style="text-align:center;"><img src="./webpack_files/webpack.svg" alt="common-npm"></td>
+<td style="text-align:left;">Generates chunks of common modules shared between entry points and splits them into separate  bundles (e.g vendor.bundle.js &amp;&amp; app.bundle.js)</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/extract-text-webpack-plugin" rel="nofollow">extract-text-webpack-plugin</a></td>
+<td style="text-align:center;"><img src="./webpack_files/extract-text-webpack-plugin.svg" alt="extract-npm"></td>
+<td style="text-align:left;">Extracts Text (CSS) from your bundles into a separate file (app.bundle.css)</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/compression-webpack-plugin" rel="nofollow">compression-webpack-plugin</a></td>
+<td style="text-align:center;"><img src="./webpack_files/compression-webpack-plugin.svg" alt="compression-npm"></td>
+<td style="text-align:left;">Prepares compressed versions of assets to serve them with Content-Encoding</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/i18n-webpack-plugin" rel="nofollow">i18n-webpack-plugin</a></td>
+<td style="text-align:center;"><img src="./webpack_files/i18n-webpack-plugin.svg" alt="i18n-npm"></td>
+<td style="text-align:left;">Adds i18n support to your bundles</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/ampedandwired/html-webpack-plugin" rel="nofollow">html-webpack-plugin</a></td>
+<td style="text-align:center;"><img src="./webpack_files/html-webpack-plugin.svg" alt="html-plugin-npm"></td>
+<td style="text-align:left;">Simplifies creation of HTML files (<code>index.html</code>) to serve your bundles</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-loaders" class="deep-link" href="https://www.npmjs.com/package/webpack#loaders" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://webpack.js.org/loaders/" rel="nofollow">Loaders</a></h3>
+<p>webpack enables use of loaders to preprocess files. This allows you to bundle
+<strong>any static resource</strong> way beyond JavaScript. You can easily <a href="https://webpack.js.org/api/loaders/" rel="nofollow">write your own
+loaders</a> using Node.js.</p>
+<p>Loaders are activated by using <code>loadername!</code> prefixes in <code>require()</code> statements,
+or are automatically applied via regex from your webpack configuration.</p>
+<h4><a id="user-content-files" class="deep-link" href="https://www.npmjs.com/package/webpack#files" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Files</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/raw-loader" rel="nofollow">raw-loader</a></td>
+<td style="text-align:center;"><img src="./webpack_files/raw-loader.svg" alt="raw-npm"></td>
+<td style="text-align:left;">Loads raw content of a file (utf-8)</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/val-loader" rel="nofollow">val-loader</a></td>
+<td style="text-align:center;"><img src="./webpack_files/val-loader.svg" alt="val-npm"></td>
+<td style="text-align:left;">Executes code as module and considers exports as JS code</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/url-loader" rel="nofollow">url-loader</a></td>
+<td style="text-align:center;"><img src="./webpack_files/url-loader.svg" alt="url-npm"></td>
+<td style="text-align:left;">Works like the file loader, but can return a Data Url if the file is smaller than a limit</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/file-loader" rel="nofollow">file-loader</a></td>
+<td style="text-align:center;"><img src="./webpack_files/file-loader.svg" alt="file-npm"></td>
+<td style="text-align:left;">Emits the file into the output folder and returns the (relative) url</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-json" class="deep-link" href="https://www.npmjs.com/package/webpack#json" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/json-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/json.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/json-loader.svg" alt="json-npm"></td>
+<td style="text-align:left;">Loads a JSON file (included by default)</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/json5-loader" rel="nofollow"><img width="48" height="10.656" src="./webpack_files/json5-logo.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/json5-loader.svg" alt="json5-npm"></td>
+<td style="text-align:left;">Loads and transpiles a JSON 5 file</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/awnist/cson-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/coffeescript.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/cson-loader.svg" alt="cson-npm"></td>
+<td style="text-align:left;">Loads and transpiles a CSON file</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-transpiling" class="deep-link" href="https://www.npmjs.com/package/webpack#transpiling" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transpiling</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/script-loader" rel="nofollow"><code>&lt;script&gt;</code></a></td>
+<td style="text-align:center;"><img src="./webpack_files/script-loader.svg" alt="script-npm"></td>
+<td style="text-align:left;">Executes a JavaScript file once in global context (like in script tag), <code>require()</code>s are not parsed</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/babel/babel-loader" rel="nofollow"><img width="48" height="48" title="babel-loader" src="./webpack_files/babel-10.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/babel-loader.svg" alt="babel-npm"></td>
+<td style="text-align:left;">Loads ES2015+ code and transpiles to ES5 using <a href="https://github.com/babel/babel" rel="nofollow">Babel</a></td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/jupl/traceur-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/tc.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/traceur-loader.svg" alt="traceur-npm"></td>
+<td style="text-align:left;">Loads ES2015+ code and transpiles to ES5 using <a href="https://github.com/google/traceur-compiler" rel="nofollow">Traceur</a></td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/TypeStrong/ts-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/logo.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/ts-loader.svg" alt="type-npm"></td>
+<td style="text-align:left;">Loads TypeScript like JavaScript</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/s-panferov/awesome-typescript-loader" rel="nofollow"><code>awesome-typescript-loader</code></a></td>
+<td style="text-align:center;"><img src="./webpack_files/awesome-typescript-loader.svg" alt="awesome-typescript-npm"></td>
+<td style="text-align:left;">Awesome TypeScript loader for webpack</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/coffee-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/coffeescript.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/coffee-loader.svg" alt="coffee-npm"></td>
+<td style="text-align:left;">Loads CoffeeScript like JavaScript</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-templating" class="deep-link" href="https://www.npmjs.com/package/webpack#templating" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Templating</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/html-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/html5.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/html-loader.svg" alt="html-npm"></td>
+<td style="text-align:left;">Exports HTML as string, requires references to static resources</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/pugjs/pug-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/pug-final-logo-_-colour-128.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/pug-loader.svg" alt="pug-npm"></td>
+<td style="text-align:left;">Loads Pug templates and returns a function</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/jade-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/jade-3.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/jade-loader.svg" alt="jade-npm"></td>
+<td style="text-align:left;">Loads Jade templates and returns a function</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/peerigon/markdown-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/markdown.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/markdown-loader.svg" alt="md-npm"></td>
+<td style="text-align:left;">Compiles Markdown to HTML</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/posthtml/posthtml-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/logo(1).svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/posthtml-loader.svg" alt="posthtml-npm"></td>
+<td style="text-align:left;">Loads and transforms a HTML file using <a href="https://github.com/posthtml/posthtml" rel="nofollow">PostHTML</a></td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/altano/handlebars-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/handlebars-1.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/handlebars-loader.svg" alt="hbs-npm"></td>
+<td style="text-align:left;">Compiles Handlebars to HTML</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-styling" class="deep-link" href="https://www.npmjs.com/package/webpack#styling" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Styling</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/style-loader" rel="nofollow"><code>&lt;style&gt;</code></a></td>
+<td style="text-align:center;"><img src="./webpack_files/style-loader.svg" alt="style-npm"></td>
+<td style="text-align:left;">Add exports of a module as style to DOM</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/css-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/css-3.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/css-loader.svg" alt="css-npm"></td>
+<td style="text-align:left;">Loads CSS file with resolved imports and returns CSS code</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/less-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/less-63.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/less-loader.svg" alt="less-npm"></td>
+<td style="text-align:left;">Loads and compiles a LESS file</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/jtangelder/sass-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/sass-1.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/sass-loader.svg" alt="sass-npm"></td>
+<td style="text-align:left;">Loads and compiles a SASS/SCSS file</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/shama/stylus-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/stylus.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/stylus-loader.svg" alt="stylus-npm"></td>
+<td style="text-align:left;">Loads and compiles a Stylus file</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/postcss/postcss-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/postcss.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/postcss-loader.svg" alt="postcss-npm"></td>
+<td style="text-align:left;">Loads and transforms a CSS/SSS file using <a href="http://postcss.org/" rel="nofollow">PostCSS</a></td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-linting--testing" class="deep-link" href="https://www.npmjs.com/package/webpack#linting--testing" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linting &amp; Testing</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack/mocha-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/mocha.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/mocha-loader.svg" alt="mocha-npm"></td>
+<td style="text-align:left;">Tests with mocha (Browser/NodeJS)</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/MoOx/eslint-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/eslint.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/eslint-loader.svg" alt="eslint-npm"></td>
+<td style="text-align:left;">PreLoader for linting code using ESLint</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack-contrib/jshint-loader" rel="nofollow"><img width="48" height="20.64" src="./webpack_files/jshint-dark.png"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/jshint-loader.svg" alt="jshint-npm"></td>
+<td style="text-align:left;">PreLoader for linting code using JSHint</td>
+</tr>
+</tbody>
+</table>
+<h4><a id="user-content-frameworks" class="deep-link" href="https://www.npmjs.com/package/webpack#frameworks" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Frameworks</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center;">Name</th>
+<th style="text-align:center;">Status</th>
+<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/vuejs/vue-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/vue-9.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/vue-loader.svg" alt="vue-npm"></td>
+<td style="text-align:left;">Loads and compiles Vue Components</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/webpack-contrib/polymer-webpack-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/polymer.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/polymer-webpack-loader.svg" alt="polymer-npm"></td>
+<td style="text-align:left;">Process HTML &amp; CSS with preprocessor of choice and <code>require()</code> Web Components like first-class modules</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/TheLarkInn/angular2-template-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/angular-icon-1.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/angular2-template-loader.svg" alt="angular-npm"></td>
+<td style="text-align:left;">Loads and compiles Angular 2 Components</td>
+</tr>
+<tr>
+<td style="text-align:center;"><a href="https://github.com/riot/tag-loader" rel="nofollow"><img width="48" height="48" src="./webpack_files/riot.svg"></a></td>
+<td style="text-align:center;"><img src="./webpack_files/riot-tag-loader.svg" alt="riot-npm"></td>
+<td style="text-align:left;">Riot official webpack loader</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-performance" class="deep-link" href="https://www.npmjs.com/package/webpack#performance" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Performance</h3>
+<p>webpack uses async I/O and has multiple caching levels. This makes webpack fast
+and incredibly <strong>fast</strong> on incremental compilations.</p>
+<h3><a id="user-content-module-formats" class="deep-link" href="https://www.npmjs.com/package/webpack#module-formats" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module Formats</h3>
+<p>webpack supports ES2015+, CommonJS and AMD modules <strong>out of the box</strong>. It performs clever static
+analysis on the AST of your code. It even has an evaluation engine to evaluate
+simple expressions. This allows you to <strong>support most existing libraries</strong> out of the box.</p>
+<h3><a id="user-content-code-splitting" class="deep-link" href="https://www.npmjs.com/package/webpack#code-splitting" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://webpack.js.org/guides/code-splitting/" rel="nofollow">Code Splitting</a></h3>
+<p>webpack allows you to split your codebase into multiple chunks. Chunks are
+loaded asynchronously at runtime. This reduces the initial loading time.</p>
+<h3><a id="user-content-optimizations" class="deep-link" href="https://www.npmjs.com/package/webpack#optimizations" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://webpack.js.org/guides/production-build/" rel="nofollow">Optimizations</a></h3>
+<p>webpack can do many optimizations to <strong>reduce the output size of your
+JavaScript</strong> by deduplicating frequently used modules, minifying, and giving
+you full control of what is loaded initially and what is loaded at runtime
+through code splitting. It can also make your code chunks <strong>cache
+friendly</strong> by using hashes.</p>
+<h2 align="center">Contributing</h2>
+<p><strong>We want contributing to webpack to be fun, enjoyable, and educational for anyone, and everyone.</strong> We have a <a href="https://medium.com/webpack/contributors-guide/home" rel="nofollow">vibrant ecosystem</a> that spans beyond this single repo. We welcome you to check out any of the repositories in <a href="http://github.com/webpack" rel="nofollow">our organization</a> or <a href="http://github.com/webpack-contrib" rel="nofollow">webpack-contrib organization</a> which houses all of our loaders and plugins.</p>
+<p>Contributions go far beyond pull requests and commits. Although we love giving you the opportunity to put your stamp on webpack, we also are thrilled to receive a variety of other contributions including:</p>
+<ul>
+<li><a href="https://github.com/webpack/webpack.js.org" rel="nofollow">Documentation</a> updates, enhancements, designs, or bugfixes</li>
+<li>Spelling or grammar fixes</li>
+<li>README.md corrections or redesigns</li>
+<li>Adding unit, or functional tests</li>
+<li>Triaging GitHub issues -- especially determining whether an issue still persists or is reproducible.</li>
+<li><a href="https://twitter.com/search?q=webpack" rel="nofollow">Searching #webpack on twitter</a> and helping someone else who needs help</li>
+<li>Teaching others how to contribute to one of the many webpack's repos!</li>
+<li><a href="https://github.com/webpack-contrib/awesome-webpack" rel="nofollow">Blogging, speaking about, or creating tutorials</a> about one of webpack's many features.</li>
+<li>Helping others in our webpack <a href="https://gitter.im/webpack/webpack" rel="nofollow">gitter channel</a>.</li>
+</ul>
+<p>If you are worried or don't know where to start, you can <strong>always</strong> reach out to <a href="https://twitter.com/thelarkinn" rel="nofollow">Sean Larkin (@TheLarkInn) on Twitter</a> or simply submit an issue and a maintainer can help give you guidance!</p>
+<p>We have also started a series on our <a href="https://medium.com/webpack" rel="nofollow">Medium Publication</a> called <a href="https://medium.com/webpack/contributors-guide/home" rel="nofollow">The Contributor's Guide to webpack</a>. We welcome you to read it and post any questions or responses if you still need help.</p>
+<p><em>Looking to speak about webpack?</em> We'd <strong>love</strong> to review your talk abstract/CFP! You can email it to webpack [at] opencollective [dot] com and we can give pointers or tips!!!</p>
+<h3 align="center">Creating your own plugins and loaders</h3>
+<p>If you create a loader or plugin, we would &lt;3 for you to open source it, and put it on npm. We follow the <code>x-loader</code>, <code>x-webpack-plugin</code> naming convention.</p>
+<h2 align="center">Support</h2>
+<p>We consider webpack to be a low-level tool used not only individually but also layered beneath other awesome tools. Because of it's flexibility, webpack isn't always the <em>easiest</em> entry-level solution, however we do believe it is the most powerful. That said, we're always looking for ways improve and simplify the tool without compromising functionality. If you have any ideas on ways to accomplish this, we're all ears!</p>
+<p>If you're just getting started, take a look at <a href="https://webpack.js.org/concepts/" rel="nofollow">our new docs and concepts page</a>. This has a high level overview that is great for beginners!!</p>
+<p>If you want to discuss something or just need help, <a href="https://gitter.im/webpack/webpack" rel="nofollow">here is our Gitter room</a> where there are always individuals looking to help out!</p>
+<p>If you are still having difficulty, we would love for you to post
+a question to <a href="https://stackoverflow.com/tags/webpack" rel="nofollow">StackOverflow with the webpack tag</a>. It is much easier to answer questions that include your webpack.config.js and relevant files! So if you can provide them, we'd be extremely grateful (and more likely to help you find the answer!)</p>
+<p>If you are twitter savvy you can tweet #webpack with your question and someone should be able to reach out and help also.</p>
+<p>If you have discovered a 🐜 or have a feature suggestion, feel free to create an issue on Github.</p>
+<h3><a id="user-content-license" class="deep-link" href="https://www.npmjs.com/package/webpack#license" aria-hidden="true" rel="nofollow"><svg aria-hidden="true" class="deep-link-icon" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h3>
+<p><a href="https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fwebpack%2Fwebpack?ref=badge_large" rel="nofollow"><img src="./webpack_files/git+https_%2F%2Fgithub.com%2Fwebpack%2Fwebpack(1).svg" alt="FOSSA Status"></a></p>
+<h2 align="center">Core Team</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img width="150" height="150" src="./webpack_files/sokra.png">
+        <br>
+        <a href="https://github.com/sokra" rel="nofollow">Tobias Koppers</a>
+        <p>Core</p>
+        <br>
+        <p>Founder of webpack</p>
+      </td>
+      <td>
+        <img width="150" height="150" src="./webpack_files/jhnns.png">
+        <br>
+        <a href="https://github.com/jhnns" rel="nofollow">Johannes Ewald</a>
+        <p>Loaders &amp; Plugins</p>
+        <br>
+        <p>Early adopter of webpack</p>
+      </td>
+      <td>
+        <img width="150" height="150" src="./webpack_files/TheLarkInn.png">
+        <br>
+        <a href="https://github.com/TheLarkInn" rel="nofollow">Sean T. Larkin</a>
+        <p>Public Relations</p>
+        <br>
+        <p>Founder of the core team</p>
+      </td>
+      <td>
+        <img width="150" height="150" src="./webpack_files/bebraw.png">
+        <br>
+        <a href="https://github.com/bebraw" rel="nofollow">Juho Vepsäläinen</a>
+        <p>Documentation</p>
+        <br>
+        <p>Author</p>
+        <a href="https://leanpub.com/survivejs-webpack" rel="nofollow">
+          <img height="15" src="./webpack_files/93e325c0-aac9-11e6-964d-cabe218c584c.png">
+        </a>
+		<br>
+      </td>
+      <td>
+        <img width="150" height="150" src="./webpack_files/spacek33z.png">
+        <br>
+        <a href="https://github.com/spacek33z" rel="nofollow">Kees Kluskens</a>
+        <p>Development</p>
+        <br>
+        <p>Sponsor</p><p>
+        <a href="https://codeyellow.nl/" rel="nofollow">
+          <img height="15px" src="./webpack_files/ad62eb04-aac7-11e6-9c14-a0fef35b9b56.png">
+        </a>
+		<br>
+      </p></td>
+     </tr>
+  </tbody>
+</table>
+<h2 align="center">Sponsoring</h2>
+<p>Most of the core team members, webpack contributors and contributors in the ecosystem do this open source work in their free time. If you use webpack for a serious task, and you'd like us to invest more time on it, please donate. This project increases your income/productivity too. It makes development and applications faster and it reduces the required bandwidth.</p>
+<p>This is how we use the donations:</p>
+<ul>
+<li>Allow the core team to work on webpack</li>
+<li>Thank contributors if they invested a large amount of time in contributing</li>
+<li>Support projects in the ecosystem that are of great value for users</li>
+<li>Support projects that are voted most (work in progress)</li>
+<li>Infrastructure cost</li>
+<li>Fees for money handling</li>
+</ul>
+<h2 align="center">Premium Partners</h2>
+<div>
+<p><a href="https://www.ag-grid.com/?utm_source=webpack&amp;utm_medium=banner&amp;utm_campaign=sponsorship" target="_blank" rel="nofollow"><img align="center" src="./webpack_files/horiz-banner-ad-ag-grid.png">
+</a></p>
+</div>
+<h2 align="center">Other Backers and Sponsors</h2>
+<p>Before we started using OpenCollective, donations were made anonymously. Now that we have made the switch, we would like to acknowledge these sponsors (and the ones who continue to donate using OpenCollective). If we've missed someone, please send us a PR, and we'll add you to this list.</p>
+<div>
+<p><a href="https://angular.io/" rel="nofollow">Google Angular Team</a>, <a href="http://architects.io/" rel="nofollow">Architects.io</a>,
+<a href="https://moonmail.io/" target="_blank" title="Email Marketing Software" rel="nofollow"><img src="./webpack_files/moonmail-logo.svg" height="30" alt="MoonMail"></a>
+<a href="https://monei.net/" target="_blank" title="Best payment gateway rates" rel="nofollow"><img src="./webpack_files/monei-logo.svg" height="30" alt="MONEI"></a></p>
+</div>
+<h2 align="center">Gold Sponsors</h2>
+<p><a href="https://opencollective.com/webpack#sponsor" rel="nofollow">Become a gold sponsor</a> and get your logo on our README on Github with a link to your site.</p>
+<div>
+<p><a href="https://opencollective.com/webpack/goldsponsor/0/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar.svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/1/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(1).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/2/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(2).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/3/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(3).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/4/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(4).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/5/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(5).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/6/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(6).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/7/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(7).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/8/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(8).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/9/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(9).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/10/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(10).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/11/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(11).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/12/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(12).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/13/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(13).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/14/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(14).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/15/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(15).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/16/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(16).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/17/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(17).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/18/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(18).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/19/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(19).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/20/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(20).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/21/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(21).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/22/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(22).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/23/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(23).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/24/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(24).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/25/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(25).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/26/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(26).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/27/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(27).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/28/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(28).svg"></a>
+<a href="https://opencollective.com/webpack/goldsponsor/29/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(29).svg"></a></p>
+</div>
+<h2 align="center">Silver Sponsors</h2>
+<p><a href="https://opencollective.com/webpack#sponsor" rel="nofollow">Become a sliver sponsor</a> and get your logo on our README on Github with a link to your site.</p>
+<div>
+<p><a href="https://opencollective.com/webpack/silversponsor/0/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(30).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/1/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(31).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/2/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(32).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/3/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(33).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/4/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(34).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/5/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(35).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/6/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(36).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/7/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(37).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/8/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(38).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/9/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(39).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/10/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(40).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/11/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(41).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/12/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(42).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/13/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(43).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/14/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(44).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/15/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(45).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/16/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(46).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/17/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(47).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/18/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(48).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/19/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(49).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/20/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(50).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/21/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(51).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/22/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(52).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/23/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(53).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/24/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(54).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/25/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(55).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/26/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(56).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/27/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(57).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/28/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(58).svg"></a>
+<a href="https://opencollective.com/webpack/silversponsor/29/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(59).svg"></a></p>
+</div>
+<h2 align="center">Bronze Sponsors</h2>
+<p><a href="https://opencollective.com/webpack#sponsor" rel="nofollow">Become a bronze sponsor</a> and get your logo on our README on Github with a link to your site.</p>
+<div>
+<p><a href="https://opencollective.com/webpack/sponsor/0/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(60).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/1/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(61).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/2/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(62).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/3/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(63).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/4/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(64).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/5/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(65).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/6/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(66).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/7/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(67).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/8/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(68).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/9/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(69).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/10/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(70).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/11/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(71).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/12/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(72).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/13/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(73).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/14/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(74).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/15/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(75).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/16/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(76).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/17/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(77).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/18/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(78).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/19/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(79).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/20/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(80).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/21/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(81).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/22/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(82).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/23/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(83).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/24/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(84).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/25/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(85).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/26/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(86).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/27/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(87).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/28/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(88).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/29/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(89).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/30/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(90).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/31/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(91).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/32/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(92).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/33/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(93).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/34/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(94).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/35/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(95).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/36/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(96).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/37/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(97).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/38/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(98).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/39/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(99).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/40/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(100).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/41/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(101).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/42/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(102).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/43/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(103).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/44/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(104).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/45/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(105).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/46/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(106).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/47/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(107).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/48/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(108).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/49/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(109).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/50/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(110).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/51/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(111).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/52/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(112).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/53/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(113).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/54/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(114).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/55/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(115).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/56/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(116).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/57/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(117).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/58/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(118).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/59/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(119).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/60/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(120).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/61/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(121).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/62/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(122).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/63/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(123).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/64/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(124).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/65/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(125).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/66/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(126).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/67/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(127).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/68/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(128).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/69/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(129).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/70/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(130).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/71/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(131).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/72/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(132).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/73/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(133).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/74/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(134).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/75/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(135).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/76/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(136).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/77/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(137).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/78/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(138).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/79/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(139).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/80/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(140).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/81/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(141).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/82/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(142).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/83/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(143).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/84/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(144).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/85/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(145).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/86/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(146).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/87/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(147).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/88/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(148).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/89/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(149).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/90/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(150).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/91/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(151).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/92/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(152).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/93/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(153).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/94/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(154).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/95/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(155).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/96/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(156).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/97/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(157).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/98/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(158).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/99/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(159).svg"></a>
+<a href="https://opencollective.com/webpack/sponsor/100/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(160).svg"></a></p>
+</div>
+<h2 align="center">Backers</h2>
+<p><a href="https://opencollective.com/webpack#backer" rel="nofollow">Become a backer</a> and get your image on our README on Github with a link to your site.</p>
+<p><a href="https://opencollective.com/webpack/backer/0/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(161).svg"></a>
+<a href="https://opencollective.com/webpack/backer/1/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(162).svg"></a>
+<a href="https://opencollective.com/webpack/backer/2/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(163).svg"></a>
+<a href="https://opencollective.com/webpack/backer/3/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(164).svg"></a>
+<a href="https://opencollective.com/webpack/backer/4/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(165).svg"></a>
+<a href="https://opencollective.com/webpack/backer/5/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(166).svg"></a>
+<a href="https://opencollective.com/webpack/backer/6/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(167).svg"></a>
+<a href="https://opencollective.com/webpack/backer/7/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(168).svg"></a>
+<a href="https://opencollective.com/webpack/backer/8/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(169).svg"></a>
+<a href="https://opencollective.com/webpack/backer/9/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(170).svg"></a>
+<a href="https://opencollective.com/webpack/backer/10/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(171).svg"></a>
+<a href="https://opencollective.com/webpack/backer/11/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(172).svg"></a>
+<a href="https://opencollective.com/webpack/backer/12/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(173).svg"></a>
+<a href="https://opencollective.com/webpack/backer/13/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(174).svg"></a>
+<a href="https://opencollective.com/webpack/backer/14/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(175).svg"></a>
+<a href="https://opencollective.com/webpack/backer/15/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(176).svg"></a>
+<a href="https://opencollective.com/webpack/backer/16/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(177).svg"></a>
+<a href="https://opencollective.com/webpack/backer/17/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(178).svg"></a>
+<a href="https://opencollective.com/webpack/backer/18/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(179).svg"></a>
+<a href="https://opencollective.com/webpack/backer/19/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(180).svg"></a>
+<a href="https://opencollective.com/webpack/backer/20/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(181).svg"></a>
+<a href="https://opencollective.com/webpack/backer/21/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(182).svg"></a>
+<a href="https://opencollective.com/webpack/backer/22/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(183).svg"></a>
+<a href="https://opencollective.com/webpack/backer/23/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(184).svg"></a>
+<a href="https://opencollective.com/webpack/backer/24/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(185).svg"></a>
+<a href="https://opencollective.com/webpack/backer/25/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(186).svg"></a>
+<a href="https://opencollective.com/webpack/backer/26/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(187).svg"></a>
+<a href="https://opencollective.com/webpack/backer/27/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(188).svg"></a>
+<a href="https://opencollective.com/webpack/backer/28/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(189).svg"></a>
+<a href="https://opencollective.com/webpack/backer/29/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(190).svg"></a>
+<a href="https://opencollective.com/webpack/backer/30/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(191).svg"></a>
+<a href="https://opencollective.com/webpack/backer/31/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(192).svg"></a>
+<a href="https://opencollective.com/webpack/backer/32/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(193).svg"></a>
+<a href="https://opencollective.com/webpack/backer/33/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(194).svg"></a>
+<a href="https://opencollective.com/webpack/backer/34/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(195).svg"></a>
+<a href="https://opencollective.com/webpack/backer/35/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(196).svg"></a>
+<a href="https://opencollective.com/webpack/backer/36/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(197).svg"></a>
+<a href="https://opencollective.com/webpack/backer/37/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(198).svg"></a>
+<a href="https://opencollective.com/webpack/backer/38/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(199).svg"></a>
+<a href="https://opencollective.com/webpack/backer/39/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(200).svg"></a>
+<a href="https://opencollective.com/webpack/backer/40/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(201).svg"></a>
+<a href="https://opencollective.com/webpack/backer/41/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(202).svg"></a>
+<a href="https://opencollective.com/webpack/backer/42/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(203).svg"></a>
+<a href="https://opencollective.com/webpack/backer/43/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(204).svg"></a>
+<a href="https://opencollective.com/webpack/backer/44/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(205).svg"></a>
+<a href="https://opencollective.com/webpack/backer/45/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(206).svg"></a>
+<a href="https://opencollective.com/webpack/backer/46/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(207).svg"></a>
+<a href="https://opencollective.com/webpack/backer/47/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(208).svg"></a>
+<a href="https://opencollective.com/webpack/backer/48/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(209).svg"></a>
+<a href="https://opencollective.com/webpack/backer/49/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(210).svg"></a>
+<a href="https://opencollective.com/webpack/backer/50/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(211).svg"></a>
+<a href="https://opencollective.com/webpack/backer/51/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(212).svg"></a>
+<a href="https://opencollective.com/webpack/backer/52/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(213).svg"></a>
+<a href="https://opencollective.com/webpack/backer/53/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(214).svg"></a>
+<a href="https://opencollective.com/webpack/backer/54/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(215).svg"></a>
+<a href="https://opencollective.com/webpack/backer/55/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(216).svg"></a>
+<a href="https://opencollective.com/webpack/backer/56/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(217).svg"></a>
+<a href="https://opencollective.com/webpack/backer/57/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(218).svg"></a>
+<a href="https://opencollective.com/webpack/backer/58/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(219).svg"></a>
+<a href="https://opencollective.com/webpack/backer/59/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(220).svg"></a>
+<a href="https://opencollective.com/webpack/backer/60/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(221).svg"></a>
+<a href="https://opencollective.com/webpack/backer/61/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(222).svg"></a>
+<a href="https://opencollective.com/webpack/backer/62/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(223).svg"></a>
+<a href="https://opencollective.com/webpack/backer/63/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(224).svg"></a>
+<a href="https://opencollective.com/webpack/backer/64/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(225).svg"></a>
+<a href="https://opencollective.com/webpack/backer/65/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(226).svg"></a>
+<a href="https://opencollective.com/webpack/backer/66/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(227).svg"></a>
+<a href="https://opencollective.com/webpack/backer/67/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(228).svg"></a>
+<a href="https://opencollective.com/webpack/backer/68/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(229).svg"></a>
+<a href="https://opencollective.com/webpack/backer/69/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(230).svg"></a>
+<a href="https://opencollective.com/webpack/backer/70/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(231).svg"></a>
+<a href="https://opencollective.com/webpack/backer/71/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(232).svg"></a>
+<a href="https://opencollective.com/webpack/backer/72/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(233).svg"></a>
+<a href="https://opencollective.com/webpack/backer/73/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(234).svg"></a>
+<a href="https://opencollective.com/webpack/backer/74/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(235).svg"></a>
+<a href="https://opencollective.com/webpack/backer/75/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(236).svg"></a>
+<a href="https://opencollective.com/webpack/backer/76/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(237).svg"></a>
+<a href="https://opencollective.com/webpack/backer/77/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(238).svg"></a>
+<a href="https://opencollective.com/webpack/backer/78/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(239).svg"></a>
+<a href="https://opencollective.com/webpack/backer/79/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(240).svg"></a>
+<a href="https://opencollective.com/webpack/backer/80/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(241).svg"></a>
+<a href="https://opencollective.com/webpack/backer/81/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(242).svg"></a>
+<a href="https://opencollective.com/webpack/backer/82/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(243).svg"></a>
+<a href="https://opencollective.com/webpack/backer/83/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(244).svg"></a>
+<a href="https://opencollective.com/webpack/backer/84/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(245).svg"></a>
+<a href="https://opencollective.com/webpack/backer/85/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(246).svg"></a>
+<a href="https://opencollective.com/webpack/backer/86/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(247).svg"></a>
+<a href="https://opencollective.com/webpack/backer/87/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(248).svg"></a>
+<a href="https://opencollective.com/webpack/backer/88/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(249).svg"></a>
+<a href="https://opencollective.com/webpack/backer/89/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(250).svg"></a>
+<a href="https://opencollective.com/webpack/backer/90/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(251).svg"></a>
+<a href="https://opencollective.com/webpack/backer/91/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(252).svg"></a>
+<a href="https://opencollective.com/webpack/backer/92/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(253).svg"></a>
+<a href="https://opencollective.com/webpack/backer/93/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(254).svg"></a>
+<a href="https://opencollective.com/webpack/backer/94/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(255).svg"></a>
+<a href="https://opencollective.com/webpack/backer/95/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(256).svg"></a>
+<a href="https://opencollective.com/webpack/backer/96/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(257).svg"></a>
+<a href="https://opencollective.com/webpack/backer/97/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(258).svg"></a>
+<a href="https://opencollective.com/webpack/backer/98/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(259).svg"></a>
+<a href="https://opencollective.com/webpack/backer/99/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(260).svg"></a>
+<a href="https://opencollective.com/webpack/backer/100/website?requireActive=false" target="_blank" rel="nofollow"><img src="./webpack_files/avatar(261).svg"></a></p>
+<h2 align="center">Thanks to</h2>
+<p align="center">(In chronological order)</p>
+<ul>
+<li>@google for <a href="http://www.gwtproject.org/" rel="nofollow">Google Web Toolkit (GWT)</a>, which aims to compile Java to JavaScript. It features a similar <a href="http://www.gwtproject.org/doc/latest/DevGuideCodeSplitting.html" rel="nofollow">Code Splitting</a> as webpack.</li>
+<li>@medikoo for <a href="https://github.com/medikoo/modules-webmake" rel="nofollow">modules-webmake</a>, which is a similar project. webpack was born because I wanted Code Splitting for modules-webmake. Interestingly the <a href="https://github.com/medikoo/modules-webmake/issues/7" rel="nofollow">Code Splitting issue is still open</a> (thanks also to @Phoscur for the discussion).</li>
+<li>@substack for <a href="http://browserify.org/" rel="nofollow">browserify</a>, which is a similar project and source for many ideas.</li>
+<li>@jrburke for <a href="http://requirejs.org/" rel="nofollow">require.js</a>, which is a similar project and source for many ideas.</li>
+<li>@defunctzombie for the <a href="https://gist.github.com/defunctzombie/4339901" rel="nofollow">browser-field spec</a>, which makes modules available for node.js, browserify and webpack.</li>
+<li>Every early webpack user, which contributed to webpack by writing issues or PRs. You influenced the direction...</li>
+<li>@shama, @jhnns and @sokra for maintaining this project</li>
+<li>Everyone who has written a loader for webpack. You are the ecosystem...</li>
+<li>Everyone I forgot to mention here, but also influenced webpack.</li>
+</ul>
+
+  </div>
+
+</div>
+
+<div class="sidebar">
+
+
+    <div class="autoselect-wrapper npm-install icon-download">
+      <input type="text" value="npm install webpack" readonly="">
+      <p><a href="https://www.npmjs.com/package/webpack/tutorial">how? learn more</a></p>
+    </div>
+
+  <ul class="box">
+
+      <li class="last-publisher">
+          <a href="https://www.npmjs.com/~sokra">
+            <img src="./webpack_files/98269f0542fae21517c11f20aa23f0a9" alt="sokra">
+            <span>sokra</span>
+          </a>
+          published
+          <span data-date="2018-02-10T14:41:42.397Z" data-date-format="relative">a week ago</span>
+      </li>
+
+    <li>
+      <strong>3.11.0</strong>
+      is the latest
+        of 484 releases
+    </li>
+
+      <li>
+        <a href="https://github.com/webpack/webpack">github.com/webpack/webpack</a>
+      </li>
+
+
+      <li>
+          <a href="http://spdx.org/licenses/MIT.html">MIT</a>
+      </li>
+
+  </ul>
+
+    <h3 title="collaborators">
+      Collaborators
+      <small><a href="https://www.npmjs.com/package/webpack/access">list</a></small>
+    </h3>
+
+    <ul class="humans collaborators">
+        <li>
+            <a href="https://www.npmjs.com/~jhnns" rel="tipsy" original-title="jhnns">
+                <img src="./webpack_files/75d334a32948bcbb10fd4c631ae79cee" alt="jhnns">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~sokra" rel="tipsy" original-title="sokra">
+                <img src="./webpack_files/98269f0542fae21517c11f20aa23f0a9" alt="sokra">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/~thelarkinn" rel="tipsy" original-title="thelarkinn">
+                <img src="./webpack_files/04b21d9f85011c53930a4370a2e41e9b" alt="thelarkinn">
+            </a>
+        </li>
+
+
+    </ul>
+
+    <h3>Stats</h3>
+    <ul class="box">
+
+        <li>
+          <strong class="pretty-number daily-downloads">456,831</strong>
+          downloads in the last day
+        </li>
+        <li>
+          <strong class="pretty-number weekly-downloads">2,829,334</strong>
+          downloads in the last week
+        </li>
+        <li>
+          <strong class="pretty-number monthly-downloads">11,822,206</strong>
+          downloads in the last month
+        </li>
+
+        <li id="issues" data-ghapi="https://api.github.com/repos/webpack/webpack">
+          <span class="original" style="display: none;">Have an issue? <a href="https://github.com/webpack/webpack/issues">464 open issues</a></span>
+            <span class="enhanced" style="">
+              <a href="https://github.com/webpack/webpack/issues">464 open issues</a> on GitHub
+            </span>
+        </li>
+
+        <li id="pull_requests" style="">
+          <a href="https://github.com/webpack/webpack/pulls">38 open pull requests</a> on GitHub
+        </li>
+
+    </ul>
+
+        <h3>Try it out</h3>
+        <ul class="box">
+          <li class="runkit"><a href="https://runkit.com/npm/webpack" target="_blank">Test webpack in your browser.</a></li>
+        </ul>
+
+
+  <h3>Keywords</h3>
+  <p class="list-of-links">
+      None
+  </p>
+
+  <h3>Dependencies (22)</h3>
+  <p class="list-of-links">
+          <a href="https://www.npmjs.com/package/acorn">acorn</a>,
+          <a href="https://www.npmjs.com/package/acorn-dynamic-import">acorn-dynamic-import</a>,
+          <a href="https://www.npmjs.com/package/ajv">ajv</a>,
+          <a href="https://www.npmjs.com/package/ajv-keywords">ajv-keywords</a>,
+          <a href="https://www.npmjs.com/package/async">async</a>,
+          <a href="https://www.npmjs.com/package/enhanced-resolve">enhanced-resolve</a>,
+          <a href="https://www.npmjs.com/package/escope">escope</a>,
+          <a href="https://www.npmjs.com/package/interpret">interpret</a>,
+          <a href="https://www.npmjs.com/package/json-loader">json-loader</a>,
+          <a href="https://www.npmjs.com/package/json5">json5</a>,
+          <a href="https://www.npmjs.com/package/loader-runner">loader-runner</a>,
+          <a href="https://www.npmjs.com/package/loader-utils">loader-utils</a>,
+          <a href="https://www.npmjs.com/package/memory-fs">memory-fs</a>,
+          <a href="https://www.npmjs.com/package/mkdirp">mkdirp</a>,
+          <a href="https://www.npmjs.com/package/node-libs-browser">node-libs-browser</a>,
+          <a href="https://www.npmjs.com/package/source-map">source-map</a>,
+          <a href="https://www.npmjs.com/package/supports-color">supports-color</a>,
+          <a href="https://www.npmjs.com/package/tapable">tapable</a>,
+          <a href="https://www.npmjs.com/package/uglifyjs-webpack-plugin">uglifyjs-webpack-plugin</a>,
+          <a href="https://www.npmjs.com/package/watchpack">watchpack</a>,
+          <a href="https://www.npmjs.com/package/webpack-sources">webpack-sources</a>,
+                <a href="https://www.npmjs.com/package/yargs">yargs</a>
+  </p>
+
+    <h3><a href="https://www.npmjs.com/browse/depended/webpack">Dependents (7450)</a></h3>
+    <p class="list-of-links dependents">
+
+          <a href="https://www.npmjs.com/package/react-quick-select-menu">react-quick-select-menu</a>,
+        
+          <a href="https://www.npmjs.com/package/robin-react-scripts">robin-react-scripts</a>,
+        
+          <a href="https://www.npmjs.com/package/easy-nuxt">easy-nuxt</a>,
+        
+          <a href="https://www.npmjs.com/package/@mapbox/batfish">@mapbox/batfish</a>,
+        
+          <a href="https://www.npmjs.com/package/gore-gulp-lite">gore-gulp-lite</a>,
+        
+          <a href="https://www.npmjs.com/package/ankhem-loader-script">ankhem-loader-script</a>,
+        
+          <a href="https://www.npmjs.com/package/meteor-webpack">meteor-webpack</a>,
+        
+          <a href="https://www.npmjs.com/package/applugins-tools">applugins-tools</a>,
+        
+          <a href="https://www.npmjs.com/package/postweb">postweb</a>,
+        
+          <a href="https://www.npmjs.com/package/track-anchor">track-anchor</a>,
+        
+          <a href="https://www.npmjs.com/package/w3mjs">w3mjs</a>,
+        
+          <a href="https://www.npmjs.com/package/track-new-tab">track-new-tab</a>,
+        
+          <a href="https://www.npmjs.com/package/dbl-turntable">dbl-turntable</a>,
+        
+          <a href="https://www.npmjs.com/package/webpack-www-bundle">webpack-www-bundle</a>,
+        
+          <a href="https://www.npmjs.com/package/redux-universal-renderer">redux-universal-renderer</a>,
+        
+          <a href="https://www.npmjs.com/package/cmis-comp-builder">cmis-comp-builder</a>,
+        
+          <a href="https://www.npmjs.com/package/sandbox-loader">sandbox-loader</a>,
+        
+          <a href="https://www.npmjs.com/package/dbl-slider">dbl-slider</a>,
+        
+          <a href="https://www.npmjs.com/package/kp-button">kp-button</a>,
+        
+          <a href="https://www.npmjs.com/package/mortero">mortero</a>,
+        
+          <a href="https://www.npmjs.com/package/iondrive">iondrive</a>,
+        
+          <a href="https://www.npmjs.com/package/supertiny-app-lib">supertiny-app-lib</a>,
+        
+          <a href="https://www.npmjs.com/package/webpack-require">webpack-require</a>,
+        
+          <a href="https://www.npmjs.com/package/autohost-webpack-hot">autohost-webpack-hot</a>,
+        
+          <a href="https://www.npmjs.com/package/temp-angular2-material-bundled">temp-angular2-material-bundled</a>,
+        
+          <a href="https://www.npmjs.com/package/antd-build">antd-build</a>,
+        
+          <a href="https://www.npmjs.com/package/go-go-react">go-go-react</a>,
+        
+          <a href="https://www.npmjs.com/package/victory-tree">victory-tree</a>,
+        
+          <a href="https://www.npmjs.com/package/victory-sunburst">victory-sunburst</a>,
+        
+          <a href="https://www.npmjs.com/package/static-files-plugin">static-files-plugin</a>,
+        
+          <a href="https://www.npmjs.com/package/syncano-gatsby">syncano-gatsby</a>,
+        
+          <a href="https://www.npmjs.com/package/colonnade">colonnade</a>,
+        
+          <a href="https://www.npmjs.com/package/rewire-webpack">rewire-webpack</a>,
+        
+          <a href="https://www.npmjs.com/package/webpack-analyse-tool">webpack-analyse-tool</a>,
+        
+          <a href="https://www.npmjs.com/package/db-diayaml">db-diayaml</a>,
+        
+          <a href="https://www.npmjs.com/package/yun">yun</a>,
+        
+          <a href="https://www.npmjs.com/package/cyber">cyber</a>,
+        
+          <a href="https://www.npmjs.com/package/dblp">dblp</a>,
+        
+          <a href="https://www.npmjs.com/package/require-error-handler-webpack-plugin">require-error-handler-webpack-plugin</a>,
+        
+          <a href="https://www.npmjs.com/package/liv-srv">liv-srv</a>,
+        
+          <a href="https://www.npmjs.com/package/fullpack">fullpack</a>,
+        
+          <a href="https://www.npmjs.com/package/vfem">vfem</a>,
+        
+          <a href="https://www.npmjs.com/package/journeyjournal">journeyjournal</a>,
+        
+          <a href="https://www.npmjs.com/package/frontend-pipeline">frontend-pipeline</a>,
+        
+          <a href="https://www.npmjs.com/package/virtualized">virtualized</a>,
+        
+          <a href="https://www.npmjs.com/package/activated-ui-devpack">activated-ui-devpack</a>,
+        
+          <a href="https://www.npmjs.com/package/packadic-site">packadic-site</a>,
+        
+          <a href="https://www.npmjs.com/package/no-thanks-predictors">no-thanks-predictors</a>,
+        
+          <a href="https://www.npmjs.com/package/beckys57">beckys57</a>,
+                  <a href="https://www.npmjs.com/package/batworker">batworker</a>,
+        <a href="https://www.npmjs.com/browse/depended/webpack">and more</a>
+    </p>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "webpack",
+      "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
+      "url": "https://www.npmjs.com/package/webpack",
+      "keywords": "",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+         "@type": "Offer",
+         "price": "0.00"
+      }
+    }
+  </script>
+
+    <div class="hiring-container" data-template="sidebar"><div class="ad">
+  <p>
+    <a href="https://duckduckgo.com/hiring?s=npm" title="DuckDuckGo">DuckDuckGo</a> is hiring.
+    <a class="quiet" href="https://www.npmjs.com/whoshiring">View more…</a>
+  </p>
+</div></div>
+</div>
+
+
+    </div>
+
+  <footer class="pane bg-npm-navy-1">
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h3 class="h4 type-npm-pastel-3">You Need Help</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://docs.npmjs.com/">Documentation</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/support">Support / Contact Us</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="http://status.npmjs.org/">Registry Status</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/www/issues">Website Issues</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm/npm/issues">CLI Issues</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/security">Security</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-6 col-md-offset-1">
+          <h3 class="h4 type-npm-pastel-3">About npm</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/about">About npm, Inc</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/jobs">Jobs</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/npm-weekly">npm Weekly</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="http://blog.npmjs.org/">Blog</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://twitter.com/npmjs">Twitter</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://github.com/npm">GitHub</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-6 col-md-offset-1">
+          <h3 class="h4 type-npm-pastel-3">Legal Stuff</h3>
+          <hr class="divider-1">
+          <ul class="list-unstyled h6 em-default">
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/terms">Terms of Use</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/conduct">Code of Conduct</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/disputes">Package Name Disputes</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/privacy">Privacy Policy</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/receiving-reports">Reporting Abuse</a></li>
+            <li class="pbl"><a class="type-neutral-11" href="https://www.npmjs.com/policies/">Other policies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="txt-c container">
+      <a class="npm-loves-you type-neutral-11" href="https://www.npmjs.com/">
+        npm loves you
+      </a>
+    </div>
+  </footer>
+
+  <script defer="" async="" src="./webpack_files/3318080746.js.download"></script>
+  <script defer="" async="" src="./webpack_files/elqCfg.min.js.download"></script><!-- Eloqua -->
+
+
+
+<!-- pid&#x3D;11321 8765c95baa6c01585c6fd817e1710b7721abb36e https://www.npmjs.com www-19-west.internal.npmjs.com  -->
+<div class="drop-down-menu-overlay" data-drop-down-menu="product-navigation"></div><div class="autocomplete-container" style="position: absolute; display: none; max-height: 400px; z-index: 9999;"><div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 400px; z-index: 9999;"></div></div></body></html>
