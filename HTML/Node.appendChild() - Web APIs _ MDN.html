@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild -->
+<html lang="en-US" dir="ltr" class="" data-ffo-opensans="true" data-ffo-zillaslab="true"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script async="" src="./Node.appendChild() - Web APIs _ MDN_files/analytics.js.download"></script><script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  <title>Node.appendChild() - Web APIs | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="https://developer.mozilla.org/en-US/">
+    <link rel="license" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#license">
+  
+
+  
+    
+    
+
+    <link href="./Node.appendChild() - Web APIs _ MDN_files/mdn.8d8694e1694c.css" rel="stylesheet" type="text/css">
+
+    
+  
+
+    <link href="./Node.appendChild() - Web APIs _ MDN_files/wiki.b6f31ca9a664.css" rel="stylesheet" type="text/css">
+
+
+    
+
+  <link href="./Node.appendChild() - Web APIs _ MDN_files/locale-en-US.7e45c23d7d30.css" rel="stylesheet" type="text/css">
+
+  
+    <script type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/mozilla-dnthelper.3936bd979b1d.js.download" charset="utf-8"></script>
+    
+
+<script type="text/javascript">
+    // only load GA if DNT is not enabled
+    if (Mozilla && !Mozilla.dntEnabled()) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36116321-5', 'mozilla.org');
+        ga('set', 'anonymizeIp', true);
+
+        
+
+        // dimension9 == "Section editing"
+        
+            // dimension12 == 'Page Revision'
+            ga('set', 'dimension12', '1331087');
+            // dimension17 == 'English Slug'
+            ga('set', 'dimension17', 'Web/API/Node/appendChild');
+
+        (function() {
+            // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+            var win = window;
+            var removeUtms = function(){
+                var location = win.location;
+                if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                    win.history.replaceState({}, '', location.pathname);
+                }
+            };
+
+            ga('send', 'pageview', {'hitCallback': removeUtms});
+        })();
+    }
+</script>
+
+  
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="MDN Web Docs">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="MDN Web Docs">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cdn.mdn.mozilla.net/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cdn.mdn.mozilla.net/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cdn.mdn.mozilla.net/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://cdn.mdn.mozilla.net/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+     <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://cdn.mdn.mozilla.net/static/img/favicon32.7f3da72dcea1.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/font-check.713e9d01025c.js.download" charset="utf-8"></script>
+
+  
+  <link rel="dns-prefetch" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+  <link rel="preconnect" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+
+  <link rel="preload" href="https://interactive-examples.mdn.mozilla.net/js/codemirror-5-31-0.js" as="script">
+  <link rel="preload" href="https://interactive-examples.mdn.mozilla.net/js/editor-js.js" as="script">
+
+  <link rel="alternate" type="application/json" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild$json">
+  <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">
+
+  
+    
+      <link rel="alternate" hreflang="de" href="https://developer.mozilla.org/de/docs/Web/API/Node/appendChild" title="Node.appendChild()">
+    
+      <link rel="alternate" hreflang="es" href="https://developer.mozilla.org/es/docs/Web/API/Node/appendChild" title="Nodo appendChild">
+    
+      <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild" title="element.appendChild">
+    
+      <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/Web/API/Node/appendChild" title="Node.appendChild">
+    
+      <link rel="alternate" hreflang="ko" href="https://developer.mozilla.org/ko/docs/Web/API/Node/appendChild" title="Node.appendChild()">
+    
+      <link rel="alternate" hreflang="pl" href="https://developer.mozilla.org/pl/docs/Web/API/Element/appendChild" title="element.appendChild">
+    
+      <link rel="alternate" hreflang="pt-BR" href="https://developer.mozilla.org/pt-BR/docs/Web/API/Node/appendChild" title="Node.appendChild">
+    
+      <link rel="alternate" hreflang="pt-PT" href="https://developer.mozilla.org/pt-PT/docs/DOM/element.appendChild" title="element.appendChild">
+    
+      <link rel="alternate" hreflang="ru" href="https://developer.mozilla.org/ru/docs/Web/API/Node/appendChild" title="Node.appendChild">
+    
+      <link rel="alternate" hreflang="vi" href="https://developer.mozilla.org/vi/docs/Web/API/Node/appendChild" title="Node.appendChild()">
+    
+      <link rel="alternate" hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/appendChild" title="Node.appendChild">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Node.appendChild()">
+  <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">
+  <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">
+  <meta name="twitter:title" content="Node.appendChild()">
+  
+  <meta property="og:description" content="The Node.appendChild() method adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node).">
+  <meta name="description" content="The Node.appendChild() method adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node).">
+  <meta name="twitter:description" content="The Node.appendChild() method adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node).">
+  
+
+<script async="" data-manual="true" src="./Node.appendChild() - Web APIs _ MDN_files/syntax-prism.05dc5663d445.js.download"></script></head>
+<body data-slug="Web/API/Node/appendChild" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        (function(){
+  var FLAGS = {
+    'compat_data': true,'kumaediting': false,'line_length': true,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true,'wiki_spam_training': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://cdn.mdn.mozilla.net/static/';
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://cdn.mdn.mozilla.net/static/build/styles/editor-content.8af8d429eff1.css','https://cdn.mdn.mozilla.net/static/build/styles/editor-locale-en-US.7e45c23d7d30.css',
+                ],
+
+                'wiki-compat-tables': ['https://cdn.mdn.mozilla.net/static/build/styles/wiki-compat-tables.aaae6c040d67.css',]
+            },
+            js: {
+                'syntax-prism': ['https://cdn.mdn.mozilla.net/static/build/js/syntax-prism.05dc5663d445.js',],
+                'wiki-compat-tables': ['https://cdn.mdn.mozilla.net/static/build/js/wiki-compat-tables.003f4acf76ea.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+
+    })(this);
+</script>
+    
+  <div class="global-notice">
+    <div class="wrap center">
+      
+        <p><bdi>MDN wants to learn about developers like you: <a href="https://qsurvey.mozilla.com/s3/MDN-survey">https://qsurvey.mozilla.com/s3/MDN-survey</a></bdi></p>
+      
+    </div>
+  </div>
+
+    <ul id="nav-access">
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#content" id="skip-main">Skip to main content</a></li>
+  <li><a id="skip-language" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#language">Select language</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#q" id="skip-search">Skip to search</a></li>
+</ul>
+
+    <!-- Header -->
+    <header id="main-header" class="header-main">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">MDN Web Docs</a>
+      <div class="nav-toolbox-wrapper">
+        <nav id="main-nav" class="nav-main" role="navigation">
+    <ul>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Web">Technologies
+                <i aria-hidden="true" class="icon-caret-down"></i>
+            </a>
+            <div class="submenu js-submenu" id="nav-tech-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Learn">References &amp; Guides
+                <i aria-hidden="true" class="icon-caret-down"></i>
+            </a>
+            <div class="submenu js-submenu" id="nav-learn-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn web development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Games">Game development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback
+                <i aria-hidden="true" class="icon-caret-down"></i>
+            </a>
+            <div class="submenu js-submenu" id="nav-contact-submenu">
+              <div class="submenu-column">
+                <ul>
+                  <li>
+                      <a href="https://support.mozilla.org/">Get Firefox help
+                          <i aria-hidden="true" class="icon-external-link"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://stackoverflow.com/">Get web development help
+                          <i aria-hidden="true" class="icon-external-link"></i>
+                      </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                      <a href="https://developer.mozilla.org/en-US/docs/MDN/Community">Join the MDN community</a>
+                  </li>
+                  <li>
+                      <a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">Report a content problem
+                          <i aria-hidden="true" class="icon-external-link"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Report a bug
+                          <i aria-hidden="true" class="icon-external-link"></i>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </li>
+  </ul>
+</nav>
+        <div id="toolbox" class="toolbox">
+  <ul>
+  <li class="nav-login"><div class="login">
+    
+        
+        <a href="https://developer.mozilla.org/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FAPI%2FNode%2FappendChild" class="login-link js-login-link" data-service="GitHub" rel="nofollow">
+            Sign in
+            <i class="icon-github" aria-hidden="true"></i>
+        </a>
+    
+</div></li>
+  </ul>
+</div>
+      </div>
+      <form id="nav-main-search" action="https://developer.mozilla.org/en-US/search" method="get" role="search" class="nav-main-search">
+  <div class="search-wrap">
+    <label for="main-q" class="offscreen">Search</label>
+    <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" aria-hidden="true">
+    <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>
+    <button type="submit" class="offscreen">Search</button>
+    <button type="button" id="close-header-search" class="close-header-search transparent">
+        <span class="offscreen">Close search</span>
+        <i aria-hidden="true" class="icon-times"></i>
+    </button>
+  </div>
+</form>
+    </header> 
+
+  <!-- Content will go here -->
+  <main id="content" role="main">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/de/docs/Web/API/Node/appendChild" data-locale="de" title="German">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/es/docs/Web/API/Node/appendChild" data-locale="es" title="Spanish">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild" data-locale="fr" title="French">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/Web/API/Node/appendChild" data-locale="ja" title="Japanese">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ko/docs/Web/API/Node/appendChild" data-locale="ko" title="Korean">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pl/docs/Web/API/Element/appendChild" data-locale="pl" title="Polish">Polski (pl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pt-BR/docs/Web/API/Node/appendChild" data-locale="pt-BR" title="Portuguese (Brazilian)">Português (do&nbsp;Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pt-PT/docs/DOM/element.appendChild" data-locale="pt-PT" title="Portuguese (Portugal)">Português (Europeu) (pt-PT)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ru/docs/Web/API/Node/appendChild" data-locale="ru" title="Russian">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/vi/docs/Web/API/Node/appendChild" data-locale="vi" title="Vietnamese">Tiếng Việt (vi)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/appendChild" data-locale="zh-CN" title="Chinese (Simplified)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild$locales" rel="nofollow" id="translations-add">Add a translation</a></li>
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild$edit" class="button neutral" id="edit-button" rel="nofollow">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li class="page-buttons-advanced"><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Advanced</div>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild$history" rel="nofollow">History</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#" onclick="return window.print();">Print this article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+
+      <div class="document-title">
+        
+
+        <h1>Node<wbr>.append<wbr>Child()</h1>
+      </div>
+    </div>
+  </div>
+  
+  <div id="toc" class="toc">
+    <div class="center">
+      <div class="toc-head">Jump to:</div>
+        <ol class="toc-links">
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Syntax" rel="internal">Syntax</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Example" rel="internal">Returns</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Example" rel="internal">Notes</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Example" rel="internal">Example</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Specifications" rel="internal">Specifications</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#Browser_compatibility" rel="internal">Browser compatibility</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#See_also" rel="internal">See also</a>
+        </li></ol>
+    </div>
+  </div>
+  
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div></div>
+
+<p>The <code><strong>Node.appendChild()</strong></code> method adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, <code>appendChild()</code> moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node).</p>
+
+<p>This means that a node can't be in two points of the document simultaneously. So if the node already has a parent, the node is first removed, then appended at the new position. The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode" title="The Node.cloneNode() method returns a duplicate of the node on which this method was called."><code>Node.cloneNode()</code></a> can be used to make a copy of the node before appending it under the new parent. Note that the copies made with <code>cloneNode</code> will not be automatically kept in sync.</p>
+
+<p>If the given child is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment" title="The DocumentFragment interface represents a minimal document object that has no parent. It is used as a lightweight version of Document that stores a segment of a document structure comprised of nodes just like a standard document. The key difference is that because the document fragment isn&#39;t part of the active document tree structure, changes made to the fragment don&#39;t affect the document, cause reflow, or incur any performance impact that can occur when changes are made."><code>DocumentFragment</code></a>,&nbsp;the entire contents of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment" title="The DocumentFragment interface represents a minimal document object that has no parent. It is used as a lightweight version of Document that stores a segment of a document structure comprised of nodes just like a standard document. The key difference is that because the document fragment isn&#39;t part of the active document tree structure, changes made to the fragment don&#39;t affect the document, cause reflow, or incur any performance impact that can occur when changes are made."><code>DocumentFragment</code></a> are moved into the child list of the specified parent node.</p>
+
+<h2 id="Syntax" name="Syntax">Syntax</h2>
+
+<pre class="syntaxbox">var <em>aChild</em> = <em>element</em>.appendChild(<em>aChild</em>);</pre>
+
+<h2 id="Example" name="Example">Returns</h2>
+
+<p>The returned value is the appended child&nbsp;except when&nbsp;the given child&nbsp;is a&nbsp;<a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment" title="The DocumentFragment interface represents a minimal document object that has no parent. It is used as a lightweight version of Document that stores a segment of a document structure comprised of nodes just like a standard document. The key difference is that because the document fragment isn&#39;t part of the active document tree structure, changes made to the fragment don&#39;t affect the document, cause reflow, or incur any performance impact that can occur when changes are made."><code>DocumentFragment</code></a>,&nbsp;in which case the empty <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment" title="The DocumentFragment interface represents a minimal document object that has no parent. It is used as a lightweight version of Document that stores a segment of a document structure comprised of nodes just like a standard document. The key difference is that because the document fragment isn&#39;t part of the active document tree structure, changes made to the fragment don&#39;t affect the document, cause reflow, or incur any performance impact that can occur when changes are made."><code>DocumentFragment</code></a>&nbsp;is returned.</p>
+
+<h2 id="Example" name="Example">Notes</h2>
+
+<p>Chaining may not work as expected due to <code>appendChild()</code> returning the child element:</p>
+
+<pre class="brush: js line-numbers  language-js"><code class=" language-js"><span class="token keyword">var</span> aBlock <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'block'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>doc<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>Sets <code>aBlock</code> to <code>&lt;b&gt;&lt;/b&gt;</code> only, which is not what you probably want.</p>
+
+<h2 id="Example" name="Example">Example</h2>
+
+<pre class="brush:js line-numbers  language-js"><code class=" language-js"><span class="token comment" spellcheck="true">// Create a new paragraph element, and append it to the end of the document body</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Specifications">Specifications</h2>
+
+<table class="standard-table">
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a href="https://dom.spec.whatwg.org/#dom-node-appendchild" hreflang="en" lang="en" class="external external-icon" rel="noopener">DOM<br><small lang="en-US">The definition of 'Node.appendChild()' in that specification.</small></a></td>
+   <td><span class="spec-Living">Living Standard</span></td>
+   <td>No change from <a rel="noopener" hreflang="en" href="https://www.w3.org/TR/DOM-Level-3-Core/" title="The &#39;Document Object Model (DOM) Level 3 Core Specification&#39; specification" class="external external-icon" lang="en">Document Object Model (DOM) Level 3 Core Specification</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/DOM-Level-3-Core/core.html#ID-184E7107" hreflang="en" lang="en" class="external external-icon" rel="noopener">Document Object Model (DOM) Level 3 Core Specification<br><small lang="en-US">The definition of 'Node.appendChild()' in that specification.</small></a></td>
+   <td><span class="spec-Obsolete">Obsolete</span></td>
+   <td>No change from <a rel="noopener" hreflang="en" href="https://www.w3.org/TR/DOM-Level-2-Core/" title="The &#39;Document Object Model (DOM) Level 2 Core Specification&#39; specification" class="external external-icon" lang="en">Document Object Model (DOM) Level 2 Core Specification</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-184E7107" hreflang="en" lang="en" class="external external-icon" rel="noopener">Document Object Model (DOM) Level 2 Core Specification<br><small lang="en-US">The definition of 'Node.appendChild()' in that specification.</small></a></td>
+   <td><span class="spec-Obsolete">Obsolete</span></td>
+   <td>No change from <a rel="noopener" hreflang="en" href="https://www.w3.org/TR/REC-DOM-Level-1/" title="The &#39;Document Object Model (DOM) Level 1 Specification&#39; specification" class="external external-icon" lang="en">Document Object Model (DOM) Level 1 Specification</a>.</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#ID-184E7107" hreflang="en" lang="en" class="external external-icon" rel="noopener">Document Object Model (DOM) Level 1 Specification<br><small lang="en-US">The definition of 'Node.appendChild()' in that specification.</small></a></td>
+   <td><span class="spec-Obsolete">Obsolete</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Browser_compatibility">Browser compatibility</h2>
+
+<p></p><p class="warning"><strong><a href="https://github.com/mdn/browser-compat-data" class="external external-icon" rel="noopener">We're converting our compatibility data into a machine-readable JSON format</a></strong>.
+            This compatibility table still uses the old format,
+            because we haven't yet converted the data it contains.
+            <strong><a href="https://developer.mozilla.org/en-US/docs/MDN/Contribute/Structures/Compatibility_tables">Find out how you can help!</a></strong></p>
+
+<div class="htab">
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a>
+    <ul>
+        <li class="selected"><a>Desktop</a></li>
+        <li><a>Mobile</a></li>
+    </ul>
+<div id="compat-desktop" style="display: block;">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Edge</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div><div id="compat-mobile" style="display: none;">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Edge</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td>1.0 (1.0)</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div></div><p></p>
+
+
+
+
+
+<p>&nbsp;</p>
+
+<h2 id="See_also" name="See_also">See also</h2>
+
+<ul>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild" title="The Node.removeChild() method removes a child node from the DOM. Returns removed node."><code>Node.removeChild()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild" title="The Node.replaceChild() method replaces one child node of the specified node with another."><code>Node.replaceChild()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore" title="The Node.insertBefore() method inserts a node before the reference node as a child of a specified parent node. If the given child is a reference to an existing node in the document, insertBefore() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node)."><code>Node.insertBefore()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/hasChildNodes" title="There are various ways to determine whether the node has a child node."><code>Node.hasChildNodes()</code></a></li>
+ <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append" title="The ParentNode.append method inserts a set of Node objects or DOMString objects after the last child of the ParentNode. DOMString objects are inserted as equivalent Text nodes."><code>ParentNode.append()</code></a></li>
+</ul>
+                  
+                
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Document Tags and Contributors</h2>
+                
+                
+  <div class="tag-attach-list contributors-sub">
+    <i aria-hidden="true" class="icon-tags icon-fw"></i>
+    <strong>Tags:</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/API" rel="nofollow">API</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/DOM" rel="nofollow">DOM</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Method" rel="nofollow">Method</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Node" rel="nofollow">Node</a></li>
+      
+        <li><a href="https://developer.mozilla.org/en-US/docs/tag/Reference" rel="nofollow">Reference</a></li>
+      
+    </ul>
+  </div>
+
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="https://developer.mozilla.org/en-US/profiles/mfluehr">mfluehr</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Floofies">Floofies</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/tasstwa">tasstwa</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Delapouite">Delapouite</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/upsuper">upsuper</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/abbycar">abbycar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/madarche">madarche</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/HarryPehkonen">HarryPehkonen</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/michaellaszlo">michaellaszlo</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/fscholz">fscholz</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/kscarfone">kscarfone</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Fuebar">Fuebar</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/mattbasta">mattbasta</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/ethertank">ethertank</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/eryk.piast">eryk.piast</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/elliottcable">elliottcable</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/OsamaBinLogin">OsamaBinLogin</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Jesdisciple">Jesdisciple</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Bzbarsky">Bzbarsky</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Mgjbot">Mgjbot</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Prnl">Prnl</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Waldo">Waldo</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Alexis%20wilke">Alexis wilke</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Tprogers">Tprogers</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Donspeck">Donspeck</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Nickolay">Nickolay</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Jabez">Jabez</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Pmash">Pmash</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Ptak82">Ptak82</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/RobG">RobG</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/BenoitL">BenoitL</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Dria">Dria</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Dougal">Dougal</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/Callek">Callek</a>, 
+    
+        <a href="https://developer.mozilla.org/en-US/profiles/JesseW">JesseW</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
+                    <a href="https://developer.mozilla.org/en-US/profiles/mfluehr">mfluehr</a>,
+                    <time datetime="2017-11-28T09:56:31.922108-08:00">Nov 28, 2017, 9:56:31 AM</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                
+                  <!-- crumbs -->
+                  
+  
+    <nav class="crumbs" role="navigation">
+      <ol typeof="BreadcrumbList" vocab="https://schema.org/" aria-label="breadcrumbs">
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/en-US/docs/Web" property="item" typeof="WebPage">
+              <span property="name">Web technology for developers</span>
+            </a>
+            <meta property="position" content="1">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API" property="item" typeof="WebPage">
+              <span property="name">Web APIs</span>
+            </a>
+            <meta property="position" content="2">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node" property="item" typeof="WebPage">
+              <span property="name">Node</span>
+            </a>
+            <meta property="position" content="3">
+          </li>
+        
+        <li property="itemListElement" typeof="ListItem" class="crumb">
+          <span property="name">Node<wbr>.append<wbr>Child()</span>
+        </li>
+      </ol>
+    </nav>
+  
+                
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="quick-links-head">Related Topics</div>
+    <ol><li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">Document Object Model</a></strong></li><li><strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node"><code>Node</code></a></strong></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Properties</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURI" title="The Node.baseURI read-only property returns the absolute base URL of a node."><code>baseURI</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURIObject" title="The Node.baseURIObject property returns the nsIURI representing the node&#39;s (typically a document or an element) base URL. It&#39;s similar to Node.baseURI, except it returns an nsIURI instead of a string."><code>base<wbr>URIObject</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes" title="The Node.childNodes read-only property returns a live collection of child nodes of the given element where the first child node is assigned index 0."><code>child<wbr>Nodes</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild" title="The Node.firstChild read-only property returns the node&#39;s first child in the tree, or null if the node has no children."><code>first<wbr>Child</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/innerText" title="Node.innerText is a property that represents the &quot;rendered&quot; text content of a node and its descendants. As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied to the clipboard. This feature was originally introduced by Internet Explorer, and was formally specified in the HTML standard in 2016 after being adopted by all major browser vendors."><code>inner<wbr>Text</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected" title=""><code>isConnected</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild" title="The Node.lastChild read-only property returns the last child of the node. If its parent is an element, then the child is generally an element node, a text node, or a comment node. It returns null if there are no child elements."><code>last<wbr>Child</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/localName" title="The Node.localName read-only property returns the local part of the qualified name of this node."><code>local<wbr>Name</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/namespaceURI" title="The Node.namespaceURI read-only property returns the namespace URI of the node, or null if the node is not in a namespace. When the node is a document, it returns the XML namespace for the current document."><code>namespaceURI</code></a></s></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling" title="The Node.nextSibling read-only property returns the node immediately following the specified one in its parent&#39;s childNodes list, or null if the specified node is the last node in that list."><code>next<wbr>Sibling</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName" title="The Node.nodeName read-only property returns the name of the current node as a string."><code>node<wbr>Name</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodePrincipal" title="The Node.nodePrincipal read-only property returns the nsIPrincipal object representing current security context of the node."><code>node<wbr>Principal</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType" title="The read-only Node.nodeType property that represents the type of the node."><code>node<wbr>Type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue" title="The Node.nodeValue property returns or sets the value of the current node."><code>node<wbr>Value</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/outerText" title="Editorial review completed."><code>outer<wbr>Text</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/ownerDocument" title="The Node.ownerDocument read-only property returns the top-level document object for this node."><code>owner<wbr>Document</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement" title="The Node.parentElement read-only property returns the DOM node&#39;s parent Element, or null if the node either has no parent, or its parent isn&#39;t a DOM Element."><code>parent<wbr>Element</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode" title="The Node.parentNode read-only property returns the parent of the specified node in the DOM tree."><code>parent<wbr>Node</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/prefix" title="The Node.prefix read-only property returns the namespace prefix of the specified node, or null if no prefix is specified."><code>prefix</code></a></s></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling" title="The Node.previousSibling read-only property returns the node immediately preceding the specified one in its parent&#39;s childNodes list, or null if the specified node is the first in that list."><code>previous<wbr>Sibling</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/rootNode" title="The Node.rootNode read-only property returns a Node object representing the topmost node in the tree, or the current node if it&#39;s the topmost node in the tree. This is found by walking backward along Node.parentNode until the top is reached."><code>root<wbr>Node</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent" title="The Node.textContent property represents the text content of a node and its descendants."><code>text<wbr>Content</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Methods</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><em><code>appendChild()</code></em></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode" title="The Node.cloneNode() method returns a duplicate of the node on which this method was called."><code>clone<wbr>Node()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/compareDocumentPosition" title="The Node.compareDocumentPosition() method compares the position of the current node against another node in any other document."><code>compare<wbr>Document<wbr>Position()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/contains" title="The Node.contains() method returns a Boolean value indicating whether a node is a descendant of a given node, i.e. the node itself, one of its direct children (childNodes), one of the children&#39;s direct children, and so on."><code>contains()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode" title="The getRootNode() method of the Node interface returns the context object&#39;s root, which optionally includes the shadow root if it is available."><code>get<wbr>Root<wbr>Node()</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/getUserData" title="The Node.getUserData() method returns any user DOMUserData set previously on the given node by Node.setUserData()."><code>get<wbr>User<wbr>Data()</code></a></s></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/hasChildNodes" title="There are various ways to determine whether the node has a child node."><code>has<wbr>Child<wbr>Nodes()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore" title="The Node.insertBefore() method inserts a node before the reference node as a child of a specified parent node. If the given child is a reference to an existing node in the document, insertBefore() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node)."><code>insert<wbr>Before()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isDefaultNamespace" title="The Node.isDefaultNamespace() method accepts a namespace URI as an argument and returns a Boolean with a value of true if the namespace is the default namespace on the given node or false if not."><code>isDefault<wbr>Namespace()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isEqualNode" title="The Node.isEqualNode() method tests whether two nodes are equal. Two nodes are equal when they have the same type, defining characteristics (for elements, this would be their ID, number of children, and so forth), its attributes match, and so on. The specific set of data points that must match varies depending on the types of the nodes."><code>isEqual<wbr>Node()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isSameNode" title="The Node.isSameNode() method tests whether two nodes are the same, that is if they reference the same object."><code>isSame<wbr>Node()</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isSupported" title="The Node.isSupported()returns a Boolean flag containing the result of a test whether the DOM implementation implements a specific feature and this feature is supported by the specific node."><code>isSupported()</code></a></s></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupNamespaceURI" title="The Node.lookupNamespaceURI() method accepts a prefix and returns the namespace URI associated with it on the given node if found (and null if not). Supplying null for the prefix will return the default namespace."><code>lookup<wbr>NamespaceURI()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/lookupPrefix" title="The Node.lookupPrefix() method returns a DOMString containing the prefix for a given namespace URI, if present, and null if not. When multiple prefixes are possible, the result is implementation-dependent."><code>lookup<wbr>Prefix()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/normalize" title="The Node.normalize() method puts the specified node and all of its sub-tree into a &quot;normalized&quot; form. In a normalized sub-tree, no text nodes in the sub-tree are empty and there are no adjacent text nodes."><code>normalize()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild" title="The Node.removeChild() method removes a child node from the DOM. Returns removed node."><code>remove<wbr>Child()</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild" title="The Node.replaceChild() method replaces one child node of the specified node with another."><code>replace<wbr>Child()</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/setUserData" title="The Node.setUserData() method allows a user to attach (or remove) data to an element, without needing to modify the DOM. Note that such data will not be preserved when imported via Node.importNode, as with Node.cloneNode() and Node.renameNode() operations (though Node.adoptNode does preserve the information), and equality tests in Node.isEqualNode() do not consider user data in making the assessment."><code>set<wbr>User<wbr>Data()</code></a></s></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Inheritance:</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"><code>Event<wbr>Target</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Related pages for DOM</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortController"><code>Abort<wbr>Controller</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal"><code>Abort<wbr>Signal</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Attr"><code>Attr</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ByteString"><code>Byte<wbr>String</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CDATASection"><code>CDATASection</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSPrimitiveValue"><code>CSSPrimitive<wbr>Value</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSValue"><code>CSSValue</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSValueList"><code>CSSValue<wbr>List</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CharacterData"><code>Character<wbr>Data</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode"><code>Child<wbr>Node</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Comment"><code>Comment</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent"><code>Custom<wbr>Event</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMConfiguration"><code>DOMConfiguration</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMError"><code>DOMError</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMErrorHandler"><code>DOMError<wbr>Handler</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMException"><code>DOMException</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation"><code>DOMImplementation</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementationList"><code>DOMImplementation<wbr>List</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementationRegistry"><code>DOMImplementation<wbr>Registry</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementationSource"><code>DOMImplementation<wbr>Source</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMLocator"><code>DOMLocator</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMObject"><code>DOMObject</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser"><code>DOMParser</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMPoint"><code>DOMPoint</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMRect"><code>DOMRect</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMString"><code>DOMString</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTimeStamp"><code>DOMTime<wbr>Stamp</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList"><code>DOMToken<wbr>List</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMUserData"><code>DOMUser<wbr>Data</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document"><code>Document</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment"><code>Document<wbr>Fragment</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentType"><code>Document<wbr>Type</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ElementTraversal"><code>Element<wbr>Traversal</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Entity"><code>Entity</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EntityReference"><code>Entity<wbr>Reference</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"><code>Event</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget"><code>Event<wbr>Target</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection"><code>HTMLCollection</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver"><code>Mutation<wbr>Observer</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeFilter"><code>Node<wbr>Filter</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeIterator"><code>Node<wbr>Iterator</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList"><code>Node<wbr>List</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode"><code>NonDocument<wbr>Type<wbr>Child<wbr>Node</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ProcessingInstruction"><code>Processing<wbr>Instruction</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/PromiseResolver"><code>Promise<wbr>Resolver</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Range"><code>Range</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Text"><code>Text</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder"><code>Text<wbr>Decoder</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder"><code>Text<wbr>Encoder</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges"><code>Time<wbr>Ranges</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker"><code>Tree<wbr>Walker</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TypeInfo"><code>Type<wbr>Info</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/USVString"><code>USVString</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/UserDataHandler"><code>User<wbr>Data<wbr>Handler</code></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLDocument"><code>XMLDocument</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+        <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Learn the best of web development</h2>
+            <p class="newsletter-description">Get the latest and greatest from MDN delivered straight to your inbox.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev">
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">E-mail</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required="" placeholder="you@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required="">
+                <label for="newsletterPrivacyInput">
+                I'm okay with Mozilla handling my info as explained in this <a href="https://www.mozilla.org/privacy/">Privacy Policy</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">Sign up now</button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Thanks! Please check your inbox to confirm your subscription.</h2>
+        <p>If you haven’t previously confirmed a subscription to a Mozilla-related newsletter you may have to do so. Please check your inbox or your spam filter for an email from us.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide"><span>Hide Newsletter Sign-up</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/en-US/docs/Web/API/Node/appendChild$edit" label="Edit page"></menuitem>
+    <menuitem data-action="/en-US/docs/Web/API/Node/appendChild$history" label="View page history"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="https://developer.mozilla.org/en-US/" class="nav-footer-logo">MDN Web Docs</a>
+          <div class="footer-group footer-group-mdn">
+            <h2 class="footer-title">MDN</h2>
+            <ul class="footer-list">
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Technologies</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn Web Development</a></li>
+              <li><a href="https://developer.mozilla.org/docs/MDN/About">About MDN</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozdevnet" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://github.com/mdn/" class="only-icon"><i aria-hidden="true" class="icon-github"></i> <span>GitHub</span></a></li>
+            </ul>
+          </div>
+
+          <a href="https://mozilla.org/" class="nav-footer-mozilla">Mozilla</a>
+          <div class="footer-group footer-group-mozilla">
+            <h2 class="footer-title">Mozilla</h2>
+            <ul class="footer-list">
+              <li><a href="https://www.mozilla.org/about/">About</a></li>
+              <li><a href="https://www.mozilla.org/contact/">Contact Us</a></li>
+              <li><a href="https://donate.mozilla.org/?utm_source=developer.mozilla.org&amp;utm_medium=referral&amp;utm_content=footer">Donate</a></li>
+              <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&amp;utm_campaign=footer&amp;utm_medium=referral">Firefox</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://www.facebook.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-facebook"></i> <span>Facebook</span></a></li>
+              <li class="footer-social"><a href="https://www.instagram.com/mozillagram/" class="only-icon"><i aria-hidden="true" class="icon-instagram"></i> <span>Instagram</span></a></li>
+            </ul>
+          </div>
+
+          
+  
+    <form class="languages go" method="get" action="https://developer.mozilla.org/en-US/docs/Web">
+      <label for="language">Other languages:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="English (US)" data-locale="en-US" value="/en-US/docs/Web/API/Node/appendChild" selected="">
+          English (US) (en-US)
+        </option>
+        
+          <option title="German" data-locale="en-US" value="/de/docs/Web/API/Node/appendChild">
+            Deutsch (de)
+          </option>
+          <option title="Spanish" data-locale="en-US" value="/es/docs/Web/API/Node/appendChild">
+            Español (es)
+          </option>
+          <option title="French" data-locale="en-US" value="/fr/docs/Web/API/Node/appendChild">
+            Français (fr)
+          </option>
+          <option title="Japanese" data-locale="en-US" value="/ja/docs/Web/API/Node/appendChild">
+            日本語 (ja)
+          </option>
+          <option title="Korean" data-locale="en-US" value="/ko/docs/Web/API/Node/appendChild">
+            한국어 (ko)
+          </option>
+          <option title="Polish" data-locale="en-US" value="/pl/docs/Web/API/Element/appendChild">
+            Polski (pl)
+          </option>
+          <option title="Portuguese (Brazilian)" data-locale="en-US" value="/pt-BR/docs/Web/API/Node/appendChild">
+            Português (do&nbsp;Brasil) (pt-BR)
+          </option>
+          <option title="Portuguese (Portugal)" data-locale="en-US" value="/pt-PT/docs/DOM/element.appendChild">
+            Português (Europeu) (pt-PT)
+          </option>
+          <option title="Russian" data-locale="en-US" value="/ru/docs/Web/API/Node/appendChild">
+            Русский (ru)
+          </option>
+          <option title="Vietnamese" data-locale="en-US" value="/vi/docs/Web/API/Node/appendChild">
+            Tiếng Việt (vi)
+          </option>
+          <option title="Chinese (Simplified)" data-locale="en-US" value="/zh-CN/docs/Web/API/Node/appendChild">
+            中文 (简体) (zh-CN)
+          </option>
+      </select>
+      <noscript>&lt;button type="submit"&gt;Go&lt;/button&gt;</noscript>
+    </form>
+  
+
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacy</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div id="license" class="contentinfo">
+              <p>© 2005-2018 Mozilla and individual contributors.</p> <p>Content is available under <a href="https://developer.mozilla.org/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/javascript.b28203373cc1.js.download"></script>
+    <script type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/main.2b11b2c2fae5.js.download" charset="utf-8"></script>
+    <script>
+    if (window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+</script>
+    
+
+  
+
+    <script async="" type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/wiki.c60705233ffd.js.download" charset="utf-8"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+    <script async="" type="text/javascript" src="./Node.appendChild() - Web APIs _ MDN_files/newsletter.7cd3274169f2.js.download" charset="utf-8"></script>
+  
+
+
+
+</body></html>

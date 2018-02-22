@@ -1,0 +1,93 @@
+;window.CloudflareApps=window.Eager=window.CloudflareApps||window.Eager||{};window.CloudflareApps=window.CloudflareApps||{};CloudflareApps.siteId="01ad85589c0a4d214ba1ffaa6be341f5";CloudflareApps.installs=CloudflareApps.installs||{};;(function(){'use strict'
+CloudflareApps.internal=CloudflareApps.internal||{}
+var errors=[]
+CloudflareApps.internal.placementErrors=errors
+var errorHashes={}
+function noteError(options){var hash=options.selector+'::'+options.type+'::'+(options.installId||'')
+if(errorHashes[hash]){return}
+errorHashes[hash]=true
+errors.push(options)}
+var initializedSelectors={}
+var currentInit=false
+CloudflareApps.internal.markSelectors=function markSelectors(){if(!currentInit){check()
+currentInit=true
+setTimeout(function(){currentInit=false})}}
+function check(){var installs=window.CloudflareApps.installs
+for(var installId in installs){if(!installs.hasOwnProperty(installId)){continue}
+var selectors=installs[installId].selectors
+if(!selectors){continue}
+for(var key in selectors){if(!selectors.hasOwnProperty(key)){continue}
+var hash=installId+'::'+key
+if(initializedSelectors[hash]){continue}
+var els=document.querySelectorAll(selectors[key])
+if(els&&els.length>1){noteError({type:'init:too-many',option:key,selector:selectors[key],installId:installId})
+initializedSelectors[hash]=true
+continue}else if(!els||!els.length){continue}
+initializedSelectors[hash]=true
+els[0].setAttribute('cfapps-selector',selectors[key])}}}
+CloudflareApps.querySelector=function querySelector(selector){if(selector==='body'||selector==='head'){return document[selector]}
+CloudflareApps.internal.markSelectors()
+var els=document.querySelectorAll('[cfapps-selector="'+selector+'"]')
+if(!els||!els.length){noteError({type:'select:not-found:by-attribute',selector:selector})
+els=document.querySelectorAll(selector)
+if(!els||!els.length){noteError({type:'select:not-found:by-query',selector:selector})
+return null}else if(els.length>1){noteError({type:'select:too-many:by-query',selector:selector})}
+return els[0]}
+if(els.length>1){noteError({type:'select:too-many:by-attribute',selector:selector})}
+return els[0]}}());(function(){'use strict'
+var prevEls={}
+CloudflareApps.createElement=function createElement(options,prevEl){options=options||{}
+CloudflareApps.internal.markSelectors()
+try{if(prevEl&&prevEl.parentNode){var replacedEl
+if(prevEl.cfAppsElementId){replacedEl=prevEls[prevEl.cfAppsElementId]}
+if(replacedEl){prevEl.parentNode.replaceChild(replacedEl,prevEl)
+delete prevEls[prevEl.cfAppsElementId]}else{prevEl.parentNode.removeChild(prevEl)}}
+var element=document.createElement('cloudflare-app')
+var container
+if(options.pages&&options.pages.URLPatterns&&!CloudflareApps.matchPage(options.pages.URLPatterns)){return element}
+try{container=CloudflareApps.querySelector(options.selector)}catch(e){}
+if(!container){return element}
+if(!container.parentNode&&(options.method==='after'||options.method==='before'||options.method==='replace')){return element}
+if(container===document.body){if(options.method==='after'){options.method='append'}else if(options.method==='before'){options.method='prepend'}}
+switch(options.method){case'prepend':if(container.firstChild){container.insertBefore(element,container.firstChild)
+break}
+case'append':container.appendChild(element)
+break
+case'after':if(container.nextSibling){container.parentNode.insertBefore(element,container.nextSibling)}else{container.parentNode.appendChild(element)}
+break
+case'before':container.parentNode.insertBefore(element,container)
+break
+case'replace':try{var id=element.cfAppsElementId=Math.random().toString(36)
+prevEls[id]=container}catch(e){}
+container.parentNode.replaceChild(element,container)}
+return element}catch(e){if(typeof console!=='undefined'&&typeof console.error!=='undefined'){console.error('Error creating Cloudflare Apps element',e)}}}}());(function(){'use strict'
+CloudflareApps.matchPage=function matchPage(patterns){if(!patterns||!patterns.length){return true}
+var loc=document.location.host+document.location.pathname
+if(window.CloudflareApps&&CloudflareApps.proxy&&CloudflareApps.proxy.originalURL){var url=CloudflareApps.proxy.originalURL.parsed
+loc=url.host+url.path}
+for(var i=0;i<patterns.length;i++){var re=new RegExp(patterns[i],'i')
+if(re.test(loc)){return true}}
+return false}}());CloudflareApps.installs["krsdfZdLeNIF"]={appId:"nt4L5NPJq1za",scope:{}};;CloudflareApps.installs["krsdfZdLeNIF"].options={"blocks":[{"code":"\u003cscript\u003e\nif (window.location.href.includes \u0026\u0026 !window.location.href.includes('media')) {\n\ntry {\nsetInterval(function() {\n   var el = document.querySelector('.js-collectionLogoOrName');\n   if (el) {\n      el.href = 'https://logrocket.com';\n   }\n}, 1000);\n\nsetInterval(function() {\n   var el = document.querySelector('.siteNav-logo');\n   if (el) {\n      el.href = 'https://blog.logrocket.com';\n   }\n}, 1000);\n\n} catch (e) {}\n\ntry {\n function getQueryVariable(variable) {\n            var query = window.location.search.substring(1);\n            var vars = query.split('\u0026');\n            for (var i = 0; i \u003c vars.length; i++) {\n                var pair = vars[i].split('=');\n                if (decodeURIComponent(pair[0]) == variable) {\n                    return decodeURIComponent(pair[1]);\n                }\n            }\n        }\n\n        var cVar = getQueryVariable('cid');\n        var source;\n        var medium = 'none';\n        if (cVar \u0026\u0026 cVar.length \u003e 0) {\n            var parts = cVar.split('_');\n            source = parts[0];\n            if (parts[1]) {\n                medium = parts[1];\n            }\n            history.replaceState('', document.title, '.');\n        }\n\n    const descriptor = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');\n    Object.defineProperty(HTMLScriptElement.prototype, 'src', {\n      set: function set(arg) {\n        if (arg.indexOf('cdn.heapanalytics.com') !== -1) {\n          return descriptor.set.call(this, arg.replace('cdn.heapanalytics.com', 'log.logrocket.com'))\n        }\n            if (arg.indexOf('connect.facebook.net') !== -1) {\n              return descriptor.set.call(this, arg.replace('connect.facebook.net', 'log.logrocket.com/fb'))\n            }\n\n        return descriptor.set.call(this, arg);\n      },\n      get: function get() {\n        return descriptor.get.call(this);\n      },\n    });\n\n    const imageDescriptor = Object.getOwnPropertyDescriptor(Image.prototype, 'src');\n    if (imageDescriptor) {\n    Object.defineProperty(Image.prototype, 'src', {\n      set: function set(arg) {\n        if (arg.indexOf('heapanalytics.com') !== -1) {\n          return imageDescriptor.set.call(this, arg.replace('heapanalytics.com', 'log.logrocket.com/heap'))\n        }\n\n        if (arg.indexOf('www.facebook.com') !== -1) {\n          return imageDescriptor.set.call(this, arg.replace('www.facebook.com', 'log.logrocket.com/fbcom'))\n        }\n        return imageDescriptor.set.call(this, arg);\n      },\n      get: function get() {\n        return imageDescriptor.get.call(this);\n      },\n    });\n}\n\n\n      var _XHR = XMLHttpRequest;\n      // eslint-disable-next-line no-native-reassign\n      XMLHttpRequest = function XMLHttpRequest(mozAnon, mozSystem) {\n        var xhrObject = new _XHR(mozAnon, mozSystem);\n\n        var origOpen = xhrObject.open.bind(xhrObject);\n        xhrObject.open = function open(method, url) {\n            if (url.indexOf('api.segment.io') !== -1) {\n                origOpen(method, url.replace('api.segment.io', 'log.blog.logrocket.com'));\n                return;\n            }\n            origOpen(method, url);\n        };\n\n        return xhrObject;\n      };\n\n      // this allows \"instanceof XMLHttpRequest\" to work\n      XMLHttpRequest.prototype = _XHR.prototype;\n\n      // Persist the static variables.\n      ['UNSENT', 'OPENED', 'HEADERS_RECEIVED', 'LOADING', 'DONE'].forEach(function (variable) {\n        XMLHttpRequest[variable] = _XHR[variable];\n      });\n\n    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console\u0026\u0026console.error\u0026\u0026console.error(\"Segment snippet included twice.\");else{analytics.invoked=!0;analytics.methods=[\"trackSubmit\",\"trackClick\",\"trackLink\",\"trackForm\",\"pageview\",\"identify\",\"reset\",\"group\",\"track\",\"ready\",\"alias\",\"debug\",\"page\",\"once\",\"off\",\"on\"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t\u003canalytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement(\"script\");e.type=\"text/javascript\";e.async=!0;e.src=(\"https:\"===document.location.protocol?\"https://\":\"http://\")+\"log.logrocket.com/a.js/v1/\"+t+\"/a.js\";var n=document.getElementsByTagName(\"script\")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION=\"4.0.0\";\n    }}();\n   analytics.load(\"KT92YSYfUcMUbmBwAexHqtzVsi85TZvu\");\n    if (source) {\n        analytics.page({}, {\n            context: {\n                campaign: {\n                    name: 'custom',\n                    source: source,\n                    medium: medium,\n                    term: 'custom',\n                    content: 'custom',\n                },\n             },\n        });\n\n        analytics.track('source', {\n            source: source,\n            medium: medium,\n        });\n    } else {\n        analytics.page();\n    }\n    analytics.track('blog');\n} catch (e) {}\n\n}\n\u003c/script\u003e\n\u003cscript\u003e\nif (window.location.href === 'https://blog.logrocket.com/frontend-in-2017-the-important-parts-4548d085977fhttps://blog.logrocket.com/frontend-in-2017-the-important-parts-4548d085977f') {\nwindow.location.href = 'https://blog.logrocket.com/frontend-in-2017-the-important-parts-4548d085977f';\n}\n\u003c/script\u003e","location":{"method":"prepend","pages":{"URLPatterns":["^blog.logrocket.com/?.*$"]},"selector":"head"}}]};;CloudflareApps.installs["krsdfZdLeNIF"].URLPatterns=["^blog.logrocket.com/?.*$"];;CloudflareApps.installs["krsdfZdLeNIF"].selectors={"blocks[0].location.selector":"head"};;if(CloudflareApps.matchPage(CloudflareApps.installs['krsdfZdLeNIF'].URLPatterns)){(function(){'use strict'
+if(!document.addEventListener)return
+var options=CloudflareApps.installs['krsdfZdLeNIF'].options
+var elements={}
+var prevElements={}
+function updateElements(){options.blocks.forEach(function(block,index){var locationHash=[block.location.selector,block.location.method,index].join('!')
+var element
+if(elements[locationHash]){element=elements[locationHash]}else{if(block.location.method==='replace'){prevElements[locationHash]=document.querySelector(block.location.selector)}
+element=CloudflareApps.createElement(block.location)
+elements[locationHash]=element}
+element.foundInBlocks=true
+element.innerHTML=block.code
+var scripts=element.querySelectorAll('script')
+if(scripts){scripts.forEach(function(script){var newScript=document.createElement('script')
+for(var key=script.attributes.length;key--;){var attr=script.attributes[key]
+if(attr.specified){newScript.setAttribute(attr.name,attr.value)}}
+newScript.innerHTML=script.innerHTML
+element.replaceChild(newScript,script)})}})
+for(var hash in elements){if(!elements[hash].foundInBlocks){if(prevElements[hash]){elements[hash].parentNode.replaceChild(prevElements[hash],elements[hash])
+delete prevElements[hash]}else{elements[hash].parentNode.removeChild(elements[hash])}
+delete elements[hash]}else{delete elements[hash].foundInBlocks}}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',updateElements)}else{updateElements()}
+window.CloudflareApps.installs['krsdfZdLeNIF'].scope={setOptions:function(nextOptions){options=nextOptions
+updateElements()}}}())}
