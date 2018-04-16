@@ -1,0 +1,8 @@
+git checkout "rama" para cambiar la rama en la carpeta que estoy trabajando
+si sale un mensaje que dice que no se puede cambiar de rama porque los archivos locales serán sobreescritos hacer:
+git reset --hard
+y después cambiar rama. Esto modifica el estado a "detached Head"
+
+
+git config --list
+git config branch.JuanJavierConflictsSolving.merge refs/heads/feature/CYMN-5-create-a-left-nav-for-the-site
