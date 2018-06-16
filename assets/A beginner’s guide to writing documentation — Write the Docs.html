@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="gr__writethedocs_org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>A beginner’s guide to writing documentation — Write the Docs</title>
+    
+    <link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/alabaster.css" type="text/css">
+    <link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/badge_only.css" type="text/css">
+    <link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/global-customizations.css" type="text/css">
+    
+    <script async="" src="./A beginner’s guide to writing documentation — Write the Docs_files/analytics.js.download"></script><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/jquery-2.0.3.min.js.download"></script>
+    <script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/jquery-migrate-1.2.1.min.js.download"></script>
+    <script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/underscore.js.download"></script>
+    <script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/doctools.js.download"></script>
+    <script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/readthedocs-doc-embed.js.download"></script>
+    <link rel="shortcut icon" href="http://www.writethedocs.org/_static/favicon-96x96.png">
+    <link rel="index" title="Index" href="http://www.writethedocs.org/genindex/">
+    <link rel="search" title="Search" href="http://www.writethedocs.org/search/">
+    <link rel="top" title="Write the Docs" href="http://www.writethedocs.org/">
+    <link rel="up" title="Documentation Guide" href="http://www.writethedocs.org/guide/">
+    <link rel="next" title="Documentation Principles" href="http://www.writethedocs.org/guide/writing/docs-principles/">
+    <link rel="prev" title="Starting off" href="http://www.writethedocs.org/guide/starting/">
+  
+   
+  <link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/custom.css" type="text/css">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  
+  <link rel="alternate" type="application/atom+xml" href="http://www.writethedocs.org/blog/archive/atom.xml" title="Blog">
+  
+  
+  <link href="./A beginner’s guide to writing documentation — Write the Docs_files/font-awesome.min.css" rel="stylesheet">
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+  
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/">
+
+<link rel="stylesheet" href="./A beginner’s guide to writing documentation — Write the Docs_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/readthedocs-data.js.download"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'guide/writing/beginners-guide-to-docs' 		
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/readthedocs-dynamic-include.js.download"></script>
+
+<!-- end RTD <extrahead> -->
+<style type="text/css">#mc_embed_signup input.mce_inline_error { border-color:#6B0505; } #mc_embed_signup div.mce_inline_error { margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body role="document" data-gr-c-s-loaded="true" style="zoom: 1;">
+  
+
+    <div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body" role="main">
+          
+          <div class="breadcrumbs">
+            
+            
+              <a href="http://www.writethedocs.org/">Home</a> »
+                
+                  <a href="http://www.writethedocs.org/about/learning-resources/">Learning Resources</a> »
+                
+                  <a href="http://www.writethedocs.org/guide/">Documentation Guide</a> »
+                
+            
+          </div>
+        
+        
+  <div class="section" id="a-beginner-s-guide-to-writing-documentation">
+<h1>A beginner’s guide to writing documentation<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#a-beginner-s-guide-to-writing-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a write up of a <a class="reference internal" href="http://www.writethedocs.org/guide/presentations/#beginner-presentation"><span class="std std-ref">Presentation</span></a>.
+Please provide feedback to <a class="reference external" href="http://twitter.com/ericholscher">@ericholscher</a>.
+You can view the source on <a class="reference external" href="https://github.com/writethedocs/www/blob/master/docs/guide/writing/beginners-guide-to-docs.rst">GitHub</a>.</p>
+</div>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Camera pans from stage left.</div>
+<div class="line">It shows a text editor, open to a blank page.</div>
+<div class="line">A person hunched in front, head to desk.</div>
+</div>
+</div></blockquote>
+<p>The scene above is well known to everyone who writes for a living;
+the mixed emotions of a blank page.
+Full of excitement, fresh with a new beginning.
+Yet also full of despair, where do you even start?</p>
+<p>I am here to stop this scene from playing out.</p>
+<p>This is a guide to documenting your first project.
+The first time is always the hardest,
+and I hope this guide will get you started down the righteous path.
+At the end,
+you should have a project that is ready for public release.</p>
+<p>Feel free to read this document straight through,
+or simply use it as a reference.</p>
+<div class="section" id="why-write-docs">
+<span id="why"></span><h2>Why write docs<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#why-write-docs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="you-will-be-using-your-code-in-6-months">
+<h3>You will be using your code in 6 months<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#you-will-be-using-your-code-in-6-months" title="Permalink to this headline">¶</a></h3>
+<p>Code that you wrote 6 months ago is often indistinguishable from code that someone else has written.
+You will look upon a file with a fond sense of remembrance.
+Then a sneaking feeling of foreboding,
+knowing that someone less experienced, less wise, had written it.</p>
+<p>As you go through this selfless act of untangling things that were obvious or clever months ago,
+you will start to empathize with your users.
+If only I had written down why I had done this.
+Life would be so much simpler.
+Documentation allows you to transfer the <em>why</em> behind code.
+Much in the same way code comments explain the <em>why</em>,
+and not the <em>how</em>,
+documentation serves the same purpose.</p>
+<div class="sidebar">
+<p class="first sidebar-title">Sidebar on open source</p>
+<p>There is a magical feeling that happens when you release your code.
+It comes in a variety of ways, but it always hits you the same.
+<em>Someone is using my code?!</em>
+A mix of terror and excitement.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">I made something of value!</div>
+<div class="line">What if it breaks?!</div>
+<div class="line">I am a real open source developer!</div>
+<div class="line">Oh god, someone else is using my code..</div>
+</div>
+</div></blockquote>
+<p>Writing good documentation will help alleviate some of these fears.
+A lot of this fear comes from putting something into the world.
+My favorite quote about this is something along these lines:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Fear is what happens when you’re doing something important.</div>
+<div class="line">If you are doing work that isn’t scary,</div>
+<div class="line">it isn’t improving you or the world.</div>
+</div>
+</div></blockquote>
+<p class="last">Congrats on being afraid!
+It means you’re doing something important.</p>
+</div>
+</div>
+<div class="section" id="you-want-people-to-use-your-code">
+<h3>You want people to use your code<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#you-want-people-to-use-your-code" title="Permalink to this headline">¶</a></h3>
+<p>You have written a piece of code,
+and released it into the world.
+You have done this because you think that others might find it useful.
+However,
+people need to understand why your code might be useful for them,
+before they decide to use it.
+Documentation tells people that this project is for them.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">If people don’t know why your project exists,</div>
+<div class="line">they won’t use it.</div>
+<div class="line">If people can’t figure out how to install your code,</div>
+<div class="line">they won’t use it.</div>
+<div class="line">If people can’t figure out how to use your code,</div>
+<div class="line">they won’t use it.</div>
+</div>
+</div></blockquote>
+<p>There are a small number of people who will source dive and use any code out there.
+That is a vanishingly small number of people,
+compared to people who will use your code when properly documented.
+If you really love your project,
+document it,
+and let other people use it.</p>
+</div>
+<div class="section" id="you-want-people-to-help-out">
+<h3>You want people to help out<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#you-want-people-to-help-out" title="Permalink to this headline">¶</a></h3>
+<p>Open source is this magical thing right?
+You release code,
+and the code gnomes come and make it better for you.</p>
+<p>Not quite.</p>
+<p>There are lots of ways that open source is amazing,
+but it doesn’t exist outside the laws of physics.
+You have to put work in,
+to get work out.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">You only get contributions after you have put in a lot of work.</div>
+<div class="line">You only get contributions after you have users.</div>
+<div class="line">You only get contributions after you have documentation.</div>
+</div>
+</div></blockquote>
+<p>Documentation also provides a platform for your first contributions.
+A lot of people have never contributed before,
+and documentation changes are a lot less scary than code changes.
+If you don’t have documentation,
+you will miss out on a whole class of contributors.</p>
+</div>
+<div class="section" id="you-want-your-code-to-be-better">
+<h3>You want your code to be better<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#you-want-your-code-to-be-better" title="Permalink to this headline">¶</a></h3>
+<p>It’s really easy to have an idea in your head that sounds perfect,
+but the act of putting words to paper requires a distillation of thought that may not be so easy.</p>
+<p>Writing documentation improves the design of your code.
+Talking through your API and design decisions on paper allows you to think about them in a more formalized way.
+A nice side effect is that it allows people to contribute code that follows your original intentions as well.</p>
+</div>
+<div class="section" id="you-want-to-be-a-better-writer">
+<h3>You want to be a better writer<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#you-want-to-be-a-better-writer" title="Permalink to this headline">¶</a></h3>
+<p>Writing documentation is a different form of writing than most people have experience with.
+Technical writing is an art that doesn’t come naturally.
+Writing documentation will start you down the road to being a better technical writer,
+which is a useful skill to have as a programmer.</p>
+<p>Writing also becomes easier over time.
+If you don’t write for many months,
+it is a lot harder to start writing again.
+Keeping your projects documented will keep you writing at a reasonable cadence.</p>
+<p>Starting simple is the best way to achieve actual results.
+I will present a well-paved path to walk down,
+and after you have the basic idea,
+you can expand your scope.
+The tools should be powerful and easy to use.
+This removes obstacles to actually putting words on the page.</p>
+<div class="sidebar" id="markup-languages">
+<p class="first sidebar-title">Sidebar on markup languages.</p>
+<p class="last">The examples in this document are both valid <a class="reference external" href="http://daringfireball.net/projects/markdown/">Markdown</a> and <a class="reference external" href="http://sphinx-doc.org/rest.html#rst-primer">reStructuredText</a>.
+reStructuredText is a bit harder to use,
+but is more powerful.
+I recommend that you check them both out,
+and decide which you want to use going forward.</p>
+</div>
+</div>
+<div class="section" id="version-controlled-plain-text">
+<h3>Version controlled plain text<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#version-controlled-plain-text" title="Permalink to this headline">¶</a></h3>
+<p>As programmers we live in a world of plain text.
+Our documentation tooling should be no exception.
+We want tools that turn plain text into pretty HTML.
+We also have some of the best tooling available for tracking changes to files.
+Why would we forgo using those tools when writing documentation?
+This workflow is powerful, and familiar to developers.</p>
+</div>
+<div class="section" id="basic-example">
+<h3>Basic Example<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#basic-example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Resources</span>
+<span class="o">---------</span>
+
+<span class="o">*</span> <span class="n">Online</span> <span class="n">documentation</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="o">.</span><span class="n">writethedocs</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+<span class="o">*</span> <span class="n">Conference</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">conf</span><span class="o">.</span><span class="n">writethedocs</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>This will render into a header,
+with a list underneath it.
+The URLs will be hyperlinked automatically.
+It’s easy to write,
+still makes sense as plain text,
+and renders nicely into HTML.</p>
+</div>
+<div class="section" id="readme">
+<h3>README<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#readme" title="Permalink to this headline">¶</a></h3>
+<p>Your first steps in documentation should go into your README.
+Code hosting services will render your README into HTML automatically if you provide the proper extension.
+It is also the first interaction that most users will have with your project.
+So having a solid README will serve your project well.</p>
+<p>Some people even go as far as to <a class="reference external" href="http://tom.preston-werner.com/2010/08/23/readme-driven-development.html">start your project with a README</a></p>
+</div>
+</div>
+<div class="section" id="what-to-write">
+<span id="write"></span><h2>What to write<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#what-to-write" title="Permalink to this headline">¶</a></h2>
+<p>Now we’re getting down to the brass tacks.
+Making sure that you give your users all the information that they need,
+but not too much.</p>
+<p>First, you need to ask yourself who you’re writing for.
+At first,
+you generally just need to appeal to two audiences:</p>
+<ul class="simple">
+<li>Users</li>
+<li>Developers</li>
+</ul>
+<p>Users are people who simply want to use your code,
+and don’t care how it works.
+Developers are people who want to contribute back to your code.</p>
+<div class="section" id="what-problem-your-project-solves">
+<h3>What problem your project solves<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#what-problem-your-project-solves" title="Permalink to this headline">¶</a></h3>
+<p>A lot of people will come to your docs trying to figure out what exactly your project is. Someone will mention it, or they’ll google a phrase randomly. You should explain what your project does and why it exists. <a class="reference external" href="http://docs.fabfile.org/">Fabric</a> does a great job of this.</p>
+</div>
+<div class="section" id="a-small-code-example">
+<h3>A small code example<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#a-small-code-example" title="Permalink to this headline">¶</a></h3>
+<p>Show a telling example of what your project would normally be used for. <a class="reference external" href="http://docs.python-requests.org/en/latest/index.html">Requests</a> does a great example of this.</p>
+</div>
+<div class="section" id="a-link-to-your-code-issue-tracker">
+<h3>A link to your code &amp; issue tracker<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#a-link-to-your-code-issue-tracker" title="Permalink to this headline">¶</a></h3>
+<p>People like to browse the code sometimes. They might be interested in filing bugs against the code for issues they’ve found. Make it really easy for people who want to contribute back to the project in any way possible. I think the <a class="reference external" href="http://docs.python-guide.org/en/latest/index.html">Python Guide</a> does a good job with the link to the code portion.</p>
+</div>
+<div class="section" id="frequently-asked-questions-faq">
+<h3>Frequently Asked Questions (FAQ)<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#frequently-asked-questions-faq" title="Permalink to this headline">¶</a></h3>
+<p>A lot of people have the same problems. If things happen all the time, you should probably fix your documentation or the code, so that the problems go away. However, there are always questions that get asked about your project, things that can’t be changed, etc. Document those, and <strong>keep it up to date</strong>. FAQs are generally out of date, but when done well, they are a golden resource. <a class="reference external" href="http://django-tastypie.readthedocs.org/en/latest/cookbook.html">Tastypie</a> did a great job with this, with their “Cookbook” concept.</p>
+</div>
+<div class="section" id="how-to-get-support">
+<h3>How to get support<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#how-to-get-support" title="Permalink to this headline">¶</a></h3>
+<p>Mailing list? IRC Channel? Document how to get help and interact with the community around a project. <a class="reference external" href="https://docs.djangoproject.com/en/1.8/faq/help">Django</a> does a great job with this.</p>
+</div>
+<div class="section" id="information-for-people-who-want-to-contribute-back">
+<h3>Information for people who want to contribute back<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#information-for-people-who-want-to-contribute-back" title="Permalink to this headline">¶</a></h3>
+<p>People usually have standards for how they expect things to be done in their projects. You should document these so that if people write code, they can do things in the norm of the project. <a class="reference external" href="http://opencomparison.readthedocs.org/en/latest/contributing.html">Open Comparison</a> does a great job of this.</p>
+</div>
+<div class="section" id="installation-instructions">
+<h3>Installation instructions<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#installation-instructions" title="Permalink to this headline">¶</a></h3>
+<p>Once people figure out whether they want to use your code or not, they need to know how to actually get it and make it run. Hopefully your install instructions should be a couple lines for the basic case. A page that gives more information and caveats should be linked from here if necessary. I think at <a class="reference external" href="http://read-the-docs.readthedocs.org/en/latest/install.html">Read the Docs</a> we do a good job with this.</p>
+</div>
+<div class="section" id="your-project-s-license">
+<h3>Your project’s license<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#your-project-s-license" title="Permalink to this headline">¶</a></h3>
+<p>BSD? MIT? GPL? This stuff might not matter to you, but the people who want to use your code will care about this a whole lot. Think about what you want to accomplish with your license, and please only pick one of the standard licenses that you see around the web.</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<span id="template"></span><h2>Next Steps<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>After you follow the above guide,
+we know your project will be successful!
+For further reading,
+check out this post on <a class="reference external" href="https://medium.com/p/aaa2a5437d3a">how to maintain an open source project</a>.</p>
+</div>
+<div class="section" id="id1">
+<h2>Template<a class="headerlink" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#id1" title="Permalink to this headline">¶</a></h2>
+<p>A simple template for you to start with,
+for your <code class="docutils literal"><span class="pre">README</span></code>.
+Name the file <code class="docutils literal"><span class="pre">README.md</span></code> if you want to use markdown,
+or <code class="docutils literal"><span class="pre">README.rst</span></code> if you want to use reStructuredText.
+More information about these can be found in the <a class="reference internal" href="http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#markup-languages"><span class="std std-ref">sidebar on markup</span></a>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$project
+========
+
+$project will solve your problem of where to start with documentation,
+by providing a basic explanation of how to do it easily.
+
+Look how easy it is to use:
+
+    import project
+    # Get your stuff done
+    project.do_stuff()
+
+Features
+--------
+
+- Be awesome
+- Make things faster
+
+Installation
+------------
+
+Install $project by running:
+
+    install project
+
+Contribute
+----------
+
+- Issue Tracker: github.com/$project/$project/issues
+- Source Code: github.com/$project/$project
+
+Support
+-------
+
+If you are having issues, please let us know.
+We have a mailing list located at: project@google-groups.com
+
+License
+-------
+
+The project is licensed under the BSD license.
+</pre></div>
+</div>
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+      </div>
+    </div>
+  </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="http://www.writethedocs.org/">
+    <img class="logo" src="./A beginner’s guide to writing documentation — Write the Docs_files/sticker-wtd-colors.png" alt="Logo">
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<p>
+Write the Docs is a global community of people who care about documentation.
+We have a Slack community, conferences on 3 continents, and local meetups!
+</p>
+<br>
+<h3>Useful Pages</h3>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="http://www.writethedocs.org/about/events-activities/">Events and Activities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/conf/">Conferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/meetups/">Meetups</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="http://www.writethedocs.org/about/learning-resources/">Learning Resources</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/newsletter/">Newsletter &amp; Mailing lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/videos/">Conference Videos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/podcast/">Podcast</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/organizer-guide/">Organizer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="http://www.writethedocs.org/guide/">Documentation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://www.writethedocs.org/about/stay-connected/">Stay Connected</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/newsletter/">Newsletter &amp; Mailing lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/slack/">Slack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/blog/">Blog Posts</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://www.writethedocs.org/about/about-the-org/">About Our Organization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/about-us/">About the Write the Docs organization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/team/">Team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/origin-story/">Origin Story</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://www.writethedocs.org/documentarians/">Documentarians</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+<br>
+
+<h3>Join our mailing list</h3>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="./A beginner’s guide to writing documentation — Write the Docs_files/classic-10_7.css" rel="stylesheet" type="text/css">
+<div id="mc_embed_signup">
+<form action="http://writethedocs.us6.list-manage.com/subscribe/post?u=94377ea46d8b176a11a325d03&amp;id=dcf0ed349b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+    <div id="mc_embed_signup_scroll">
+<div class="mc-field-group">
+    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true">
+</div>
+<div class="mc-field-group input-group">
+    <strong>What types of updates would you like? </strong>
+    <ul><li><input type="checkbox" value="1" name="group[14633][1]" id="mce-group[14633]-14633-0" checked=""><label for="mce-group[14633]-14633-0">Monthly Community Newsletter</label></li>
+    <li><input type="checkbox" value="2" name="group[14633][2]" id="mce-group[14633]-14633-1"><label for="mce-group[14633]-14633-1">North American Conference Announcements</label></li>
+    <li><input type="checkbox" value="4" name="group[14633][4]" id="mce-group[14633]-14633-2"><label for="mce-group[14633]-14633-2">European Conference Announcements</label></li>
+</ul>
+</div>
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_94377ea46d8b176a11a325d03_dcf0ed349b" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="./A beginner’s guide to writing documentation — Write the Docs_files/mc-validate.js.download"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
+
+        <div class="rtd-pro alabaster"><div class="rtd-pro-about"><a href="https://readthedocs.org/sustainability/advertising/"><span>Sponsored </span><i class="fa fa-info-circle"></i></a></div><a class="rtd-pro-image-wrapper" href="http://readthedocs.org/sustainability/click/194/cbsJMDO0uZ1t/" target="_blank"><img class="rtd-pro-image" src="./A beginner’s guide to writing documentation — Write the Docs_files/saved_resource"></a><span><b>Reach over 7 million devs</b> each month when you <a class="rtd-pro-link" href="http://readthedocs.org/sustainability/click/194/cbsJMDO0uZ1t/" target="_blank">advertise with Read the Docs</a>.</span><p class="ethical-callout"><small><em><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html">Ads served ethically</a></em></small></p></div><div class="rtd-pro-wrapper"></div></div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="footer">
+      <div class="container">
+          <span style="float: left;">© Write the Docs 2017 </span>
+          <span style="float: left;">
+            &nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./A beginner’s guide to writing documentation — Write the Docs_files/80x15.png"></a>
+          </span>
+          <span id="social-footer" class="pull-right">
+            <span><a href="mailto:support@writethedocs.org"><i class="iconf-email"></i>support@writethedocs.org</a></span> |
+            <span><a href="https://github.com/writethedocs"><i class="iconf-github-circled-alt2"></i>GitHub</a></span> |
+            <span><a href="https://twitter.com/writethedocs"><i class="iconf-twitter-circled"></i>Twitter</a></span> |
+            <span><a href="http://www.writethedocs.org/code-of-conduct/">Code&nbsp;of&nbsp;Conduct</a></span>
+          </span>
+      </div>
+
+    
+    <a href="https://github.com/writethedocs/www" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="./A beginner’s guide to writing documentation — Write the Docs_files/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" class="github">
+    </a>
+    
+
+</div>
+  
+<!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+  <div class="rst-versions rst-badge" data-toggle="rst-versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">&nbsp;</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+
+      
+      
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="http://readthedocs.org/projects/writethedocs-www/downloads/htmlzip/latest/">HTML</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="http://readthedocs.org/projects/writethedocs-www/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/writethedocs-www/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/writethedocs-www/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/writethedocs/www/blob/master/docs/guide/writing/beginners-guide-to-docs.rst">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/writethedocs/www/edit/master/docs/guide/writing/beginners-guide-to-docs.rst">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="http://readthedocs.org/projects/writethedocs-www/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+      Free document hosting provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+      
+
+      
+    </div>
+  </div>
+  
+
+</div>
+</body></html>

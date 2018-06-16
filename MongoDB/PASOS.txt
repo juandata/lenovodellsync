@@ -1,0 +1,35 @@
+1 crear carpeta data y log en raiz de mongo y carpeta db dentro de data
+2 ir a la carpeta bin y  ejecutar mongod  --directoryperdb --dbpath C:\mongo\data\db --logpath C:\mongo\log\mongo.log --logappend --install
+3 ejecutar net start MongoDB para correr el servicio
+
+comandos
+mongo
+show dbs
+use mydatabase (crea y entra a nueva base de datos)
+db (ver qué base de datos estoy usando)
+4crear usuario: https://docs.mongodb.com/manual/reference/method/db.createUser/
+db.createUser({
+	user: "juan",
+	pwd: "mimosin8",
+	roles: [ "readWrite", "dbAdmin" ]
+});
+5 crear colecciones
+db.createCollection("customers");
+6 mostrar colleciones
+show.collections
+7. insertar documentos en colecciones
+db.customers.insert({first_name: "juan", last_name:"tabares"});
+8. ver los documentos de una base de datos
+db.customers.find(); db.customers.find().pretty();
+9. Añadir varios documentos a una collección
+db.customers.insert([{first_name : "maria", last_name: "tabares"},{first_name : "antonio", last_name : "tabares", gender : "male"}]);
+10. actualizar coleccoines
+db.customers.update({first_name : "juan"}, {$set: {gender : "male"}});
+(añade un nuevo campo a la colección, también puede hacerse sin set pero se deben escribir todas
+las propiedades del objeto en el segundo parametro para no borrarlas)
+*operadores 
+$inc (para incrementar el valor númerico de una propiedad)
+$unset (eliminar un campo) 
+{upsert : true} para añadir un campo quee no existe con update
+$rename:{"gender": "sex"} cambiar campo
+db.customers.remove({first_name : "juan"}); elimina un campo

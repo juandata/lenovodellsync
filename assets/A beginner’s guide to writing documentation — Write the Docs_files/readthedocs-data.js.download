@@ -1,0 +1,15 @@
+  var READTHEDOCS_DATA = {
+    project: "writethedocs-www",
+    version: "latest",
+    language: "en",
+    programming_language: "",
+    subprojects: {},
+    canonical_url: "http://www.writethedocs.org/",
+    theme: "alabaster",
+    builder: "sphinx",
+    docroot: "/docs/",
+    source_suffix: ".rst",
+    api_host: "https://readthedocs.org",
+    commit: "5606fb69"
+  };
+  
