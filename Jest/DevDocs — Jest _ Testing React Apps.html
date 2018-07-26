@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://devdocs.io/jest/tutorial-react -->
+<html lang="en" class="gr__devdocs_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="description" content="Jest 22.3.0 API documentation with instant search, offline support, keyboard shortcuts, mobile version, and more.">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:image" content="https://cdn.devdocs.io/images/icon-320.png">
+  <title>DevDocs — Jest / Testing React Apps</title>
+  <link rel="canonical" href="http://devdocs.io/jest/tutorial-react">
+  <link rel="manifest" href="http://devdocs.io/manifest.json">
+  <link rel="icon" type="image/x-icon" href="https://cdn.devdocs.io/favicon.ico">
+  <link rel="search" type="application/opensearchdescription+xml" href="http://devdocs.io/opensearch.xml" title="Search DevDocs">
+  <link rel="stylesheet" href="./DevDocs — Jest _ Testing React Apps_files/application-fa96e43ac298a12d153c0d74d2ff33517841c11060c032db4e02b35b332c9df5.css" data-alt="//cdn.devdocs.io/assets/application-dark-8359f583cc8211b4207065dec8760fd9bdc0660f68ac55a17aa6a0c206efce16.css">
+<style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; touch-action-delay: none; }
+body /shadow-deep/ [touch-action="none"]{ -ms-touch-action: none; touch-action: none; touch-action-delay: none; }
+[touch-action="auto"]{ -ms-touch-action: auto; touch-action: auto; touch-action-delay: none; }
+body /shadow-deep/ [touch-action="auto"]{ -ms-touch-action: auto; touch-action: auto; touch-action-delay: none; }
+[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; touch-action-delay: none; }
+body /shadow-deep/ [touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; touch-action-delay: none; }
+[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; touch-action-delay: none; }
+body /shadow-deep/ [touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; touch-action-delay: none; }
+[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; touch-action-delay: none; }
+body /shadow-deep/ [touch-action="pan-x pan-y"],body /shadow-deep/ [touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; touch-action-delay: none; }
+</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css"></head>
+<body data-doc="{&quot;name&quot;:&quot;Jest&quot;,&quot;slug&quot;:&quot;jest&quot;,&quot;type&quot;:&quot;jest&quot;,&quot;links&quot;:{&quot;home&quot;:&quot;https://facebook.github.io/jest/&quot;,&quot;code&quot;:&quot;https://github.com/facebook/jest&quot;},&quot;release&quot;:&quot;22.3.0&quot;,&quot;mtime&quot;:1519572598,&quot;db_size&quot;:390775,&quot;full_name&quot;:&quot;Jest&quot;,&quot;slug_without_version&quot;:&quot;jest&quot;}" data-gr-c-s-loaded="true">
+<noscript class="_fail">DevDocs requires JavaScript to run.</noscript>
+<div class="_app" role="application"><div role="alert" class="_notice"><p class="_notice-text"> You're browsing the Jest documentation. To browse all docs, go to
+<a href="http://devdocs.io/" target="_top">devdocs.io</a> (or press <code>esc</code>). </p></div>
+  <header class="_header" role="banner">
+    <button type="button" aria-label="Toggle navigation" class="_header-btn" data-toggle-sidebar="" hidden="">
+      <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+    </button>
+    <form class="_search" role="search">
+      <svg><use xlink:href="#icon-search"></use></svg>
+      <input type="search" name="q" class="_search-input" placeholder="Search…" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="30" aria-label="Search">
+      <button type="reset" class="_search-clear" title="Clear search"><svg><use xlink:href="#icon-close"></use></svg>Clear search</button>
+      <div class="_search-tag"></div>
+    </form>
+    <button type="button" aria-label="Back" class="_header-btn" data-back="" hidden="">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>
+    </button>
+    <button type="button" aria-label="Forward" class="_header-btn _forward-btn" data-forward="" hidden="">
+      <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+    </button>
+    <button type="button" aria-label="Toggle menu" title="Toggle menu" class="_header-btn _menu-btn" data-toggle-menu="">
+      <svg viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+    </button>
+    <nav class="_menu" role="navigation">
+      <h1 class="_menu-title"><a href="http://devdocs.io/" class="_menu-title-link">DevDocs</a></h1>
+      <a href="http://devdocs.io/settings" class="_menu-link">Preferences</a>
+      <a href="http://devdocs.io/offline" class="_menu-link">Offline Data</a>
+      <a href="http://devdocs.io/news" class="_menu-link">Changelog</a>
+      <a href="http://devdocs.io/help" class="_menu-link">Guide</a>
+      <a href="http://devdocs.io/about" class="_menu-link">About</a>
+    </nav>
+  </header>
+  <section class="_sidebar show" tabindex="-1"><div role="navigation" class="_list"><a href="http://devdocs.io/jest/" class="_list-item _icon-jest _list-dir open" data-slug="jest" title="Jest" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">22.3.0</span><span class="_list-text">Jest</span></a><div class="_list _list-sub"><a href="http://devdocs.io/jest-guides/" class="_list-item _list-dir open" data-slug="guides" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">10</span><span class="_list-text">Guides</span></a><div class="_list _list-sub"><a href="http://devdocs.io/jest/tutorial-async" class="_list-item _list-hover" tabindex="-1">An Async Example</a><a href="http://devdocs.io/jest/es6-class-mocks" class="_list-item _list-hover" tabindex="-1">ES6 Class Mocks</a><a href="http://devdocs.io/jest/manual-mocks" class="_list-item _list-hover" tabindex="-1">Manual Mocks</a><a href="http://devdocs.io/jest/migration-guide" class="_list-item _list-hover" tabindex="-1">Migrating to Jest</a><a href="http://devdocs.io/jest/snapshot-testing" class="_list-item _list-hover" tabindex="-1">Snapshot Testing</a><a href="http://devdocs.io/jest/timer-mocks" class="_list-item _list-hover" tabindex="-1">Timer Mocks</a><a href="http://devdocs.io/jest/troubleshooting" class="_list-item _list-hover" tabindex="-1">Troubleshooting</a><a href="http://devdocs.io/jest/mongodb" class="_list-item _list-hover" tabindex="-1">Using with MongoDB</a><a href="http://devdocs.io/jest/puppeteer" class="_list-item _list-hover" tabindex="-1">Using with puppeteer</a><a href="http://devdocs.io/jest/webpack" class="_list-item _list-hover" tabindex="-1">Using with webpack</a></div><a href="http://devdocs.io/jest-guides-introduction/" class="_list-item _list-dir" data-slug="guides-introduction" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">6</span><span class="_list-text">Guides: Introduction</span></a><a href="http://devdocs.io/jest-configuring-jest/" class="_list-item _list-dir" data-slug="configuring-jest" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">50</span><span class="_list-text">Configuring Jest</span></a><a href="http://devdocs.io/jest-expect/" class="_list-item _list-dir" data-slug="expect" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">41</span><span class="_list-text">Expect</span></a><a href="http://devdocs.io/jest-framework-guides/" class="_list-item _list-dir open" data-slug="framework-guides" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">3</span><span class="_list-text">Framework Guides</span></a><div class="_list _list-sub"><a href="http://devdocs.io/jest/tutorial-react" class="_list-item _list-hover active" tabindex="-1">Testing React Apps</a><a href="http://devdocs.io/jest/tutorial-react-native" class="_list-item _list-hover" tabindex="-1">Testing React Native Apps</a><a href="http://devdocs.io/jest/testing-frameworks" class="_list-item _list-hover focus" tabindex="-1">Testing Web Frameworks</a></div><a href="http://devdocs.io/jest-globals/" class="_list-item _list-dir" data-slug="globals" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">13</span><span class="_list-text">Globals</span></a><a href="http://devdocs.io/jest-jest-cli-options/" class="_list-item _list-dir" data-slug="jest-cli-options" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">44</span><span class="_list-text">Jest CLI Options</span></a><a href="http://devdocs.io/jest-mock-functions/" class="_list-item _list-dir" data-slug="mock-functions" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">17</span><span class="_list-text">Mock Functions</span></a><a href="http://devdocs.io/jest-the-jest-object/" class="_list-item _list-dir" data-slug="the-jest-object" tabindex="-1"><svg class="_list-arrow"><use xlink:href="#icon-dir"></use></svg><span class="_list-count">25</span><span class="_list-text">The Jest Object</span></a></div></div></section>
+  <div class="_container" role="document">
+    <main class="_content" role="main"><div class="_page _jest"><h1>Testing React Apps</h1>
+<span><p>At Facebook, we use Jest to test <a href="http://facebook.github.io/react/">React</a> applications.</p> <h2 id="setup">Setup</h2> <h3 id="setup-with-create-react-app">Setup with Create React App</h3> <p>If you are just getting started with React, we recommend using <a href="https://github.com/facebookincubator/create-react-app">Create React App</a>. It is ready to use and <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests">ships with Jest</a>! You don't need to do any extra steps for setup, and can head straight to the next section.</p> <h3 id="setup-without-create-react-app">Setup without Create React App</h3> <p>If you have an existing application you'll need to install a few packages to make everything work well together. We are using the <code>babel-jest</code> package and the <code>react</code> babel preset to transform our code inside of the test environment. Also see <a href="http://devdocs.io/jest/getting-started#using-babel">using babel</a>.</p> <p>Run</p> <pre>npm install --save-dev jest babel-jest babel-preset-env babel-preset-react react-test-renderer
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>Your <code>package.json</code> should look something like this (where <code>&lt;current-version&gt;</code> is the actual latest version number for the package). Please add the scripts and jest configuration entries:</p> <pre>// package.json
+  "dependencies": {
+    "react": "&lt;current-version&gt;",
+    "react-dom": "&lt;current-version&gt;"
+  },
+  "devDependencies": {
+    "babel-jest": "&lt;current-version&gt;",
+    "babel-preset-env": "&lt;current-version&gt;",
+    "babel-preset-react": "&lt;current-version&gt;",
+    "jest": "&lt;current-version&gt;",
+    "react-test-renderer": "&lt;current-version&gt;"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <pre>// .babelrc
+{
+  "presets": ["env", "react"]
+}
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p><strong>And you're good to go!</strong></p> <h3 id="snapshot-testing">Snapshot Testing</h3> <p>Let's create a <a href="http://devdocs.io/jest/snapshot-testing">snapshot test</a> for a Link component that renders hyperlinks:</p> <pre>// Link.react.js
+import React from 'react';
+
+const STATUS = {
+  HOVERED: 'hovered',
+  NORMAL: 'normal',
+};
+
+export default class Link extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this._onMouseEnter = this._onMouseEnter.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
+
+    this.state = {
+      class: STATUS.NORMAL,
+    };
+  }
+
+  _onMouseEnter() {
+    this.setState({class: STATUS.HOVERED});
+  }
+
+  _onMouseLeave() {
+    this.setState({class: STATUS.NORMAL});
+  }
+
+  render() {
+    return (
+      &lt;a
+        className={this.state.class}
+        href={this.props.page || '#'}
+        onMouseEnter={this._onMouseEnter}
+        onMouseLeave={this._onMouseLeave}
+      &gt;
+        {this.props.children}
+      &lt;/a&gt;
+    );
+  }
+}
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>Now let's use React's test renderer and Jest's snapshot feature to interact with the component and capture the rendered output and create a snapshot file:</p> <pre>// Link.react.test.js
+import React from 'react';
+import Link from '../Link.react';
+import renderer from 'react-test-renderer';
+
+test('Link changes the class when hovered', () =&gt; {
+  const component = renderer.create(
+    &lt;Link page="http://www.facebook.com"&gt;Facebook&lt;/Link&gt;,
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  // manually trigger the callback
+  tree.props.onMouseEnter();
+  // re-rendering
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  // manually trigger the callback
+  tree.props.onMouseLeave();
+  // re-rendering
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>When you run <code>npm test</code> or <code>jest</code>, this will produce an output file like this:</p> <pre>// __tests__/__snapshots__/Link.react.test.js.snap
+exports[`Link changes the class when hovered 1`] = `
+&lt;a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}&gt;
+  Facebook
+&lt;/a&gt;
+`;
+
+exports[`Link changes the class when hovered 2`] = `
+&lt;a
+  className="hovered"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}&gt;
+  Facebook
+&lt;/a&gt;
+`;
+
+exports[`Link changes the class when hovered 3`] = `
+&lt;a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}&gt;
+  Facebook
+&lt;/a&gt;
+`;
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>The next time you run the tests, the rendered output will be compared to the previously created snapshot. The snapshot should be committed along code changes. When a snapshot test fails, you need to inspect whether it is an intended or unintended change. If the change is expected you can invoke Jest with <code>jest -u</code> to overwrite the existing snapshot.</p> <p>The code for this example is available at <a href="https://github.com/facebook/jest/tree/master/examples/snapshot">examples/snapshot</a>.</p> <h4 id="snapshot-testing-with-mocks-enzyme-and-react-16">Snapshot Testing with Mocks, Enzyme and React 16</h4> <p>There's a caveat around snapshot testing when using Enzyme and React 16+. If you mock out a module using the following style:</p> <pre>jest.mock('../SomeDirectory/SomeComponent', () =&gt; 'SomeComponent');
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>Then you will see warnings in the console:</p> <pre>Warning: &lt;SomeComponent /&gt; is using uppercase HTML. Always use lowercase HTML tags in React.
+
+# Or:
+Warning: The tag &lt;SomeComponent&gt; is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>React 16 triggers these warnings due to how it checks element types, and the mocked module fails these checks. Your options are:</p> <ol> <li>Render as text. This way you won't see the props passed to the mock component in the snapshot, but it's straightforward: <pre>jest.mock('./SomeComponent', () =&gt; () =&gt; 'SomeComponent');
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre>
+</li> <li>Render as a custom element. DOM "custom elements" aren't checked for anything and shouldn't fire warnings. They are lowercase and have a dash in the name. <pre>jest.mock('./Widget', () =&gt; 'mock-widget');
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre>
+</li> <li>Use <code>react-test-renderer</code>. The test renderer doesn't care about element types and will happily accept e.g. <code>SomeComponent</code>. You could check snapshots using the test renderer, and check component behavior separately using Enzyme.</li> </ol> <h3 id="dom-testing">DOM Testing</h3> <p>If you'd like to assert, and manipulate your rendered components you can use <a href="http://airbnb.io/enzyme/">Enzyme</a> or React's <a href="http://facebook.github.io/react/docs/test-utils.html">TestUtils</a>. We use Enzyme for this example.</p> <p>You have to run <code>npm install --save-dev enzyme</code> to use Enzyme. If you are using a React below version 15.5.0, you will also need to install <code>react-addons-test-utils</code>.</p> <p>Let's implement a simple checkbox which swaps between two labels:</p> <pre>// CheckboxWithLabel.js
+
+import React from 'react';
+
+export default class CheckboxWithLabel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isChecked: false};
+
+    // bind manually because React class components don't auto-bind
+    // http://facebook.github.io/react/blog/2015/01/27/react-v0.13.0-beta-1.html#autobinding
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange() {
+    this.setState({isChecked: !this.state.isChecked});
+  }
+
+  render() {
+    return (
+      &lt;label&gt;
+        &lt;input
+          type="checkbox"
+          checked={this.state.isChecked}
+          onChange={this.onChange}
+        /&gt;
+        {this.state.isChecked ? this.props.labelOn : this.props.labelOff}
+      &lt;/label&gt;
+    );
+  }
+}
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>We use Enzyme's <a href="http://airbnb.io/enzyme/docs/api/shallow.html">shallow renderer</a> in this example.</p> <pre>// __tests__/CheckboxWithLabel-test.js
+
+import React from 'react';
+import {shallow} from 'enzyme';
+import CheckboxWithLabel from '../CheckboxWithLabel';
+
+test('CheckboxWithLabel changes the text after click', () =&gt; {
+  // Render a checkbox with label in the document
+  const checkbox = shallow(&lt;CheckboxWithLabel labelOn="On" labelOff="Off" /&gt;);
+
+  expect(checkbox.text()).toEqual('Off');
+
+  checkbox.find('input').simulate('change');
+
+  expect(checkbox.text()).toEqual('On');
+});
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>The code for this example is available at <a href="https://github.com/facebook/jest/tree/master/examples/enzyme">examples/enzyme</a>.</p> <h3 id="custom-transformers">Custom transformers</h3> <p>If you need more advanced functionality, you can also build your own transformer. Instead of using babel-jest, here is an example of using babel:</p> <pre>// custom-transformer.js
+'use strict';
+
+const babel = require('babel-core');
+const jestPreset = require('babel-preset-jest');
+
+module.exports = {
+  process(src, filename) {
+    if (babel.util.canCompile(filename)) {
+      return babel.transform(src, {
+        filename,
+        presets: [jestPreset],
+        retainLines: true,
+      }).code;
+    }
+    return src;
+  },
+};
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> <p>Don't forget to install the <code>babel-core</code> and <code>babel-preset-jest</code> packages for this example to work.</p> <p>To make this work with Jest you need to update your Jest configuration with this: <code>"transform": {"\\.js$": "path/to/custom-transformer.js"}</code>.</p> <p>If you'd like to build a transformer with babel support, you can also use babel-jest to compose one and pass in your custom configuration options:</p> <pre>const babelJest = require('babel-jest');
+
+module.exports = babelJest.createTransformer({
+  presets: ['my-custom-preset'],
+});
+<button type="button" class="_pre-clip" title="Copy to clipboard" aria-label="Copy to clipboard"><svg><use xlink:href="#icon-copy"></use></svg></button></pre> </span><div class="_attribution">
+  <p class="_attribution-p">
+    © 2014–present Facebook Inc.<br>Licensed under the BSD License.<br>
+    <a href="https://facebook.github.io/jest/docs/en/tutorial-react.html" class="_attribution-link">https://facebook.github.io/jest/docs/en/tutorial-react.html</a>
+  </p>
+</div>
+</div></main>
+  </div>
+  <form class="_settings" id="settings">
+    <div class="_header">
+      <button type="button" aria-label="Back" class="_settings-btn _settings-btn-back" data-back="">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg> Back
+      </button>
+      <button type="submit" class="_settings-btn _settings-btn-save">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path></svg> Apply
+      </button>
+      <nav class="_settings-tabs">
+        <button type="button" class="_settings-tab active" data-tab="doc-picker" hidden="">Docs</button><button type="button" class="_settings-tab" data-tab="settings" hidden="">Settings</button>
+      </nav>
+    </div>
+    <div class="_sidebar" tabindex="-1"></div>
+  </form>
+<div class="_resizer" draggable="true"></div></div>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="icon-search" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></symbol>
+    <symbol id="icon-dir" viewBox="0 0 20 20"><path d="M15 10c0 .3-.305.515-.305.515l-8.56 5.303c-.625.41-1.135.106-1.135-.67V4.853c0-.777.51-1.078 1.135-.67l8.56 5.305S15 9.702 15 10z"></path></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></symbol>
+    <symbol id="icon-copy" viewBox="0 0 14 16"><path d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></symbol>
+    <symbol id="icon-external-link" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></symbol>
+  </defs>
+</svg>
+<style data-size="20rem" data-resizer="">
+  ._container { margin-left: 20rem; }
+  ._header, ._list { width: 20rem; }
+  ._list-hover.clone { min-width: 20rem; }
+  ._notice, ._path, ._resizer { left: 20rem; }
+</style>
+<script type="text/javascript" async="" id="gauges-tracker" data-site-id="51c15f82613f5d7819000067" src="./DevDocs — Jest _ Testing React Apps_files/track.js.download"></script><script async="" src="./DevDocs — Jest _ Testing React Apps_files/analytics.js.download"></script><script src="./DevDocs — Jest _ Testing React Apps_files/application-a76771ca96b817386225c34c635f7e7a443a946cc92dc4b820f3099252860505.js.download"></script>
+
+
+</body></html>
